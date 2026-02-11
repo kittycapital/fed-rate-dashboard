@@ -1,18 +1,17 @@
 #!/usr/bin/env python3
 """
-Fed Rate Dashboard v3.2
+Fed Rate Dashboard v3.3
 ========================
-- Polymarket: /events/slug/ 경로 방식으로 수정 (핵심 버그 수정!)
-- FRED: Fed Funds 목표금리 (DFEDTARU/DFEDTARL) 실시간 조회
-- Kalshi 제거
-- 2026년 FOMC 전체 일정 표시
+- FOMC 날짜 수정: 3번째 미팅 = 4/28-29 (5/5-6 ❌)
+- Polymarket: events 검색(closed=false)을 주력으로, slug는 보조
+- FRED: Fed Funds 목표금리 실시간
 """
 
 import json, requests, re, os
 from datetime import datetime, timedelta
 
 TIMEOUT = 15
-HDR = {"User-Agent": "FedRateDashboard/3.2", "Accept": "application/json"}
+HDR = {"User-Agent": "FedRateDashboard/3.3", "Accept": "application/json"}
 NOW = datetime.utcnow()
 YEAR = NOW.year
 
@@ -34,7 +33,6 @@ def tr_title(t):
     for en, ko in MO_KO.items():
         t = re.sub(rf"(?i)Fed [Dd]ecision in {en}\??", f"{ko} FOMC 금리 결정", t)
     t = re.sub(r"(?i)what will the fed (?:funds )?rate be at the end of (\d{4})\??", lambda m: f"{m[1]}년 말 Fed 기준금리 전망", t)
-    t = re.sub(r"(?i)fed funds rate (?:at )?(?:the )?end of (\d{4})", lambda m: f"{m[1]}년 말 기준금리", t)
     return t
 
 def tr_outcome(o):
@@ -54,16 +52,16 @@ def tr_outcome(o):
     if r: return f"{r[1]}~{r[2]}%"
     return o
 
-# ═══════════════════════ FOMC 캘린더 ═══════════════════════
+# ═══════════════ FOMC 캘린더 (공식 일정) ═══════════════
+# 출처: federalreserve.gov/monetarypolicy/fomccalendars.htm
 
 FOMC_DATES = {
     2025: [(1,28,29),(3,18,19),(5,6,7),(6,17,18),(7,29,30),(9,16,17),(10,28,29),(12,9,10)],
-    2026: [(1,27,28),(3,17,18),(5,5,6),(6,16,17),(7,28,29),(9,15,16),(10,27,28),(12,8,9)],
-    2027: [(1,26,27),(3,16,17),(5,4,5),(6,15,16),(7,27,28),(9,21,22),(10,26,27),(12,14,15)],
+    2026: [(1,27,28),(3,17,18),(4,28,29),(6,16,17),(7,28,29),(9,15,16),(10,27,28),(12,8,9)],
+    2027: [(1,26,27),(3,16,17),(4,27,28),(6,15,16),(7,27,28),(9,21,22),(10,26,27),(12,14,15)],
 }
 
 def build_fomc_calendar():
-    """올해 FOMC 전체 일정"""
     print("[0] FOMC 캘린더 ...")
     cal = []
     today = NOW.strftime("%Y-%m-%d")
@@ -78,6 +76,9 @@ def build_fomc_calendar():
             "is_past": end_str < today,
         })
     print(f"  ✅ {YEAR}년 {len(cal)}개 미팅")
+    for c in cal:
+        s = "완료" if c["is_past"] else "예정"
+        print(f"    {c['label']:4s} {c['date']}~{c['end_date'].split('-')[2]} ({s})")
     return cal
 
 # ═══════════════════════ SOFR ═══════════════════════
@@ -99,12 +100,10 @@ def fetch_sofr():
 # ═══════════════════════ FRED ═══════════════════════
 
 def fetch_fred_target_rate():
-    """FRED에서 현재 Fed Funds 목표금리 조회 (DFEDTARU/DFEDTARL)"""
     api_key = os.environ.get("FRED_API_KEY", "")
     if not api_key:
         print("[2] FRED 목표금리 ⏭️ (API키 없음)")
         return None
-
     print("[2] FRED 목표금리 ...")
     result = {}
     for series, label in [("DFEDTARU","upper"), ("DFEDTARL","lower")]:
@@ -113,62 +112,31 @@ def fetch_fred_target_rate():
                 f"https://api.stlouisfed.org/fred/series/observations"
                 f"?series_id={series}&api_key={api_key}&file_type=json"
                 f"&sort_order=desc&limit=5",
-                timeout=TIMEOUT
-            )
+                timeout=TIMEOUT)
             r.raise_for_status()
-            obs = r.json().get("observations", [])
-            for o in obs:
+            for o in r.json().get("observations", []):
                 if o.get("value", ".") != ".":
                     result[label] = float(o["value"])
                     result[f"{label}_date"] = o["date"]
                     break
         except Exception as e:
             print(f"  ⚠️ {series}: {e}")
-
     if "upper" in result and "lower" in result:
         print(f"  ✅ {result['lower']:.2f}~{result['upper']:.2f}%")
         return result
-    print("  ⚠️ 일부 데이터 누락")
     return result if result else None
 
 # ═══════════════════════ Polymarket ═══════════════════════
 
 def fetch_polymarket():
     """
-    Polymarket API - 공식 문서 기준:
-    ★ /events/slug/{slug} — 개별 이벤트 조회 (핵심!)
-    ★ /events?tag=... — 태그로 검색
+    ★ 전략 변경: events 검색(closed=false)을 주력으로!
+    slug 방식은 2025년 이벤트를 반환하는 문제가 있음
     """
     print("[3] Polymarket ...")
     BASE = "https://gamma-api.polymarket.com"
     seen = set()
-    fomc_decisions = []
-
-    def fetch_by_slug(slug):
-        """★ 공식 API: /events/slug/{slug}"""
-        try:
-            url = f"{BASE}/events/slug/{slug}"
-            r = requests.get(url, headers=HDR, timeout=TIMEOUT)
-            if r.status_code == 200:
-                d = r.json()
-                if isinstance(d, dict) and d.get("slug"):
-                    return d
-                if isinstance(d, list) and d:
-                    return d[0]
-            print(f"    ⚠️ slug={slug}: HTTP {r.status_code}")
-        except Exception as e:
-            print(f"    ⚠️ slug={slug}: {e}")
-        return None
-
-    def fetch_events(params):
-        """이벤트 목록 조회"""
-        try:
-            r = requests.get(f"{BASE}/events", params=params, headers=HDR, timeout=TIMEOUT)
-            if r.status_code == 200:
-                d = r.json()
-                return d if isinstance(d, list) else []
-        except: pass
-        return []
+    results = []
 
     def parse_markets(ev):
         ms = []
@@ -188,70 +156,98 @@ def fetch_polymarket():
             })
         return ms
 
-    def add_event(ev):
-        if not ev: return
-        slug = ev.get("slug","")
-        if slug in seen or not slug: return
-        seen.add(slug)
-        title = ev.get("title","")
+    def is_current_year(ev):
         end = ev.get("endDate","")
+        if not end: return True
+        try:
+            ey = datetime.fromisoformat(end.replace("Z","")).year
+            return ey >= YEAR
+        except:
+            return True
 
-        # 너무 오래된 이벤트 제외
-        if end:
-            try:
-                ey = datetime.fromisoformat(end.replace("Z","")).year
-                if ey < YEAR: return  # 과거 연도 제외
-            except: pass
-
-        obj = {
-            "slug": slug, "title": title, "title_ko": tr_title(title),
-            "endDate": end, "closed": ev.get("closed", False),
+    def add_event(ev, source=""):
+        if not ev: return False
+        slug = ev.get("slug","")
+        if slug in seen or not slug: return False
+        seen.add(slug)
+        if not is_current_year(ev):
+            print(f"    ⛔ {slug} (과거 연도)")
+            return False
+        results.append({
+            "slug": slug, "title": ev.get("title",""),
+            "title_ko": tr_title(ev.get("title","")),
+            "endDate": ev.get("endDate",""),
+            "closed": ev.get("closed", False),
             "markets": parse_markets(ev),
-        }
-        fomc_decisions.append(obj)
+        })
+        print(f"    ✅ {slug} [{source}]")
+        return True
 
-    # ★ 전략A: 슬러그 경로로 직접 조회 (핵심!)
-    print("  📌 슬러그 직접 조회 (/events/slug/)")
-    for mo in MONTHS_EN:
-        slug = f"fed-decision-in-{mo}"
-        ev = fetch_by_slug(slug)
-        if ev:
-            add_event(ev)
-            print(f"    ✅ {slug}")
+    # ★ 전략1: events 검색 (closed=false) — 주력!
+    print("  📌 [주력] 활성 이벤트 검색 (closed=false)")
+    for query in ["Fed Decision", "fed rate", "fed funds rate"]:
+        try:
+            r = requests.get(f"{BASE}/events",
+                params={"title": query, "closed": "false", "active": "true", "limit": "50"},
+                headers=HDR, timeout=TIMEOUT)
+            if r.status_code == 200:
+                evts = r.json()
+                if isinstance(evts, list):
+                    for ev in evts:
+                        t = ev.get("title","").lower()
+                        if "fed" in t:
+                            add_event(ev, f"search:{query}")
+        except Exception as e:
+            print(f"    ⚠️ search:{query}: {e}")
 
-    # 추가 슬러그들
-    extra_slugs = [
+    # ★ 전략2: 태그 검색
+    print("  📌 [보조] 태그 검색")
+    for tag in ["fed-rates", "federal-reserve", "fomc"]:
+        try:
+            r = requests.get(f"{BASE}/events",
+                params={"tag": tag, "closed": "false", "active": "true", "limit": "50"},
+                headers=HDR, timeout=TIMEOUT)
+            if r.status_code == 200:
+                evts = r.json()
+                if isinstance(evts, list):
+                    for ev in evts:
+                        add_event(ev, f"tag:{tag}")
+        except Exception as e:
+            print(f"    ⚠️ tag:{tag}: {e}")
+
+    # ★ 전략3: slug 보충 (아직 못 찾은 것만)
+    print("  📌 [보충] 슬러그 조회")
+    slug_list = [f"fed-decision-in-{mo}" for mo in MONTHS_EN]
+    slug_list += [
         f"how-many-fed-rate-cuts-in-{YEAR}",
-        f"how-many-fed-rate-cuts-in-{YEAR+1}",
         f"what-will-the-fed-rate-be-at-the-end-of-{YEAR}",
     ]
-    for slug in extra_slugs:
-        ev = fetch_by_slug(slug)
-        if ev:
-            add_event(ev)
-            print(f"    ✅ {slug}")
+    for slug in slug_list:
+        if slug in seen: continue
+        try:
+            r = requests.get(f"{BASE}/events/slug/{slug}", headers=HDR, timeout=TIMEOUT)
+            if r.status_code == 200:
+                d = r.json()
+                ev = d if isinstance(d, dict) and d.get("slug") else (d[0] if isinstance(d, list) and d else None)
+                add_event(ev, "slug")
+        except: pass
 
-    # ★ 전략B: 태그로 검색 (보충)
-    print("  📌 태그 검색")
-    for tag in ["fed-rates", "federal-reserve", "interest-rates"]:
-        for ev in fetch_events({"tag": tag, "active": "true", "closed": "false", "limit": "50"}):
-            title = ev.get("title","").lower()
-            if "fed" in title and ("decision" in title or "rate" in title):
-                add_event(ev)
-
-    fomc_decisions.sort(key=lambda x: x.get("endDate",""))
-    print(f"  ✅ 총 {len(fomc_decisions)}개 이벤트")
-    return fomc_decisions
+    results.sort(key=lambda x: x.get("endDate",""))
+    print(f"\n  🎯 최종: {len(results)}개 이벤트 수집")
+    for r in results:
+        mc = len([m for m in r['markets'] if m['prices']])
+        print(f"    • {r['slug']} | markets={mc} | closed={r['closed']}")
+    return results
 
 # ═══════════════════════ Main ═══════════════════════
 
 def main():
     print("="*55)
-    print(f"🏦 Fed Rate Dashboard v3.2 | {NOW.strftime('%Y-%m-%d %H:%M UTC')}")
+    print(f"🏦 Fed Rate Dashboard v3.3 | {NOW.strftime('%Y-%m-%d %H:%M UTC')}")
     print("="*55)
 
     output = {
-        "meta": {"updated_at": NOW.isoformat()+"Z", "year": YEAR, "version": "3.2"},
+        "meta": {"updated_at": NOW.isoformat()+"Z", "year": YEAR, "version": "3.3"},
         "fomc_calendar": build_fomc_calendar(),
         "sofr": fetch_sofr(),
         "fed_funds_target": fetch_fred_target_rate(),
@@ -262,13 +258,12 @@ def main():
     with open("data/rate_data.json", "w", encoding="utf-8") as f:
         json.dump(output, f, ensure_ascii=False, indent=2)
 
-    pm = output["polymarket"]
     tgt = output["fed_funds_target"]
     tgt_str = f"{tgt['lower']:.2f}~{tgt['upper']:.2f}%" if tgt and "upper" in tgt else "N/A"
     print(f"\n✅ 저장: data/rate_data.json")
     print(f"   캘린더 {len(output['fomc_calendar'])}개 | SOFR {len(output['sofr'])}일")
     print(f"   목표금리: {tgt_str}")
-    print(f"   Polymarket: {len(pm)}개 이벤트")
+    print(f"   Polymarket: {len(output['polymarket'])}개 이벤트")
 
 if __name__ == "__main__":
     main()
