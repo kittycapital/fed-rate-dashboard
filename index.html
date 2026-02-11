@@ -48,9 +48,9 @@ body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--text
 .s-next{background:rgba(245,158,11,.12);color:#fbbf24}
 .s-future{background:rgba(100,116,139,.1);color:#94a3b8}
 
-.pg{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.pg{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
 .pi{background:rgba(255,255,255,.015);border:1px solid var(--border);border-radius:9px;padding:13px}
-.pi .pq{font-size:11px;color:var(--muted);margin-bottom:9px;line-height:1.4}
+.pi .pq{font-size:12px;color:var(--text);margin-bottom:9px;line-height:1.4;font-weight:500}
 .pi .pa{display:flex;align-items:center;justify-content:space-between;margin-bottom:4px}
 .pi .pa .ol{font-size:11px}
 .pi .pa .op{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:600}
@@ -82,22 +82,20 @@ body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--text
     <div class="live"><span class="dot"></span><span id="ts">로딩 중...</span></div>
   </div>
 
-  <div class="metrics" id="metrics">
+  <div class="metrics">
     <div class="mc"><div class="ml">현재 SOFR</div><div class="mv" style="color:var(--cyan)" id="m-sofr">--</div><div class="ms" id="m-sofr-d">--</div></div>
     <div class="mc"><div class="ml">Fed Funds 목표</div><div class="mv" style="color:var(--accent)" id="m-ff">4.25-4.50%</div><div class="ms" id="m-ff-d">--</div></div>
     <div class="mc"><div class="ml">연말 예상 (최다)</div><div class="mv" style="color:var(--purple)" id="m-ye">--</div><div class="ms" id="m-ye-d">--</div></div>
     <div class="mc"><div class="ml">다음 FOMC</div><div class="mv" style="color:var(--orange)" id="m-next">--</div><div class="ms" id="m-next-d">--</div></div>
   </div>
 
-  <!-- SOFR -->
   <div class="sec">
     <div class="sh"><div><div class="st">📈 SOFR 금리 추이 <span class="badge b-nyfed">NY Fed</span><span class="badge b-free">무료</span></div><div class="sd">뉴욕 연준 발표 Secured Overnight Financing Rate</div></div></div>
     <div id="sofrWrap"><div class="cw"><canvas id="cSOFR"></canvas></div></div>
   </div>
 
-  <!-- FOMC Bar Chart -->
   <div class="sec">
-    <div class="sh"><div><div class="st">🎯 FOMC 미팅별 금리 전망 <span class="badge b-poly">Polymarket</span><span class="badge b-kalshi">Kalshi</span></div><div class="sd">각 FOMC 미팅에서의 금리 결정 확률</div></div></div>
+    <div class="sh"><div><div class="st">🎯 FOMC 미팅별 금리 전망 <span class="badge b-poly">Polymarket</span><span class="badge b-kalshi">Kalshi</span></div><div class="sd">각 FOMC 미팅에서의 금리 결정 확률 (최근 완료 + 예정)</div></div></div>
     <div id="fomcWrap"><div class="cw" style="height:300px"><canvas id="cFOMC"></canvas></div>
     <div class="leg">
       <div class="leg-i"><div class="leg-d" style="background:var(--dim)"></div>동결</div>
@@ -107,19 +105,16 @@ body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--text
     </div></div>
   </div>
 
-  <!-- Rate Path -->
   <div class="sec">
     <div class="sh"><div><div class="st">📉 예상 금리 경로 <span class="badge b-poly">Polymarket</span><span class="badge b-kalshi">Kalshi</span></div><div class="sd">예측 시장 확률에서 계산한 내재 금리 경로</div></div></div>
     <div id="pathWrap"><div class="cw"><canvas id="cPath"></canvas></div></div>
   </div>
 
-  <!-- FOMC Table -->
   <div class="sec">
     <div class="sh"><div><div class="st">📋 FOMC 미팅 세부 확률</div></div></div>
     <div style="overflow-x:auto"><table class="ft"><thead><tr><th>미팅</th><th>상태</th><th>동결</th><th>25bp 인하</th><th>50bp+ 인하</th><th>인상</th></tr></thead><tbody id="tBody"></tbody></table></div>
   </div>
 
-  <!-- Prediction Grid -->
   <div class="sec">
     <div class="sh"><div><div class="st">🔮 주요 금리 예측 마켓</div><div class="sd">Polymarket & Kalshi Fed 관련 활성 마켓</div></div></div>
     <div class="pg" id="pGrid"></div>
@@ -127,14 +122,13 @@ body{font-family:'Noto Sans KR',sans-serif;background:var(--bg);color:var(--text
 
   <div class="foot">
     ⚠️ 본 대시보드는 정보 제공 목적이며, 투자 권유가 아닙니다.<br>
-    데이터: NY Fed Markets API · Polymarket Gamma API · Kalshi Public API (모두 무료)<br>
-    연도 하드코딩 없음 — API에서 활성 마켓을 자동 탐색합니다.
+    데이터: NY Fed Markets API · Polymarket Gamma API · Kalshi Public API (모두 무료)
   </div>
 </div>
 
 <script>
 // ═══════════════════════════════════════════════
-//  한글 번역 (프론트엔드 보조용)
+//  한글 번역 (★ 전체 문장 패턴을 먼저!)
 // ═══════════════════════════════════════════════
 
 const MONTH_KO = {
@@ -146,16 +140,37 @@ const MONTH_KO = {
 function toKo(s) {
   if (!s) return s;
   let t = s;
-  // FOMC 미팅
-  for (const [en,ko] of Object.entries(MONTH_KO)) {
-    t = t.replace(new RegExp(`Fed [Dd]ecision in ${en}\\??`,"gi"), `${ko} FOMC 금리 결정`);
+
+  // ★ 전체 문장 패턴을 먼저 (부분 치환보다 우선!)
+  // "Will no rate cuts happen in 2026?"
+  t = t.replace(/will no rate cuts? happen in (\d{4})\??/gi, (_, y) => `${y}년 금리 인하 0회 여부`);
+  // "Will 12 or more rate cuts happen in 2026?"
+  t = t.replace(/will (\d+) or more rate cuts? happen in (\d{4})\??/gi, (_, n, y) => `${y}년 ${n}회 이상 금리 인하 여부`);
+  // "Will fewer than 3 rate cuts happen in 2026?"
+  t = t.replace(/will fewer than (\d+) rate cuts? happen in (\d{4})\??/gi, (_, n, y) => `${y}년 ${n}회 미만 금리 인하 여부`);
+  // "Will at least 3 rate cuts happen in 2026?"
+  t = t.replace(/will at least (\d+) rate cuts? happen in (\d{4})\??/gi, (_, n, y) => `${y}년 최소 ${n}회 금리 인하 여부`);
+  // "Will 2 rate cuts happen in 2026?"
+  t = t.replace(/will (\d+) rate cuts? happen in (\d{4})\??/gi, (_, n, y) => `${y}년 ${n}회 금리 인하 여부`);
+
+  // "How many fed rate cuts in 2026?"
+  t = t.replace(/how many (?:fed )?rate cuts? (?:in )?(\d{4})\??/gi, (_, y) => `${y}년 Fed 금리 인하 횟수`);
+  // "Number of rate cuts in 2026"
+  t = t.replace(/number of (?:fed )?rate cuts?.*?(\d{4})/gi, (_, y) => `${y}년 금리 인하 횟수`);
+
+  // FOMC 미팅 결정
+  for (const [en, ko] of Object.entries(MONTH_KO)) {
+    t = t.replace(new RegExp(`Fed [Dd]ecision in ${en}\\??`, "gi"), `${ko} FOMC 금리 결정`);
   }
-  t = t.replace(/what will the fed (funds )?rate be at the end of (\d{4})\??/gi, (m,_,y)=>`${y}년 말 Fed 기준금리 전망`);
-  t = t.replace(/how many fed rate cuts in (\d{4})\??/gi, (m,y)=>`${y}년 Fed 금리 인하 횟수`);
-  t = t.replace(/will the fed (raise|hike) rates.*?(\d{4})\??/gi, (m,_,y)=>`${y}년 Fed 금리 인상 여부`);
-  t = t.replace(/will the fed cut rates.*?(\d{4})\??/gi, (m,y)=>`${y}년 Fed 금리 인하 여부`);
-  t = t.replace(/number of fed rate cuts.*?(\d{4})/gi, (m,y)=>`${y}년 금리 인하 횟수`);
-  t = t.replace(/fed rate at year.?end (\d{4})/gi, (m,y)=>`${y}년 말 기준금리`);
+
+  // 연말 금리
+  t = t.replace(/what will the fed (?:funds )?rate be at the end of (\d{4})\??/gi, (_, y) => `${y}년 말 Fed 기준금리 전망`);
+  t = t.replace(/fed funds rate (?:at )?(?:the )?end of (\d{4})/gi, (_, y) => `${y}년 말 기준금리`);
+
+  // 금리 인상/인하 여부
+  t = t.replace(/will the fed (?:raise|hike) rates?.*?(\d{4})\??/gi, (_, y) => `${y}년 Fed 금리 인상 여부`);
+  t = t.replace(/will the fed cut rates?.*?(\d{4})\??/gi, (_, y) => `${y}년 Fed 금리 인하 여부`);
+
   return t;
 }
 
@@ -183,20 +198,20 @@ function outcomeKo(o) {
 //  Data Load
 // ═══════════════════════════════════════════════
 
-const JSON_PATH = "data/rate_data.json";
-
 async function loadData() {
   try {
-    const r = await fetch(JSON_PATH);
+    const r = await fetch("data/rate_data.json");
     if (r.ok) { const j = await r.json(); if (j.sofr?.length || j.polymarket?.fomc_decisions?.length) return j; }
   } catch(_){}
-
-  console.log("JSON 없음 → 실시간 API 호출");
   return await fetchLive();
 }
 
 async function fetchLive() {
   const out = {meta:{updated_at:new Date().toISOString()}, sofr:[], polymarket:{fomc_decisions:[],other_markets:[]}, kalshi:[]};
+  const FED_KW = ["fed ","fomc","federal reserve","rate cut","rate hike","interest rate","rate decision","fed decision","fed funds"];
+  const isFed = t => FED_KW.some(kw => t.toLowerCase().includes(kw));
+  const months = Object.keys(MONTH_KO);
+  const seen = new Set();
 
   // SOFR
   try {
@@ -205,12 +220,7 @@ async function fetchLive() {
     out.sofr = (j.refRates||[]).map(x=>({date:x.effectiveDate,rate:+x.percentRate})).sort((a,b)=>a.date.localeCompare(b.date));
   } catch(e){ console.warn("SOFR fail",e); }
 
-  // Polymarket — 다중 전략
-  const seen = new Set();
-  const FED_KW = ["fed ","fomc","federal reserve","rate cut","rate hike","interest rate","rate decision","fed decision","fed funds"];
-  const isFedRelated = t => FED_KW.some(kw => t.toLowerCase().includes(kw));
-  const months = Object.keys(MONTH_KO);
-
+  // Polymarket
   async function tryFetch(params) {
     try {
       const r = await fetch("https://gamma-api.polymarket.com/events?" + new URLSearchParams(params));
@@ -222,36 +232,34 @@ async function fetchLive() {
 
   function parseEv(ev) {
     const slug = ev.slug||"";
-    if (seen.has(slug) || !slug) return;
+    if (seen.has(slug)||!slug) return;
     seen.add(slug);
     const title = ev.title||"";
-    if (!isFedRelated(title)) return;
-
+    if (!isFed(title)) return;
     const ms = (ev.markets||[]).map(m=>{
-      let outcomes, prices;
+      let outcomes,prices;
       try{outcomes=JSON.parse(m.outcomes||"[]")}catch{outcomes=[]}
       try{prices=JSON.parse(m.outcomePrices||"[]")}catch{prices=[]}
       return {question:m.question||"",groupItemTitle:m.groupItemTitle||"",outcomes,prices:prices.map(Number),volume:+(m.volume||0),liquidity:+(m.liquidity||0)};
     });
-
-    const tl = title.toLowerCase();
-    const isFomc = (tl.includes("fed decision")||tl.includes("fomc")) && months.some(mo=>tl.includes(mo));
-    const obj = {slug,title,title_ko:toKo(title),endDate:ev.endDate||"",markets:ms};
-
-    if (isFomc) out.polymarket.fomc_decisions.push(obj);
+    const tl=title.toLowerCase();
+    const isFomc=(tl.includes("fed decision")||tl.includes("fomc"))&&months.some(mo=>tl.includes(mo));
+    const obj={slug,title,title_ko:toKo(title),endDate:ev.endDate||"",closed:ev.closed||false,active:ev.active!==false,markets:ms};
+    if(isFomc)out.polymarket.fomc_decisions.push(obj);
     else out.polymarket.other_markets.push(obj);
   }
 
-  // A: slug patterns
-  for (const mo of months) {
-    (await tryFetch({slug:`fed-decision-in-${mo}`})).forEach(parseEv);
+  // A: slug patterns (active + closed for recent completed)
+  for(const mo of months){
+    (await tryFetch({slug:`fed-decision-in-${mo}`,active:"true"})).forEach(parseEv);
+    (await tryFetch({slug:`fed-decision-in-${mo}`,closed:"true"})).forEach(parseEv);
   }
-  const yr = new Date().getFullYear();
-  for (const s of [`how-many-fed-rate-cuts-in-${yr}`,`what-will-the-fed-rate-be-at-the-end-of-${yr}`]) {
+  const yr=new Date().getFullYear();
+  for(const s of [`how-many-fed-rate-cuts-in-${yr}`,`what-will-the-fed-rate-be-at-the-end-of-${yr}`]){
     (await tryFetch({slug:s})).forEach(parseEv);
   }
   // B: tags
-  for (const tag of ["fed-rates","fed","federal-reserve","interest-rates"]) {
+  for(const tag of ["fed-rates","fed","federal-reserve","interest-rates"]){
     (await tryFetch({tag,active:"true",closed:"false",limit:"50"})).forEach(parseEv);
   }
 
@@ -262,36 +270,31 @@ async function fetchLive() {
 
 
 // ═══════════════════════════════════════════════
-//  Parse FOMC → 표준 형태
+//  FOMC 파싱 — ★ 연도 포함 라벨, 과거 이벤트 필터
 // ═══════════════════════════════════════════════
 
 function parseFOMCDecisions(polyFomc) {
   const now = new Date();
-  const futureEvents = polyFomc.filter(e => {
-    const ed = e.endDate ? new Date(e.endDate) : null;
-    return !ed || ed >= now;
-  });
-  const firstFutureSlug = futureEvents.length ? futureEvents[0].slug : null;
+  const thisYear = now.getFullYear();
 
-  return polyFomc.map(ev => {
+  // ★ endDate에서 연도 추출하여 라벨에 포함
+  const parsed = polyFomc.map(ev => {
     let noChange=0, cut25=0, cut50=0, hike=0;
 
     for (const m of ev.markets) {
-      const q = (m.question + " " + m.groupItemTitle).toLowerCase();
-      const p0 = (m.prices[0]||0)*100;
-
-      // 개별 아웃컴 파싱 (영문 원본 우선, 없으면 outcomes)
       const outs = m.outcomes_en || m.outcomes || [];
-      outs.forEach((o,i)=>{
+      outs.forEach((o,i) => {
         const ol = o.toLowerCase(), pi = (m.prices[i]||0)*100;
         if (ol.includes("no change") || ol==="동결")                 noChange = Math.max(noChange, pi);
         else if ((ol.includes("25") && (ol.includes("decrease")||ol.includes("cut"))) || ol==="25bp 인하")  cut25 = Math.max(cut25, pi);
         else if ((ol.includes("50") && (ol.includes("decrease")||ol.includes("cut"))) || ol==="50bp 인하")  cut50 = Math.max(cut50, pi);
-        else if (ol.includes("hike")||ol.includes("increase")||ol==="인상")  hike = Math.max(hike, pi);
+        else if (ol.includes("hike")||ol.includes("increase")||ol==="인상"||ol.includes("75")||ol.includes("100"))  hike = Math.max(hike, pi);
       });
 
-      // 질문 레벨 파싱 (binary 마켓)
+      // binary 마켓
+      const q = (m.question + " " + m.groupItemTitle).toLowerCase();
       if (outs.length <= 2) {
+        const p0 = (m.prices[0]||0)*100;
         if (q.includes("no change")) noChange = Math.max(noChange, p0);
         else if (q.includes("25") && (q.includes("decrease")||q.includes("cut"))) cut25 = Math.max(cut25, p0);
         else if (q.includes("50") && (q.includes("decrease")||q.includes("cut"))) cut50 = Math.max(cut50, p0);
@@ -299,36 +302,73 @@ function parseFOMCDecisions(polyFomc) {
       }
     }
 
+    // endDate에서 연도 추출
     const endDate = ev.endDate ? new Date(ev.endDate) : null;
+    const evYear = endDate ? endDate.getFullYear() : null;
     const isPast = endDate && endDate < now;
-    const isNext = ev.slug === firstFutureSlug;
 
-    // 한글 제목: title_ko 또는 번역
-    let label = ev.title_ko || toKo(ev.title) || ev.title;
-    label = label.replace(/FOMC 금리 결정/g,"").trim();
+    // 월 이름 추출 (title에서)
+    let monthLabel = "";
+    const titleLower = (ev.title||"").toLowerCase();
+    for (const [en, ko] of Object.entries(MONTH_KO)) {
+      if (titleLower.includes(en)) { monthLabel = ko; break; }
+    }
+    // 한글 title_ko에서도 시도
+    if (!monthLabel) {
+      const koTitle = ev.title_ko || "";
+      const moMatch = koTitle.match(/(\d+)월/);
+      if (moMatch) monthLabel = moMatch[0];
+    }
+
+    // ★ 연도 다르면 라벨에 연도 포함: "1월 '26" vs "1월 '25"
+    let label = monthLabel || ev.title_ko || toKo(ev.title) || ev.title;
+    if (evYear && evYear !== thisYear) {
+      label = `${monthLabel} '${String(evYear).slice(2)}`;
+    }
 
     return {
       title: label,
       endDate: ev.endDate,
+      endDateObj: endDate,
+      evYear,
       noChange: Math.round(noChange),
       cut25: Math.round(cut25),
       cut50: Math.round(cut50),
       hike: Math.round(hike),
-      status: isPast ? "done" : isNext ? "next" : "future",
+      isPast,
+      closed: ev.closed || false,
     };
   });
+
+  // ★ 필터: 최근 2개 완료 + 모든 미래 이벤트만 표시
+  const pastEvents = parsed.filter(f => f.isPast).slice(-2); // 최근 2개만
+  const futureEvents = parsed.filter(f => !f.isPast);
+
+  const filtered = [...pastEvents, ...futureEvents];
+
+  // 상태 설정
+  const firstFuture = futureEvents[0];
+  filtered.forEach(f => {
+    if (f.isPast) f.status = "done";
+    else if (firstFuture && f.endDate === firstFuture.endDate) f.status = "next";
+    else f.status = "future";
+  });
+
+  return filtered;
 }
 
 function parseOtherMarkets(polyOther, kalshi) {
   const items = [];
 
-  // Polymarket 기타 (Fed 관련만)
   for (const ev of polyOther) {
     for (const m of ev.markets) {
       if (!m.prices.length) continue;
       const outs = m.outcomes_en || m.outcomes || [];
+      // ★ 한글 질문 — toKo로 번역 (question_en 우선)
+      const qEn = m.question_en || m.question || ev.title;
+      const qKo = toKo(qEn);
       items.push({
-        question: toKo(m.question || ev.title_ko || ev.title),
+        question: qKo,
         outcomes: outs.map((o,i)=>({
           label: outcomeKo(o),
           pct: Math.round((m.prices[i]||0)*100)
@@ -339,19 +379,15 @@ function parseOtherMarkets(polyOther, kalshi) {
     }
   }
 
-  // Kalshi
   for (const series of (kalshi||[])) {
     for (const m of series.markets) {
       const yesP = m.last_price || m.yes_bid || 0;
       if (!yesP) continue;
-      const title = m.title_ko || toKo(m.title) || m.title;
-      const sub = m.subtitle_ko || toKo(m.subtitle) || m.subtitle;
+      const title = toKo(m.title || m.title_ko || "");
+      const sub = toKo(m.subtitle || m.subtitle_ko || "");
       items.push({
         question: title + (sub ? " — " + sub : ""),
-        outcomes: [
-          {label:"예", pct:yesP},
-          {label:"아니오", pct:100-yesP},
-        ],
+        outcomes: [{label:"예",pct:yesP},{label:"아니오",pct:100-yesP}],
         source: "kalshi",
         volume: m.volume || 0,
       });
@@ -367,106 +403,67 @@ function parseOtherMarkets(polyOther, kalshi) {
 //  Charts
 // ═══════════════════════════════════════════════
 
-Chart.defaults.color = '#94a3b8';
-Chart.defaults.borderColor = '#1a2332';
-Chart.defaults.font.family = "'Noto Sans KR','JetBrains Mono',sans-serif";
-Chart.defaults.font.size = 11;
-const charts = {};
+Chart.defaults.color='#94a3b8';Chart.defaults.borderColor='#1a2332';
+Chart.defaults.font.family="'Noto Sans KR','JetBrains Mono',sans-serif";Chart.defaults.font.size=11;
+const charts={};
 
-function noDataHTML(msg) {
-  return `<div class="no-data"><div class="icon">📭</div>${msg}<br><br><code>python fetch_rate_data.py</code> 실행 후 다시 확인해 주세요</div>`;
-}
+function noDataHTML(msg){return `<div class="no-data"><div class="icon">📭</div>${msg}<br><br><code>python fetch_rate_data.py</code> 실행 후 다시 확인해 주세요</div>`;}
 
-function drawSOFR(sofr) {
-  if (!sofr.length) { document.getElementById("sofrWrap").innerHTML = noDataHTML("SOFR 데이터가 없습니다"); return; }
-  const ctx = document.getElementById("cSOFR").getContext("2d");
-  if (charts.sofr) charts.sofr.destroy();
-  charts.sofr = new Chart(ctx, {
+function drawSOFR(sofr){
+  if(!sofr.length){document.getElementById("sofrWrap").innerHTML=noDataHTML("SOFR 데이터 없음");return;}
+  const ctx=document.getElementById("cSOFR").getContext("2d");
+  if(charts.sofr)charts.sofr.destroy();
+  charts.sofr=new Chart(ctx,{
     type:"line",
-    data:{
-      labels: sofr.map(d=>{ const t=new Date(d.date); return `${t.getMonth()+1}/${t.getDate()}`; }),
-      datasets:[{
-        label:"SOFR (%)", data:sofr.map(d=>d.rate),
-        borderColor:"#06b6d4", backgroundColor:"rgba(6,182,212,.08)",
-        borderWidth:2, fill:true, tension:.3, pointRadius:0,
-        pointHoverRadius:5, pointHoverBackgroundColor:"#06b6d4",
-      }]
-    },
-    options:{
-      responsive:true, maintainAspectRatio:false,
-      interaction:{mode:"index",intersect:false},
+    data:{labels:sofr.map(d=>{const t=new Date(d.date);return`${t.getMonth()+1}/${t.getDate()}`}),
+      datasets:[{label:"SOFR (%)",data:sofr.map(d=>d.rate),borderColor:"#06b6d4",backgroundColor:"rgba(6,182,212,.08)",borderWidth:2,fill:true,tension:.3,pointRadius:0,pointHoverRadius:5,pointHoverBackgroundColor:"#06b6d4"}]},
+    options:{responsive:true,maintainAspectRatio:false,interaction:{mode:"index",intersect:false},
       plugins:{legend:{display:false},tooltip:{backgroundColor:"#1e293b",borderColor:"#334155",borderWidth:1,padding:8,callbacks:{label:c=>`SOFR: ${c.raw.toFixed(3)}%`}}},
-      scales:{
-        x:{grid:{display:false},ticks:{maxTicksLimit:8,font:{size:10}}},
-        y:{grid:{color:"#1a2332"},ticks:{callback:v=>v.toFixed(2)+"%",font:{size:10}}}
-      }
-    }
+      scales:{x:{grid:{display:false},ticks:{maxTicksLimit:8,font:{size:10}}},y:{grid:{color:"#1a2332"},ticks:{callback:v=>v.toFixed(2)+"%",font:{size:10}}}}}
   });
 }
 
-function drawFOMC(fomc) {
-  if (!fomc.length) { document.getElementById("fomcWrap").innerHTML = noDataHTML("FOMC 예측 데이터가 없습니다"); return; }
-  const ctx = document.getElementById("cFOMC").getContext("2d");
-  if (charts.fomc) charts.fomc.destroy();
-  charts.fomc = new Chart(ctx, {
+function drawFOMC(fomc){
+  if(!fomc.length){document.getElementById("fomcWrap").innerHTML=noDataHTML("FOMC 예측 데이터 없음");return;}
+  const ctx=document.getElementById("cFOMC").getContext("2d");
+  if(charts.fomc)charts.fomc.destroy();
+  charts.fomc=new Chart(ctx,{
     type:"bar",
-    data:{
-      labels: fomc.map(f=>f.title),
+    data:{labels:fomc.map(f=>f.title),
       datasets:[
         {label:"동결",data:fomc.map(f=>f.noChange),backgroundColor:"#475569",borderRadius:3,barPercentage:.7},
         {label:"25bp 인하",data:fomc.map(f=>f.cut25),backgroundColor:"#3b82f6",borderRadius:3,barPercentage:.7},
         {label:"50bp+ 인하",data:fomc.map(f=>f.cut50),backgroundColor:"#06b6d4",borderRadius:3,barPercentage:.7},
         {label:"인상",data:fomc.map(f=>f.hike),backgroundColor:"#ef4444",borderRadius:3,barPercentage:.7},
-      ]
-    },
-    options:{
-      responsive:true, maintainAspectRatio:false,
+      ]},
+    options:{responsive:true,maintainAspectRatio:false,
       plugins:{legend:{display:false},tooltip:{backgroundColor:"#1e293b",borderColor:"#334155",borderWidth:1,padding:8,callbacks:{label:c=>`${c.dataset.label}: ${c.raw}%`}}},
-      scales:{
-        x:{stacked:true,grid:{display:false},ticks:{font:{size:10}}},
-        y:{stacked:true,max:100,grid:{color:"#1a2332"},ticks:{callback:v=>v+"%",font:{size:10}}}
-      }
-    }
+      scales:{x:{stacked:true,grid:{display:false},ticks:{font:{size:10}}},y:{stacked:true,max:100,grid:{color:"#1a2332"},ticks:{callback:v=>v+"%",font:{size:10}}}}}
   });
 }
 
-function drawPath(fomc) {
-  const futureEvents = fomc.filter(f=>f.status!=="done");
-  if (!futureEvents.length) { document.getElementById("pathWrap").innerHTML = noDataHTML("금리 경로 계산에 필요한 데이터가 없습니다"); return; }
-
-  // 현재 금리 상한 (SOFR 기반 또는 기본값)
-  let upper = 4.50; // Fed Funds upper bound default
-  const path = [{label:"현재",upper,lower:upper-0.25}];
-
-  for (const f of futureEvents) {
-    const expChange = (f.cut25*-0.25 + f.cut50*-0.50 + f.hike*0.25) / 100;
-    upper = Math.round((upper + expChange)*100)/100;
-    path.push({label:f.title, upper, lower:upper-0.25});
+function drawPath(fomc){
+  const future=fomc.filter(f=>f.status!=="done");
+  if(!future.length){document.getElementById("pathWrap").innerHTML=noDataHTML("금리 경로 데이터 없음");return;}
+  let upper=4.50;
+  const path=[{label:"현재",upper,lower:upper-0.25}];
+  for(const f of future){
+    const exp=(f.cut25*-0.25+f.cut50*-0.50+f.hike*0.25)/100;
+    upper=Math.round((upper+exp)*100)/100;
+    path.push({label:f.title,upper,lower:upper-0.25});
   }
-
-  const ctx = document.getElementById("cPath").getContext("2d");
-  if (charts.path) charts.path.destroy();
-  charts.path = new Chart(ctx, {
+  const ctx=document.getElementById("cPath").getContext("2d");
+  if(charts.path)charts.path.destroy();
+  charts.path=new Chart(ctx,{
     type:"line",
-    data:{
-      labels: path.map(p=>p.label),
+    data:{labels:path.map(p=>p.label),
       datasets:[
         {label:"내재 금리 상한",data:path.map(p=>p.upper),borderColor:"#3b82f6",backgroundColor:"rgba(59,130,246,.06)",borderWidth:2.5,fill:true,tension:.4,pointRadius:5,pointBackgroundColor:"#3b82f6",pointBorderColor:"#0d1117",pointBorderWidth:2},
         {label:"내재 금리 하한",data:path.map(p=>p.lower),borderColor:"#8b5cf6",backgroundColor:"rgba(139,92,246,.06)",borderWidth:2,borderDash:[5,5],fill:true,tension:.4,pointRadius:4,pointBackgroundColor:"#8b5cf6",pointBorderColor:"#0d1117",pointBorderWidth:2},
-      ]
-    },
-    options:{
-      responsive:true, maintainAspectRatio:false,
-      interaction:{mode:"index",intersect:false},
-      plugins:{
-        legend:{position:"bottom",labels:{boxWidth:10,padding:14,font:{size:10},usePointStyle:true}},
-        tooltip:{backgroundColor:"#1e293b",borderColor:"#334155",borderWidth:1,padding:8,callbacks:{label:c=>`${c.dataset.label}: ${c.raw.toFixed(2)}%`}}
-      },
-      scales:{
-        x:{grid:{display:false},ticks:{font:{size:10}}},
-        y:{grid:{color:"#1a2332"},ticks:{callback:v=>v.toFixed(2)+"%",stepSize:.25,font:{size:10}},suggestedMin:2.5}
-      }
-    }
+      ]},
+    options:{responsive:true,maintainAspectRatio:false,interaction:{mode:"index",intersect:false},
+      plugins:{legend:{position:"bottom",labels:{boxWidth:10,padding:14,font:{size:10},usePointStyle:true}},tooltip:{backgroundColor:"#1e293b",borderColor:"#334155",borderWidth:1,padding:8,callbacks:{label:c=>`${c.dataset.label}: ${c.raw.toFixed(2)}%`}}},
+      scales:{x:{grid:{display:false},ticks:{font:{size:10}}},y:{grid:{color:"#1a2332"},ticks:{callback:v=>v.toFixed(2)+"%",stepSize:.25,font:{size:10}},suggestedMin:2.5}}}
   });
 }
 
@@ -475,28 +472,24 @@ function drawPath(fomc) {
 //  Table & Grid
 // ═══════════════════════════════════════════════
 
-function drawTable(fomc) {
-  const tb = document.getElementById("tBody");
-  if (!fomc.length) { tb.innerHTML='<tr><td colspan="6" style="text-align:center;color:var(--dim);padding:20px">데이터 없음</td></tr>'; return; }
-  tb.innerHTML = fomc.map(f=>{
-    const sc = f.status==="done"?"s-done":f.status==="next"?"s-next":"s-future";
-    const sl = f.status==="done"?"완료":f.status==="next"?"다음":"예정";
-    const bar = (p,c)=>`<div class="pb"><div class="bar" style="width:${Math.max(p,1)}%;background:${c}"></div><span class="pl" style="color:${c}">${p}%</span></div>`;
-    return `<tr><td style="font-weight:500;white-space:nowrap">${f.title}</td><td><span class="sb ${sc}">${sl}</span></td><td>${bar(f.noChange,"#64748b")}</td><td>${bar(f.cut25,"#3b82f6")}</td><td>${bar(f.cut50,"#06b6d4")}</td><td>${bar(f.hike,"#ef4444")}</td></tr>`;
+function drawTable(fomc){
+  const tb=document.getElementById("tBody");
+  if(!fomc.length){tb.innerHTML='<tr><td colspan="6" style="text-align:center;color:var(--dim);padding:20px">데이터 없음</td></tr>';return;}
+  tb.innerHTML=fomc.map(f=>{
+    const sc=f.status==="done"?"s-done":f.status==="next"?"s-next":"s-future";
+    const sl=f.status==="done"?"완료":f.status==="next"?"다음":"예정";
+    const bar=(p,c)=>`<div class="pb"><div class="bar" style="width:${Math.max(p,1)}%;background:${c}"></div><span class="pl" style="color:${c}">${p}%</span></div>`;
+    return`<tr><td style="font-weight:500;white-space:nowrap">${f.title}</td><td><span class="sb ${sc}">${sl}</span></td><td>${bar(f.noChange,"#64748b")}</td><td>${bar(f.cut25,"#3b82f6")}</td><td>${bar(f.cut50,"#06b6d4")}</td><td>${bar(f.hike,"#ef4444")}</td></tr>`;
   }).join("");
 }
 
-function drawPredGrid(items) {
-  const g = document.getElementById("pGrid");
-  if (!items.length) {
-    g.innerHTML='<div class="no-data" style="grid-column:1/-1">📭 Fed 관련 예측 마켓이 없습니다<br><br><code>python fetch_rate_data.py</code> 실행 후 다시 확인해 주세요</div>';
-    return;
-  }
-
-  const colors = ["var(--accent)","var(--purple)","var(--cyan)","var(--orange)","var(--green)","var(--pink)"];
-  g.innerHTML = items.map(item=>{
-    const srcTag = item.source==="polymarket"?'<span class="tp">Polymarket</span>':'<span class="tk">Kalshi</span>';
-    return `<div class="pi">
+function drawPredGrid(items){
+  const g=document.getElementById("pGrid");
+  if(!items.length){g.innerHTML='<div class="no-data" style="grid-column:1/-1">📭 Fed 관련 예측 마켓이 없습니다</div>';return;}
+  const colors=["var(--accent)","var(--purple)","var(--cyan)","var(--orange)","var(--green)","var(--pink)"];
+  g.innerHTML=items.map(item=>{
+    const srcTag=item.source==="polymarket"?'<span class="tp">Polymarket</span>':'<span class="tk">Kalshi</span>';
+    return`<div class="pi">
       <div class="pq">${item.question}</div>
       ${item.outcomes.slice(0,4).map((o,i)=>`
         <div class="pa"><span class="ol">${o.label}</span><span class="op" style="color:${colors[i%colors.length]}">${o.pct}%</span></div>
@@ -512,37 +505,31 @@ function drawPredGrid(items) {
 //  Metrics
 // ═══════════════════════════════════════════════
 
-function updateMetrics(sofr, fomc, otherMarkets, data) {
-  if (sofr.length) {
-    const last = sofr[sofr.length-1];
-    document.getElementById("m-sofr").textContent = last.rate.toFixed(2)+"%";
-    document.getElementById("m-sofr-d").textContent = last.date;
+function updateMetrics(sofr, fomc, otherMarkets, data){
+  if(sofr.length){
+    const last=sofr[sofr.length-1];
+    document.getElementById("m-sofr").textContent=last.rate.toFixed(2)+"%";
+    document.getElementById("m-sofr-d").textContent=last.date;
   }
 
-  // 연말 예상
-  const yearEnd = otherMarkets.find(m=>
-    m.question.includes("말") || m.question.toLowerCase().includes("end of") || m.question.toLowerCase().includes("year-end")
-  );
-  if (yearEnd && yearEnd.outcomes.length) {
-    const top = yearEnd.outcomes.reduce((a,b)=>b.pct>a.pct?b:a, yearEnd.outcomes[0]);
-    document.getElementById("m-ye").textContent = top.label;
-    document.getElementById("m-ye-d").textContent = `${top.pct}% 확률`;
+  const yearEnd=otherMarkets.find(m=>m.question.includes("말")||m.question.toLowerCase().includes("end of"));
+  if(yearEnd&&yearEnd.outcomes.length){
+    const top=yearEnd.outcomes.reduce((a,b)=>b.pct>a.pct?b:a,yearEnd.outcomes[0]);
+    document.getElementById("m-ye").textContent=top.label;
+    document.getElementById("m-ye-d").textContent=`${top.pct}% 확률`;
   }
 
-  // 다음 FOMC
-  const next = fomc.find(f=>f.status==="next");
-  if (next) {
-    const topAction = next.noChange >= Math.max(next.cut25,next.cut50) ? "동결" : "인하";
-    const topPct = Math.max(next.noChange, next.cut25, next.cut50);
-    document.getElementById("m-next").textContent = topAction+" "+topPct+"%";
-    document.getElementById("m-next-d").textContent = next.title;
+  const next=fomc.find(f=>f.status==="next");
+  if(next){
+    const topAction=next.noChange>=Math.max(next.cut25,next.cut50)?"동결":"인하";
+    const topPct=Math.max(next.noChange,next.cut25,next.cut50);
+    document.getElementById("m-next").textContent=topAction+" "+topPct+"%";
+    document.getElementById("m-next-d").textContent=next.title;
   }
 
-  // 타임스탬프
-  const ts = data.meta?.updated_at || new Date().toISOString();
-  const d = new Date(ts);
-  document.getElementById("ts").textContent =
-    `${d.toLocaleDateString("ko-KR")} ${d.toLocaleTimeString("ko-KR",{hour:"2-digit",minute:"2-digit"})} 업데이트`;
+  const ts=data.meta?.updated_at||new Date().toISOString();
+  const d=new Date(ts);
+  document.getElementById("ts").textContent=`${d.toLocaleDateString("ko-KR")} ${d.toLocaleTimeString("ko-KR",{hour:"2-digit",minute:"2-digit"})} 업데이트`;
 }
 
 
@@ -550,28 +537,19 @@ function updateMetrics(sofr, fomc, otherMarkets, data) {
 //  Init
 // ═══════════════════════════════════════════════
 
-async function init() {
-  try {
-    const data = await loadData();
-    const sofr = data.sofr || [];
-    const fomc = parseFOMCDecisions(data.polymarket?.fomc_decisions || []);
-    const otherMarkets = parseOtherMarkets(
-      data.polymarket?.other_markets || [],
-      data.kalshi || []
-    );
-
-    updateMetrics(sofr, fomc, otherMarkets, data);
-    drawSOFR(sofr);
-    drawFOMC(fomc);
-    drawPath(fomc);
-    drawTable(fomc);
-    drawPredGrid(otherMarkets);
-  } catch(e) {
+async function init(){
+  try{
+    const data=await loadData();
+    const sofr=data.sofr||[];
+    const fomc=parseFOMCDecisions(data.polymarket?.fomc_decisions||[]);
+    const otherMarkets=parseOtherMarkets(data.polymarket?.other_markets||[],data.kalshi||[]);
+    updateMetrics(sofr,fomc,otherMarkets,data);
+    drawSOFR(sofr);drawFOMC(fomc);drawPath(fomc);drawTable(fomc);drawPredGrid(otherMarkets);
+  }catch(e){
     console.error(e);
-    document.getElementById("ts").textContent = "데이터 로드 실패 — " + e.message;
+    document.getElementById("ts").textContent="데이터 로드 실패 — "+e.message;
   }
 }
-
 init();
 </script>
 </body>
