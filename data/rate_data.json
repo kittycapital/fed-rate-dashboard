@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-02-11T12:58:12.328457Z",
+    "updated_at": "2026-02-11T13:05:34.685476Z",
     "year": 2026,
     "version": "3.2"
   },
@@ -71,10 +71,6 @@
     }
   ],
   "sofr": [
-    {
-      "date": "2025-09-29",
-      "rate": 4.13
-    },
     {
       "date": "2025-09-30",
       "rate": 4.24
@@ -430,13 +426,17 @@
     {
       "date": "2026-02-09",
       "rate": 3.63
+    },
+    {
+      "date": "2026-02-10",
+      "rate": 3.65
     }
   ],
   "fed_funds_target": {
     "upper": 3.75,
-    "upper_date": "2026-02-10",
+    "upper_date": "2026-02-11",
     "lower": 3.5,
-    "lower_date": "2026-02-10"
+    "lower_date": "2026-02-11"
   },
   "polymarket": [
     {
@@ -543,7 +543,7 @@
             0.0265,
             0.9735
           ],
-          "volume": 616417.644333
+          "volume": 616674.594333
         },
         {
           "question_en": "Will the Fed decrease interest rates by 25 bps after the April 2026 meeting?",
@@ -579,7 +579,7 @@
             0.69,
             0.31
           ],
-          "volume": 206581.232837
+          "volume": 206648.855693
         },
         {
           "question_en": "Will the Fed increase interest rates by 25+ bps after the April 2026 meeting?",
@@ -597,7 +597,7 @@
             0.0165,
             0.9835
           ],
-          "volume": 300499.623376
+          "volume": 300633.983126
         }
       ]
     },
@@ -900,10 +900,10 @@
             "아니오"
           ],
           "prices": [
-            0.0535,
-            0.9465
+            0.0515,
+            0.9485
           ],
-          "volume": 955051.22565
+          "volume": 955425.08565
         },
         {
           "question_en": "Will 1 Fed rate cut happen in 2026?",
@@ -921,7 +921,7 @@
             0.175,
             0.825
           ],
-          "volume": 441114.234717
+          "volume": 441121.784717
         },
         {
           "question_en": "Will 2 Fed rate cuts happen in 2026?",
@@ -939,7 +939,7 @@
             0.255,
             0.745
           ],
-          "volume": 411852.182309
+          "volume": 411861.512309
         },
         {
           "question_en": "Will 3 Fed rate cuts happen in 2026?",
