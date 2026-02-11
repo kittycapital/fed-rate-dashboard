@@ -1,8 +1,8 @@
 {
   "meta": {
-    "updated_at": "2026-02-11T12:38:05.338106Z",
+    "updated_at": "2026-02-11T12:58:12.328457Z",
     "year": 2026,
-    "version": "3.0"
+    "version": "3.2"
   },
   "fomc_calendar": [
     {
@@ -68,947 +68,9 @@
       "year": 2026,
       "label": "12월",
       "is_past": false
-    },
-    {
-      "date": "2027-01-26",
-      "end_date": "2027-01-27",
-      "month": 1,
-      "year": 2027,
-      "label": "1월",
-      "is_past": false
-    },
-    {
-      "date": "2027-03-16",
-      "end_date": "2027-03-17",
-      "month": 3,
-      "year": 2027,
-      "label": "3월",
-      "is_past": false
-    },
-    {
-      "date": "2027-05-04",
-      "end_date": "2027-05-05",
-      "month": 5,
-      "year": 2027,
-      "label": "5월",
-      "is_past": false
-    },
-    {
-      "date": "2027-06-15",
-      "end_date": "2027-06-16",
-      "month": 6,
-      "year": 2027,
-      "label": "6월",
-      "is_past": false
-    },
-    {
-      "date": "2027-07-27",
-      "end_date": "2027-07-28",
-      "month": 7,
-      "year": 2027,
-      "label": "7월",
-      "is_past": false
-    },
-    {
-      "date": "2027-09-21",
-      "end_date": "2027-09-22",
-      "month": 9,
-      "year": 2027,
-      "label": "9월",
-      "is_past": false
-    },
-    {
-      "date": "2027-10-26",
-      "end_date": "2027-10-27",
-      "month": 10,
-      "year": 2027,
-      "label": "10월",
-      "is_past": false
-    },
-    {
-      "date": "2027-12-14",
-      "end_date": "2027-12-15",
-      "month": 12,
-      "year": 2027,
-      "label": "12월",
-      "is_past": false
     }
   ],
   "sofr": [
-    {
-      "date": "2025-11-12",
-      "rate": 3.98
-    },
-    {
-      "date": "2025-11-13",
-      "rate": 4.0
-    },
-    {
-      "date": "2025-11-14",
-      "rate": 3.95
-    },
-    {
-      "date": "2025-11-17",
-      "rate": 4.0
-    },
-    {
-      "date": "2025-11-18",
-      "rate": 3.94
-    },
-    {
-      "date": "2025-11-19",
-      "rate": 3.91
-    },
-    {
-      "date": "2025-11-20",
-      "rate": 3.91
-    },
-    {
-      "date": "2025-11-21",
-      "rate": 3.93
-    },
-    {
-      "date": "2025-11-24",
-      "rate": 3.96
-    },
-    {
-      "date": "2025-11-25",
-      "rate": 4.01
-    },
-    {
-      "date": "2025-11-26",
-      "rate": 4.05
-    },
-    {
-      "date": "2025-11-28",
-      "rate": 4.12
-    },
-    {
-      "date": "2025-12-01",
-      "rate": 4.12
-    },
-    {
-      "date": "2025-12-02",
-      "rate": 4.01
-    },
-    {
-      "date": "2025-12-03",
-      "rate": 3.95
-    },
-    {
-      "date": "2025-12-04",
-      "rate": 3.92
-    },
-    {
-      "date": "2025-12-05",
-      "rate": 3.93
-    },
-    {
-      "date": "2025-12-08",
-      "rate": 3.95
-    },
-    {
-      "date": "2025-12-09",
-      "rate": 3.93
-    },
-    {
-      "date": "2025-12-10",
-      "rate": 3.9
-    },
-    {
-      "date": "2025-12-11",
-      "rate": 3.66
-    },
-    {
-      "date": "2025-12-12",
-      "rate": 3.67
-    },
-    {
-      "date": "2025-12-15",
-      "rate": 3.75
-    },
-    {
-      "date": "2025-12-16",
-      "rate": 3.69
-    },
-    {
-      "date": "2025-12-17",
-      "rate": 3.69
-    },
-    {
-      "date": "2025-12-18",
-      "rate": 3.66
-    },
-    {
-      "date": "2025-12-19",
-      "rate": 3.66
-    },
-    {
-      "date": "2025-12-22",
-      "rate": 3.68
-    },
-    {
-      "date": "2025-12-23",
-      "rate": 3.66
-    },
-    {
-      "date": "2025-12-24",
-      "rate": 3.66
-    },
-    {
-      "date": "2025-12-26",
-      "rate": 3.76
-    },
-    {
-      "date": "2025-12-29",
-      "rate": 3.77
-    },
-    {
-      "date": "2025-12-30",
-      "rate": 3.71
-    },
-    {
-      "date": "2025-12-31",
-      "rate": 3.87
-    },
-    {
-      "date": "2026-01-02",
-      "rate": 3.75
-    },
-    {
-      "date": "2026-01-05",
-      "rate": 3.7
-    },
-    {
-      "date": "2026-01-06",
-      "rate": 3.66
-    },
-    {
-      "date": "2026-01-07",
-      "rate": 3.65
-    },
-    {
-      "date": "2026-01-08",
-      "rate": 3.64
-    },
-    {
-      "date": "2026-01-09",
-      "rate": 3.64
-    },
-    {
-      "date": "2026-01-12",
-      "rate": 3.64
-    },
-    {
-      "date": "2026-01-13",
-      "rate": 3.65
-    },
-    {
-      "date": "2026-01-14",
-      "rate": 3.64
-    },
-    {
-      "date": "2026-01-15",
-      "rate": 3.66
-    },
-    {
-      "date": "2026-01-16",
-      "rate": 3.65
-    },
-    {
-      "date": "2026-01-20",
-      "rate": 3.64
-    },
-    {
-      "date": "2026-01-21",
-      "rate": 3.63
-    },
-    {
-      "date": "2026-01-22",
-      "rate": 3.64
-    },
-    {
-      "date": "2026-01-23",
-      "rate": 3.65
-    },
-    {
-      "date": "2026-01-26",
-      "rate": 3.66
-    },
-    {
-      "date": "2026-01-27",
-      "rate": 3.66
-    },
-    {
-      "date": "2026-01-28",
-      "rate": 3.64
-    },
-    {
-      "date": "2026-01-29",
-      "rate": 3.65
-    },
-    {
-      "date": "2026-01-30",
-      "rate": 3.68
-    },
-    {
-      "date": "2026-02-02",
-      "rate": 3.69
-    },
-    {
-      "date": "2026-02-03",
-      "rate": 3.69
-    },
-    {
-      "date": "2026-02-04",
-      "rate": 3.65
-    },
-    {
-      "date": "2026-02-05",
-      "rate": 3.65
-    },
-    {
-      "date": "2026-02-06",
-      "rate": 3.64
-    },
-    {
-      "date": "2026-02-09",
-      "rate": 3.63
-    }
-  ],
-  "fred_sofr": [
-    {
-      "date": "2025-02-11",
-      "rate": 4.34
-    },
-    {
-      "date": "2025-02-12",
-      "rate": 4.32
-    },
-    {
-      "date": "2025-02-13",
-      "rate": 4.33
-    },
-    {
-      "date": "2025-02-14",
-      "rate": 4.33
-    },
-    {
-      "date": "2025-02-18",
-      "rate": 4.37
-    },
-    {
-      "date": "2025-02-19",
-      "rate": 4.35
-    },
-    {
-      "date": "2025-02-20",
-      "rate": 4.33
-    },
-    {
-      "date": "2025-02-21",
-      "rate": 4.34
-    },
-    {
-      "date": "2025-02-24",
-      "rate": 4.34
-    },
-    {
-      "date": "2025-02-25",
-      "rate": 4.33
-    },
-    {
-      "date": "2025-02-26",
-      "rate": 4.33
-    },
-    {
-      "date": "2025-02-27",
-      "rate": 4.36
-    },
-    {
-      "date": "2025-02-28",
-      "rate": 4.39
-    },
-    {
-      "date": "2025-03-03",
-      "rate": 4.33
-    },
-    {
-      "date": "2025-03-04",
-      "rate": 4.33
-    },
-    {
-      "date": "2025-03-05",
-      "rate": 4.34
-    },
-    {
-      "date": "2025-03-06",
-      "rate": 4.35
-    },
-    {
-      "date": "2025-03-07",
-      "rate": 4.34
-    },
-    {
-      "date": "2025-03-10",
-      "rate": 4.33
-    },
-    {
-      "date": "2025-03-11",
-      "rate": 4.32
-    },
-    {
-      "date": "2025-03-12",
-      "rate": 4.31
-    },
-    {
-      "date": "2025-03-13",
-      "rate": 4.3
-    },
-    {
-      "date": "2025-03-14",
-      "rate": 4.3
-    },
-    {
-      "date": "2025-03-17",
-      "rate": 4.32
-    },
-    {
-      "date": "2025-03-18",
-      "rate": 4.31
-    },
-    {
-      "date": "2025-03-19",
-      "rate": 4.29
-    },
-    {
-      "date": "2025-03-20",
-      "rate": 4.29
-    },
-    {
-      "date": "2025-03-21",
-      "rate": 4.3
-    },
-    {
-      "date": "2025-03-24",
-      "rate": 4.31
-    },
-    {
-      "date": "2025-03-25",
-      "rate": 4.33
-    },
-    {
-      "date": "2025-03-26",
-      "rate": 4.35
-    },
-    {
-      "date": "2025-03-27",
-      "rate": 4.36
-    },
-    {
-      "date": "2025-03-28",
-      "rate": 4.34
-    },
-    {
-      "date": "2025-03-31",
-      "rate": 4.41
-    },
-    {
-      "date": "2025-04-01",
-      "rate": 4.39
-    },
-    {
-      "date": "2025-04-02",
-      "rate": 4.37
-    },
-    {
-      "date": "2025-04-03",
-      "rate": 4.39
-    },
-    {
-      "date": "2025-04-04",
-      "rate": 4.35
-    },
-    {
-      "date": "2025-04-07",
-      "rate": 4.33
-    },
-    {
-      "date": "2025-04-08",
-      "rate": 4.4
-    },
-    {
-      "date": "2025-04-09",
-      "rate": 4.42
-    },
-    {
-      "date": "2025-04-10",
-      "rate": 4.37
-    },
-    {
-      "date": "2025-04-11",
-      "rate": 4.33
-    },
-    {
-      "date": "2025-04-14",
-      "rate": 4.33
-    },
-    {
-      "date": "2025-04-15",
-      "rate": 4.36
-    },
-    {
-      "date": "2025-04-16",
-      "rate": 4.31
-    },
-    {
-      "date": "2025-04-17",
-      "rate": 4.32
-    },
-    {
-      "date": "2025-04-21",
-      "rate": 4.32
-    },
-    {
-      "date": "2025-04-22",
-      "rate": 4.3
-    },
-    {
-      "date": "2025-04-23",
-      "rate": 4.28
-    },
-    {
-      "date": "2025-04-24",
-      "rate": 4.29
-    },
-    {
-      "date": "2025-04-25",
-      "rate": 4.33
-    },
-    {
-      "date": "2025-04-28",
-      "rate": 4.36
-    },
-    {
-      "date": "2025-04-29",
-      "rate": 4.36
-    },
-    {
-      "date": "2025-04-30",
-      "rate": 4.41
-    },
-    {
-      "date": "2025-05-01",
-      "rate": 4.39
-    },
-    {
-      "date": "2025-05-02",
-      "rate": 4.36
-    },
-    {
-      "date": "2025-05-05",
-      "rate": 4.33
-    },
-    {
-      "date": "2025-05-06",
-      "rate": 4.32
-    },
-    {
-      "date": "2025-05-07",
-      "rate": 4.3
-    },
-    {
-      "date": "2025-05-08",
-      "rate": 4.29
-    },
-    {
-      "date": "2025-05-09",
-      "rate": 4.28
-    },
-    {
-      "date": "2025-05-12",
-      "rate": 4.28
-    },
-    {
-      "date": "2025-05-13",
-      "rate": 4.3
-    },
-    {
-      "date": "2025-05-14",
-      "rate": 4.29
-    },
-    {
-      "date": "2025-05-15",
-      "rate": 4.31
-    },
-    {
-      "date": "2025-05-16",
-      "rate": 4.3
-    },
-    {
-      "date": "2025-05-19",
-      "rate": 4.29
-    },
-    {
-      "date": "2025-05-20",
-      "rate": 4.27
-    },
-    {
-      "date": "2025-05-21",
-      "rate": 4.26
-    },
-    {
-      "date": "2025-05-22",
-      "rate": 4.26
-    },
-    {
-      "date": "2025-05-23",
-      "rate": 4.26
-    },
-    {
-      "date": "2025-05-27",
-      "rate": 4.31
-    },
-    {
-      "date": "2025-05-28",
-      "rate": 4.33
-    },
-    {
-      "date": "2025-05-29",
-      "rate": 4.33
-    },
-    {
-      "date": "2025-05-30",
-      "rate": 4.35
-    },
-    {
-      "date": "2025-06-02",
-      "rate": 4.35
-    },
-    {
-      "date": "2025-06-03",
-      "rate": 4.32
-    },
-    {
-      "date": "2025-06-04",
-      "rate": 4.28
-    },
-    {
-      "date": "2025-06-05",
-      "rate": 4.29
-    },
-    {
-      "date": "2025-06-06",
-      "rate": 4.29
-    },
-    {
-      "date": "2025-06-09",
-      "rate": 4.29
-    },
-    {
-      "date": "2025-06-10",
-      "rate": 4.28
-    },
-    {
-      "date": "2025-06-11",
-      "rate": 4.28
-    },
-    {
-      "date": "2025-06-12",
-      "rate": 4.28
-    },
-    {
-      "date": "2025-06-13",
-      "rate": 4.28
-    },
-    {
-      "date": "2025-06-16",
-      "rate": 4.32
-    },
-    {
-      "date": "2025-06-17",
-      "rate": 4.31
-    },
-    {
-      "date": "2025-06-18",
-      "rate": 4.28
-    },
-    {
-      "date": "2025-06-20",
-      "rate": 4.29
-    },
-    {
-      "date": "2025-06-23",
-      "rate": 4.29
-    },
-    {
-      "date": "2025-06-24",
-      "rate": 4.3
-    },
-    {
-      "date": "2025-06-25",
-      "rate": 4.36
-    },
-    {
-      "date": "2025-06-26",
-      "rate": 4.4
-    },
-    {
-      "date": "2025-06-27",
-      "rate": 4.39
-    },
-    {
-      "date": "2025-06-30",
-      "rate": 4.45
-    },
-    {
-      "date": "2025-07-01",
-      "rate": 4.44
-    },
-    {
-      "date": "2025-07-02",
-      "rate": 4.4
-    },
-    {
-      "date": "2025-07-03",
-      "rate": 4.35
-    },
-    {
-      "date": "2025-07-07",
-      "rate": 4.33
-    },
-    {
-      "date": "2025-07-08",
-      "rate": 4.34
-    },
-    {
-      "date": "2025-07-09",
-      "rate": 4.32
-    },
-    {
-      "date": "2025-07-10",
-      "rate": 4.31
-    },
-    {
-      "date": "2025-07-11",
-      "rate": 4.31
-    },
-    {
-      "date": "2025-07-14",
-      "rate": 4.33
-    },
-    {
-      "date": "2025-07-15",
-      "rate": 4.37
-    },
-    {
-      "date": "2025-07-16",
-      "rate": 4.34
-    },
-    {
-      "date": "2025-07-17",
-      "rate": 4.34
-    },
-    {
-      "date": "2025-07-18",
-      "rate": 4.3
-    },
-    {
-      "date": "2025-07-21",
-      "rate": 4.28
-    },
-    {
-      "date": "2025-07-22",
-      "rate": 4.28
-    },
-    {
-      "date": "2025-07-23",
-      "rate": 4.28
-    },
-    {
-      "date": "2025-07-24",
-      "rate": 4.3
-    },
-    {
-      "date": "2025-07-25",
-      "rate": 4.36
-    },
-    {
-      "date": "2025-07-28",
-      "rate": 4.36
-    },
-    {
-      "date": "2025-07-29",
-      "rate": 4.36
-    },
-    {
-      "date": "2025-07-30",
-      "rate": 4.32
-    },
-    {
-      "date": "2025-07-31",
-      "rate": 4.39
-    },
-    {
-      "date": "2025-08-01",
-      "rate": 4.34
-    },
-    {
-      "date": "2025-08-04",
-      "rate": 4.33
-    },
-    {
-      "date": "2025-08-05",
-      "rate": 4.34
-    },
-    {
-      "date": "2025-08-06",
-      "rate": 4.34
-    },
-    {
-      "date": "2025-08-07",
-      "rate": 4.35
-    },
-    {
-      "date": "2025-08-08",
-      "rate": 4.35
-    },
-    {
-      "date": "2025-08-11",
-      "rate": 4.34
-    },
-    {
-      "date": "2025-08-12",
-      "rate": 4.36
-    },
-    {
-      "date": "2025-08-13",
-      "rate": 4.33
-    },
-    {
-      "date": "2025-08-14",
-      "rate": 4.34
-    },
-    {
-      "date": "2025-08-15",
-      "rate": 4.36
-    },
-    {
-      "date": "2025-08-18",
-      "rate": 4.34
-    },
-    {
-      "date": "2025-08-19",
-      "rate": 4.33
-    },
-    {
-      "date": "2025-08-20",
-      "rate": 4.31
-    },
-    {
-      "date": "2025-08-21",
-      "rate": 4.32
-    },
-    {
-      "date": "2025-08-22",
-      "rate": 4.36
-    },
-    {
-      "date": "2025-08-25",
-      "rate": 4.37
-    },
-    {
-      "date": "2025-08-26",
-      "rate": 4.38
-    },
-    {
-      "date": "2025-08-27",
-      "rate": 4.36
-    },
-    {
-      "date": "2025-08-28",
-      "rate": 4.34
-    },
-    {
-      "date": "2025-08-29",
-      "rate": 4.34
-    },
-    {
-      "date": "2025-09-02",
-      "rate": 4.39
-    },
-    {
-      "date": "2025-09-03",
-      "rate": 4.39
-    },
-    {
-      "date": "2025-09-04",
-      "rate": 4.41
-    },
-    {
-      "date": "2025-09-05",
-      "rate": 4.42
-    },
-    {
-      "date": "2025-09-08",
-      "rate": 4.4
-    },
-    {
-      "date": "2025-09-09",
-      "rate": 4.4
-    },
-    {
-      "date": "2025-09-10",
-      "rate": 4.39
-    },
-    {
-      "date": "2025-09-11",
-      "rate": 4.41
-    },
-    {
-      "date": "2025-09-12",
-      "rate": 4.42
-    },
-    {
-      "date": "2025-09-15",
-      "rate": 4.51
-    },
-    {
-      "date": "2025-09-16",
-      "rate": 4.39
-    },
-    {
-      "date": "2025-09-17",
-      "rate": 4.38
-    },
-    {
-      "date": "2025-09-18",
-      "rate": 4.14
-    },
-    {
-      "date": "2025-09-19",
-      "rate": 4.14
-    },
-    {
-      "date": "2025-09-22",
-      "rate": 4.14
-    },
-    {
-      "date": "2025-09-23",
-      "rate": 4.12
-    },
-    {
-      "date": "2025-09-24",
-      "rate": 4.13
-    },
-    {
-      "date": "2025-09-25",
-      "rate": 4.18
-    },
-    {
-      "date": "2025-09-26",
-      "rate": 4.16
-    },
     {
       "date": "2025-09-29",
       "rate": 4.13
@@ -1370,2501 +432,696 @@
       "rate": 3.63
     }
   ],
-  "polymarket": {
-    "fomc_decisions": [
-      {
-        "slug": "fed-decision-in-march",
-        "title": "Fed decision in March?",
-        "title_ko": "3월 FOMC 금리 결정",
-        "endDate": "2025-03-19T12:00:00Z",
-        "closed": true,
-        "markets": [
-          {
-            "question_en": "Fed decreases interest rates by 50+ bps after March 2025 meeting?",
-            "question_ko": "Fed decreases interest rates by 50+ bps after March 2025 meeting?",
-            "groupItemTitle_en": "50+ bps decrease",
-            "outcomes_en": [
-              "Yes",
-              "No"
-            ],
-            "outcomes_ko": [
-              "예",
-              "아니오"
-            ],
-            "prices": [
-              0.0,
-              1.0
-            ],
-            "volume": 22150914.603213
-          },
-          {
-            "question_en": "Fed decreases interest rates by 25 bps after March 2025 meeting?",
-            "question_ko": "Fed decreases interest rates by 25 bps after March 2025 meeting?",
-            "groupItemTitle_en": "25 bps decrease",
-            "outcomes_en": [
-              "Yes",
-              "No"
-            ],
-            "outcomes_ko": [
-              "예",
-              "아니오"
-            ],
-            "prices": [
-              0.0,
-              1.0
-            ],
-            "volume": 17180913.164155
-          },
-          {
-            "question_en": "No change in Fed interest rates after March 2025 meeting?",
-            "question_ko": "No change in Fed interest rates after March 2025 meeting?",
-            "groupItemTitle_en": "No Change",
-            "outcomes_en": [
-              "Yes",
-              "No"
-            ],
-            "outcomes_ko": [
-              "예",
-              "아니오"
-            ],
-            "prices": [
-              1.0,
-              0.0
-            ],
-            "volume": 17161804.938166
-          },
-          {
-            "question_en": "Fed increases interest rates by 25+ bps after March 2025 meeting?",
-            "question_ko": "Fed increases interest rates by 25+ bps after March 2025 meeting?",
-            "groupItemTitle_en": "25+ bps increase",
-            "outcomes_en": [
-              "Yes",
-              "No"
-            ],
-            "outcomes_ko": [
-              "예",
-              "아니오"
-            ],
-            "prices": [
-              0.0,
-              1.0
-            ],
-            "volume": 21544318.532625
-          }
-        ]
-      },
-      {
-        "slug": "fed-decision-in-june",
-        "title": "Fed decision in June?",
-        "title_ko": "6월 FOMC 금리 결정",
-        "endDate": "2025-06-18T12:00:00Z",
-        "closed": true,
-        "markets": [
-          {
-            "question_en": "No change in Fed interest rates after June 2025 meeting?",
-            "question_ko": "No change in Fed interest rates after June 2025 meeting?",
-            "groupItemTitle_en": "No change",
-            "outcomes_en": [
-              "Yes",
-              "No"
-            ],
-            "outcomes_ko": [
-              "예",
-              "아니오"
-            ],
-            "prices": [
-              1.0,
-              0.0
-            ],
-            "volume": 28071372.791282
-          },
-          {
-            "question_en": "Fed decreases interest rates by 50+ bps after June 2025 meeting?",
-            "question_ko": "Fed decreases interest rates by 50+ bps after June 2025 meeting?",
-            "groupItemTitle_en": "50+ bps decrease",
-            "outcomes_en": [
-              "Yes",
-              "No"
-            ],
-            "outcomes_ko": [
-              "예",
-              "아니오"
-            ],
-            "prices": [
-              0.0,
-              1.0
-            ],
-            "volume": 29564378.908894
-          },
-          {
-            "question_en": "Fed decreases interest rates by 25 bps after June 2025 meeting?",
-            "question_ko": "Fed decreases interest rates by 25 bps after June 2025 meeting?",
-            "groupItemTitle_en": "25 bps decrease",
-            "outcomes_en": [
-              "Yes",
-              "No"
-            ],
-            "outcomes_ko": [
-              "예",
-              "아니오"
-            ],
-            "prices": [
-              0.0,
-              1.0
-            ],
-            "volume": 22347675.300958
-          },
-          {
-            "question_en": "Fed increases interest rates by 25+ bps after June 2025 meeting?",
-            "question_ko": "Fed increases interest rates by 25+ bps after June 2025 meeting?",
-            "groupItemTitle_en": "25+ bps increase",
-            "outcomes_en": [
-              "Yes",
-              "No"
-            ],
-            "outcomes_ko": [
-              "예",
-              "아니오"
-            ],
-            "prices": [
-              0.0,
-              1.0
-            ],
-            "volume": 26912558.981079
-          }
-        ]
-      },
-      {
-        "slug": "fed-decision-in-july",
-        "title": "Fed decision in July?",
-        "title_ko": "7월 FOMC 금리 결정",
-        "endDate": "2025-07-30T12:00:00Z",
-        "closed": true,
-        "markets": [
-          {
-            "question_en": "Fed decreases interest rates by 50+ bps after July 2025 meeting?",
-            "question_ko": "Fed decreases interest rates by 50+ bps after July 2025 meeting?",
-            "groupItemTitle_en": "50+ bps decrease",
-            "outcomes_en": [
-              "Yes",
-              "No"
-            ],
-            "outcomes_ko": [
-              "예",
-              "아니오"
-            ],
-            "prices": [
-              0.0,
-              1.0
-            ],
-            "volume": 40912544.015545
-          },
-          {
-            "question_en": "Fed decreases interest rates by 25 bps after July 2025 meeting?",
-            "question_ko": "Fed decreases interest rates by 25 bps after July 2025 meeting?",
-            "groupItemTitle_en": "25 bps decrease",
-            "outcomes_en": [
-              "Yes",
-              "No"
-            ],
-            "outcomes_ko": [
-              "예",
-              "아니오"
-            ],
-            "prices": [
-              0.0,
-              1.0
-            ],
-            "volume": 23551704.395621
-          },
-          {
-            "question_en": "No change in Fed interest rates after July 2025 meeting?",
-            "question_ko": "No change in Fed interest rates after July 2025 meeting?",
-            "groupItemTitle_en": "No change",
-            "outcomes_en": [
-              "Yes",
-              "No"
-            ],
-            "outcomes_ko": [
-              "예",
-              "아니오"
-            ],
-            "prices": [
-              1.0,
-              0.0
-            ],
-            "volume": 28670116.640169
-          },
-          {
-            "question_en": "Fed increases interest rates by 25+ bps after July 2025 meeting?",
-            "question_ko": "Fed increases interest rates by 25+ bps after July 2025 meeting?",
-            "groupItemTitle_en": "25+ bps increase",
-            "outcomes_en": [
-              "Yes",
-              "No"
-            ],
-            "outcomes_ko": [
-              "예",
-              "아니오"
-            ],
-            "prices": [
-              0.0,
-              1.0
-            ],
-            "volume": 43479262.352112
-          }
-        ]
-      },
-      {
-        "slug": "fed-decision-in-september",
-        "title": "Fed decision in September?",
-        "title_ko": "9월 FOMC 금리 결정",
-        "endDate": "2025-09-17T12:00:00Z",
-        "closed": true,
-        "markets": [
-          {
-            "question_en": "Fed decreases interest rates by 50+ bps after September 2025 meeting?",
-            "question_ko": "Fed decreases interest rates by 50+ bps after September 2025 meeting?",
-            "groupItemTitle_en": "50+ bps decrease",
-            "outcomes_en": [
-              "Yes",
-              "No"
-            ],
-            "outcomes_ko": [
-              "예",
-              "아니오"
-            ],
-            "prices": [
-              0.0,
-              1.0
-            ],
-            "volume": 49890284.071409
-          },
-          {
-            "question_en": "Fed decreases interest rates by 25 bps after September 2025 meeting?",
-            "question_ko": "Fed decreases interest rates by 25 bps after September 2025 meeting?",
-            "groupItemTitle_en": "25 bps decrease",
-            "outcomes_en": [
-              "Yes",
-              "No"
-            ],
-            "outcomes_ko": [
-              "예",
-              "아니오"
-            ],
-            "prices": [
-              1.0,
-              0.0
-            ],
-            "volume": 36329925.673244
-          },
-          {
-            "question_en": "No change in Fed interest rates after September 2025 meeting?",
-            "question_ko": "No change in Fed interest rates after September 2025 meeting?",
-            "groupItemTitle_en": "No change",
-            "outcomes_en": [
-              "Yes",
-              "No"
-            ],
-            "outcomes_ko": [
-              "예",
-              "아니오"
-            ],
-            "prices": [
-              0.0,
-              1.0
-            ],
-            "volume": 67368762.49652
-          },
-          {
-            "question_en": "Fed increases interest rates by 25+ bps after September 2025 meeting?",
-            "question_ko": "Fed increases interest rates by 25+ bps after September 2025 meeting?",
-            "groupItemTitle_en": "25+ bps increase",
-            "outcomes_en": [
-              "Yes",
-              "No"
-            ],
-            "outcomes_ko": [
-              "예",
-              "아니오"
-            ],
-            "prices": [
-              0.0,
-              1.0
-            ],
-            "volume": 67002488.50419
-          }
-        ]
-      },
-      {
-        "slug": "fed-decision-in-october",
-        "title": "Fed decision in October?",
-        "title_ko": "10월 FOMC 금리 결정",
-        "endDate": "2025-10-29T12:00:00Z",
-        "closed": true,
-        "markets": [
-          {
-            "question_en": "Fed decreases interest rates by 50+ bps after October 2025 meeting?",
-            "question_ko": "Fed decreases interest rates by 50+ bps after October 2025 meeting?",
-            "groupItemTitle_en": "50+ bps decrease",
-            "outcomes_en": [
-              "Yes",
-              "No"
-            ],
-            "outcomes_ko": [
-              "예",
-              "아니오"
-            ],
-            "prices": [
-              0.0,
-              1.0
-            ],
-            "volume": 52589989.131546
-          },
-          {
-            "question_en": "Fed decreases interest rates by 25 bps after October 2025 meeting?",
-            "question_ko": "Fed decreases interest rates by 25 bps after October 2025 meeting?",
-            "groupItemTitle_en": "25 bps decrease",
-            "outcomes_en": [
-              "Yes",
-              "No"
-            ],
-            "outcomes_ko": [
-              "예",
-              "아니오"
-            ],
-            "prices": [
-              1.0,
-              0.0
-            ],
-            "volume": 51626217.76071
-          },
-          {
-            "question_en": "No change in Fed interest rates after October 2025 meeting?",
-            "question_ko": "No change in Fed interest rates after October 2025 meeting?",
-            "groupItemTitle_en": "No change",
-            "outcomes_en": [
-              "Yes",
-              "No"
-            ],
-            "outcomes_ko": [
-              "예",
-              "아니오"
-            ],
-            "prices": [
-              0.0,
-              1.0
-            ],
-            "volume": 46052653.992844
-          },
-          {
-            "question_en": "Fed increases interest rates by 25+ bps after October 2025 meeting?",
-            "question_ko": "Fed increases interest rates by 25+ bps after October 2025 meeting?",
-            "groupItemTitle_en": "25+ bps increase",
-            "outcomes_en": [
-              "Yes",
-              "No"
-            ],
-            "outcomes_ko": [
-              "예",
-              "아니오"
-            ],
-            "prices": [
-              0.0,
-              1.0
-            ],
-            "volume": 102216689.131463
-          }
-        ]
-      },
-      {
-        "slug": "fed-decision-in-december",
-        "title": "Fed decision in December?",
-        "title_ko": "12월 FOMC 금리 결정",
-        "endDate": "2025-12-10T00:00:00Z",
-        "closed": true,
-        "markets": [
-          {
-            "question_en": "Fed decreases interest rates by 50+ bps after December 2025 meeting?",
-            "question_ko": "Fed decreases interest rates by 50+ bps after December 2025 meeting?",
-            "groupItemTitle_en": "50+ bps decrease",
-            "outcomes_en": [
-              "Yes",
-              "No"
-            ],
-            "outcomes_ko": [
-              "예",
-              "아니오"
-            ],
-            "prices": [
-              0.0,
-              1.0
-            ],
-            "volume": 161574382.129451
-          },
-          {
-            "question_en": "Fed decreases interest rates by 25 bps after December 2025 meeting?",
-            "question_ko": "Fed decreases interest rates by 25 bps after December 2025 meeting?",
-            "groupItemTitle_en": "25 bps decrease",
-            "outcomes_en": [
-              "Yes",
-              "No"
-            ],
-            "outcomes_ko": [
-              "예",
-              "아니오"
-            ],
-            "prices": [
-              1.0,
-              0.0
-            ],
-            "volume": 54634506.683355
-          },
-          {
-            "question_en": "No change in Fed interest rates after December 2025 meeting?",
-            "question_ko": "No change in Fed interest rates after December 2025 meeting?",
-            "groupItemTitle_en": "No change",
-            "outcomes_en": [
-              "Yes",
-              "No"
-            ],
-            "outcomes_ko": [
-              "예",
-              "아니오"
-            ],
-            "prices": [
-              0.0,
-              1.0
-            ],
-            "volume": 44523455.111481
-          },
-          {
-            "question_en": "Fed increases interest rates by 25+ bps after December 2025 meeting?",
-            "question_ko": "Fed increases interest rates by 25+ bps after December 2025 meeting?",
-            "groupItemTitle_en": "25+ bps increase",
-            "outcomes_en": [
-              "Yes",
-              "No"
-            ],
-            "outcomes_ko": [
-              "예",
-              "아니오"
-            ],
-            "prices": [
-              0.0,
-              1.0
-            ],
-            "volume": 133173605.453166
-          }
-        ]
-      },
-      {
-        "slug": "fed-decision-in-january",
-        "title": "Fed decision in January?",
-        "title_ko": "1월 FOMC 금리 결정",
-        "endDate": "2026-01-28T00:00:00Z",
-        "closed": true,
-        "markets": [
-          {
-            "question_en": "Fed decreases interest rates by 50+ bps after January 2026 meeting?",
-            "question_ko": "Fed decreases interest rates by 50+ bps after January 2026 meeting?",
-            "groupItemTitle_en": "50+ bps decrease",
-            "outcomes_en": [
-              "Yes",
-              "No"
-            ],
-            "outcomes_ko": [
-              "예",
-              "아니오"
-            ],
-            "prices": [
-              0.0,
-              1.0
-            ],
-            "volume": 235065166.637259
-          },
-          {
-            "question_en": "Fed decreases interest rates by 25 bps after January 2026 meeting?",
-            "question_ko": "Fed decreases interest rates by 25 bps after January 2026 meeting?",
-            "groupItemTitle_en": "25 bps decrease",
-            "outcomes_en": [
-              "Yes",
-              "No"
-            ],
-            "outcomes_ko": [
-              "예",
-              "아니오"
-            ],
-            "prices": [
-              0.0,
-              1.0
-            ],
-            "volume": 101211542.667667
-          },
-          {
-            "question_en": "No change in Fed interest rates after January 2026 meeting?",
-            "question_ko": "No change in Fed interest rates after January 2026 meeting?",
-            "groupItemTitle_en": "No change",
-            "outcomes_en": [
-              "Yes",
-              "No"
-            ],
-            "outcomes_ko": [
-              "예",
-              "아니오"
-            ],
-            "prices": [
-              1.0,
-              0.0
-            ],
-            "volume": 106767096.072298
-          },
-          {
-            "question_en": "Fed increases interest rates by 25+ bps after January 2026 meeting?",
-            "question_ko": "Fed increases interest rates by 25+ bps after January 2026 meeting?",
-            "groupItemTitle_en": "25+ bps increase",
-            "outcomes_en": [
-              "Yes",
-              "No"
-            ],
-            "outcomes_ko": [
-              "예",
-              "아니오"
-            ],
-            "prices": [
-              0.0,
-              1.0
-            ],
-            "volume": 216455743.153891
-          }
-        ]
-      },
-      {
-        "slug": "fed-decision-in-april",
-        "title": "Fed decision in April?",
-        "title_ko": "4월 FOMC 금리 결정",
-        "endDate": "2026-04-29T00:00:00Z",
-        "closed": false,
-        "markets": [
-          {
-            "question_en": "Will the Fed decrease interest rates by 50+ bps after the April 2026 meeting?",
-            "question_ko": "Will the Fed decrease interest rates by 50+ bps after the April 2026 meeting?",
-            "groupItemTitle_en": "50+ bps decrease",
-            "outcomes_en": [
-              "Yes",
-              "No"
-            ],
-            "outcomes_ko": [
-              "예",
-              "아니오"
-            ],
-            "prices": [
-              0.0265,
-              0.9735
-            ],
-            "volume": 616284.964333
-          },
-          {
-            "question_en": "Will the Fed decrease interest rates by 25 bps after the April 2026 meeting?",
-            "question_ko": "Will the Fed decrease interest rates by 25 bps after the April 2026 meeting?",
-            "groupItemTitle_en": "25 bps decrease",
-            "outcomes_en": [
-              "Yes",
-              "No"
-            ],
-            "outcomes_ko": [
-              "예",
-              "아니오"
-            ],
-            "prices": [
-              0.27,
-              0.73
-            ],
-            "volume": 412819.051579
-          },
-          {
-            "question_en": "Will there be no change in Fed interest rates after the April 2026 meeting?",
-            "question_ko": "Will there be no change in Fed interest rates after the April 2026 meeting?",
-            "groupItemTitle_en": "No change",
-            "outcomes_en": [
-              "Yes",
-              "No"
-            ],
-            "outcomes_ko": [
-              "예",
-              "아니오"
-            ],
-            "prices": [
-              0.69,
-              0.31
-            ],
-            "volume": 206436.892837
-          },
-          {
-            "question_en": "Will the Fed increase interest rates by 25+ bps after the April 2026 meeting?",
-            "question_ko": "Will the Fed increase interest rates by 25+ bps after the April 2026 meeting?",
-            "groupItemTitle_en": "25+ bps increase",
-            "outcomes_en": [
-              "Yes",
-              "No"
-            ],
-            "outcomes_ko": [
-              "예",
-              "아니오"
-            ],
-            "prices": [
-              0.017,
-              0.983
-            ],
-            "volume": 300065.663814
-          }
-        ]
-      }
-    ],
-    "other_markets": [
-      {
-        "slug": "what-will-the-fed-rate-be-at-the-end-of-2026",
-        "title": "What will the Fed rate be at the end of 2026?",
-        "title_ko": "2026년 말 Fed 기준금리 전망",
-        "endDate": "2026-12-09T00:00:00Z",
-        "closed": false,
-        "markets": [
-          {
-            "question_en": "Will the upper bound of the target federal funds rate be 4.25% at the end of 2026?",
-            "question_ko": "Will the upper bound of the target federal funds rate be 4.25% at the end of 2026?",
-            "groupItemTitle_en": "4.25%",
-            "outcomes_en": [
-              "Yes",
-              "No"
-            ],
-            "outcomes_ko": [
-              "예",
-              "아니오"
-            ],
-            "prices": [
-              0.0025,
-              0.9975
-            ],
-            "volume": 5223.19881
-          },
-          {
-            "question_en": "Will the upper bound of the target federal funds rate be 2.25% at the end of 2026?",
-            "question_ko": "Will the upper bound of the target federal funds rate be 2.25% at the end of 2026?",
-            "groupItemTitle_en": "2.25%",
-            "outcomes_en": [
-              "Yes",
-              "No"
-            ],
-            "outcomes_ko": [
-              "예",
-              "아니오"
-            ],
-            "prices": [
-              0.033,
-              0.967
-            ],
-            "volume": 5550.284511
-          },
-          {
-            "question_en": "Will the upper bound of the target federal funds rate be 3.25% at the end of 2026?",
-            "question_ko": "Will the upper bound of the target federal funds rate be 3.25% at the end of 2026?",
-            "groupItemTitle_en": "3.25%",
-            "outcomes_en": [
-              "Yes",
-              "No"
-            ],
-            "outcomes_ko": [
-              "예",
-              "아니오"
-            ],
-            "prices": [
-              0.27,
-              0.73
-            ],
-            "volume": 11143.775327
-          },
-          {
-            "question_en": "Will the upper bound of the target federal funds rate be 3.75% at the end of 2026?",
-            "question_ko": "Will the upper bound of the target federal funds rate be 3.75% at the end of 2026?",
-            "groupItemTitle_en": "3.75%",
-            "outcomes_en": [
-              "Yes",
-              "No"
-            ],
-            "outcomes_ko": [
-              "예",
-              "아니오"
-            ],
-            "prices": [
-              0.0645,
-              0.9355
-            ],
-            "volume": 19970.430539
-          },
-          {
-            "question_en": "Will the upper bound of the target federal funds rate be 3.0% at the end of 2026?",
-            "question_ko": "Will the upper bound of the target federal funds rate be 3.0% at the end of 2026?",
-            "groupItemTitle_en": "3.0%",
-            "outcomes_en": [
-              "Yes",
-              "No"
-            ],
-            "outcomes_ko": [
-              "예",
-              "아니오"
-            ],
-            "prices": [
-              0.26,
-              0.74
-            ],
-            "volume": 10640.610818
-          },
-          {
-            "question_en": "Will the upper bound of the target federal funds rate be 2.5% at the end of 2026?",
-            "question_ko": "Will the upper bound of the target federal funds rate be 2.5% at the end of 2026?",
-            "groupItemTitle_en": "2.5%",
-            "outcomes_en": [
-              "Yes",
-              "No"
-            ],
-            "outcomes_ko": [
-              "예",
-              "아니오"
-            ],
-            "prices": [
-              0.0535,
-              0.9465
-            ],
-            "volume": 6374.18885
-          },
-          {
-            "question_en": "Will the upper bound of the target federal funds rate be 2.75% at the end of 2026?",
-            "question_ko": "Will the upper bound of the target federal funds rate be 2.75% at the end of 2026?",
-            "groupItemTitle_en": "2.75%",
-            "outcomes_en": [
-              "Yes",
-              "No"
-            ],
-            "outcomes_ko": [
-              "예",
-              "아니오"
-            ],
-            "prices": [
-              0.115,
-              0.885
-            ],
-            "volume": 7253.275799
-          },
-          {
-            "question_en": "Will the upper bound of the target federal funds rate be 3.5% at the end of 2026?",
-            "question_ko": "Will the upper bound of the target federal funds rate be 3.5% at the end of 2026?",
-            "groupItemTitle_en": "3.5%",
-            "outcomes_en": [
-              "Yes",
-              "No"
-            ],
-            "outcomes_ko": [
-              "예",
-              "아니오"
-            ],
-            "prices": [
-              0.175,
-              0.825
-            ],
-            "volume": 14572.273332
-          },
-          {
-            "question_en": "Will the upper bound of the target federal funds rate be 4.0% at the end of 2026?",
-            "question_ko": "Will the upper bound of the target federal funds rate be 4.0% at the end of 2026?",
-            "groupItemTitle_en": "4.0%",
-            "outcomes_en": [
-              "Yes",
-              "No"
-            ],
-            "outcomes_ko": [
-              "예",
-              "아니오"
-            ],
-            "prices": [
-              0.0035,
-              0.9965
-            ],
-            "volume": 5988.521352
-          },
-          {
-            "question_en": "Will the upper bound of the target federal funds rate be ≥ 4.5% at the end of 2026?",
-            "question_ko": "Will the upper bound of the target federal funds rate be ≥ 4.5% at the end of 2026?",
-            "groupItemTitle_en": "≥ 4.5%",
-            "outcomes_en": [
-              "Yes",
-              "No"
-            ],
-            "outcomes_ko": [
-              "예",
-              "아니오"
-            ],
-            "prices": [
-              0.0025,
-              0.9975
-            ],
-            "volume": 5962.150917
-          },
-          {
-            "question_en": "Will the upper bound of the target federal funds rate be ≤1.0% at the end of 2026?",
-            "question_ko": "Will the upper bound of the target federal funds rate be ≤1.0% at the end of 2026?",
-            "groupItemTitle_en": "≤1.0%",
-            "outcomes_en": [
-              "Yes",
-              "No"
-            ],
-            "outcomes_ko": [
-              "예",
-              "아니오"
-            ],
-            "prices": [
-              0.0245,
-              0.9755
-            ],
-            "volume": 27966.826729
-          },
-          {
-            "question_en": "Will the upper bound of the target federal funds rate be 1.25% at the end of 2026?",
-            "question_ko": "Will the upper bound of the target federal funds rate be 1.25% at the end of 2026?",
-            "groupItemTitle_en": "1.25",
-            "outcomes_en": [
-              "Yes",
-              "No"
-            ],
-            "outcomes_ko": [
-              "예",
-              "아니오"
-            ],
-            "prices": [
-              0.0065,
-              0.9935
-            ],
-            "volume": 31193.216683
-          },
-          {
-            "question_en": "Will the upper bound of the target federal funds rate be 1.5% at the end of 2026?",
-            "question_ko": "Will the upper bound of the target federal funds rate be 1.5% at the end of 2026?",
-            "groupItemTitle_en": "1.5%",
-            "outcomes_en": [
-              "Yes",
-              "No"
-            ],
-            "outcomes_ko": [
-              "예",
-              "아니오"
-            ],
-            "prices": [
-              0.005,
-              0.995
-            ],
-            "volume": 3812.234952
-          },
-          {
-            "question_en": "Will the upper bound of the target federal funds rate be 1.75% at the end of 2026?",
-            "question_ko": "Will the upper bound of the target federal funds rate be 1.75% at the end of 2026?",
-            "groupItemTitle_en": "1.75%",
-            "outcomes_en": [
-              "Yes",
-              "No"
-            ],
-            "outcomes_ko": [
-              "예",
-              "아니오"
-            ],
-            "prices": [
-              0.0035,
-              0.9965
-            ],
-            "volume": 3603.95895
-          },
-          {
-            "question_en": "Will the upper bound of the target federal funds rate be 2.0% at the end of 2026?",
-            "question_ko": "Will the upper bound of the target federal funds rate be 2.0% at the end of 2026?",
-            "groupItemTitle_en": "2.0%",
-            "outcomes_en": [
-              "Yes",
-              "No"
-            ],
-            "outcomes_ko": [
-              "예",
-              "아니오"
-            ],
-            "prices": [
-              0.0055,
-              0.9945
-            ],
-            "volume": 3903.370467
-          }
-        ]
-      },
-      {
-        "slug": "how-many-fed-rate-cuts-in-2026",
-        "title": "How many Fed rate cuts in 2026?",
-        "title_ko": "2026년 Fed 금리 인하 횟수",
-        "endDate": "2026-12-31T00:00:00Z",
-        "closed": false,
-        "markets": [
-          {
-            "question_en": "Will no Fed rate cuts happen in 2026?",
-            "question_ko": "Will no Fed rate cuts happen in 2026?",
-            "groupItemTitle_en": "0 (0 bps)",
-            "outcomes_en": [
-              "Yes",
-              "No"
-            ],
-            "outcomes_ko": [
-              "예",
-              "아니오"
-            ],
-            "prices": [
-              0.0555,
-              0.9445
-            ],
-            "volume": 954699.25565
-          },
-          {
-            "question_en": "Will 1 Fed rate cut happen in 2026?",
-            "question_ko": "Will 1 Fed rate cut happen in 2026?",
-            "groupItemTitle_en": "1 (25 bps)",
-            "outcomes_en": [
-              "Yes",
-              "No"
-            ],
-            "outcomes_ko": [
-              "예",
-              "아니오"
-            ],
-            "prices": [
-              0.175,
-              0.825
-            ],
-            "volume": 440092.186529
-          },
-          {
-            "question_en": "Will 2 Fed rate cuts happen in 2026?",
-            "question_ko": "Will 2 Fed rate cuts happen in 2026?",
-            "groupItemTitle_en": "2 (50 bps)",
-            "outcomes_en": [
-              "Yes",
-              "No"
-            ],
-            "outcomes_ko": [
-              "예",
-              "아니오"
-            ],
-            "prices": [
-              0.255,
-              0.745
-            ],
-            "volume": 411852.182309
-          },
-          {
-            "question_en": "Will 3 Fed rate cuts happen in 2026?",
-            "question_ko": "Will 3 Fed rate cuts happen in 2026?",
-            "groupItemTitle_en": "3 (75 bps)",
-            "outcomes_en": [
-              "Yes",
-              "No"
-            ],
-            "outcomes_ko": [
-              "예",
-              "아니오"
-            ],
-            "prices": [
-              0.245,
-              0.755
-            ],
-            "volume": 290795.36952
-          },
-          {
-            "question_en": "Will 4 Fed rate cuts happen in 2026?",
-            "question_ko": "Will 4 Fed rate cuts happen in 2026?",
-            "groupItemTitle_en": "4 (100 bps)",
-            "outcomes_en": [
-              "Yes",
-              "No"
-            ],
-            "outcomes_ko": [
-              "예",
-              "아니오"
-            ],
-            "prices": [
-              0.175,
-              0.825
-            ],
-            "volume": 284179.580364
-          },
-          {
-            "question_en": "Will 5 Fed rate cuts happen in 2026?",
-            "question_ko": "Will 5 Fed rate cuts happen in 2026?",
-            "groupItemTitle_en": "5 (125 bps)",
-            "outcomes_en": [
-              "Yes",
-              "No"
-            ],
-            "outcomes_ko": [
-              "예",
-              "아니오"
-            ],
-            "prices": [
-              0.055,
-              0.945
-            ],
-            "volume": 265599.890095
-          },
-          {
-            "question_en": "Will 6 Fed rate cuts happen in 2026?",
-            "question_ko": "Will 6 Fed rate cuts happen in 2026?",
-            "groupItemTitle_en": "6 (150 bps)",
-            "outcomes_en": [
-              "Yes",
-              "No"
-            ],
-            "outcomes_ko": [
-              "예",
-              "아니오"
-            ],
-            "prices": [
-              0.0175,
-              0.9825
-            ],
-            "volume": 683025.549642
-          },
-          {
-            "question_en": "Will 7 Fed rate cuts happen in 2026?",
-            "question_ko": "Will 7 Fed rate cuts happen in 2026?",
-            "groupItemTitle_en": "7 (175 bps)",
-            "outcomes_en": [
-              "Yes",
-              "No"
-            ],
-            "outcomes_ko": [
-              "예",
-              "아니오"
-            ],
-            "prices": [
-              0.0055,
-              0.9945
-            ],
-            "volume": 291884.821504
-          },
-          {
-            "question_en": "Will 8 Fed rate cuts happen in 2026?",
-            "question_ko": "Will 8 Fed rate cuts happen in 2026?",
-            "groupItemTitle_en": "8 (200 bps)",
-            "outcomes_en": [
-              "Yes",
-              "No"
-            ],
-            "outcomes_ko": [
-              "예",
-              "아니오"
-            ],
-            "prices": [
-              0.007,
-              0.993
-            ],
-            "volume": 367450.881371
-          },
-          {
-            "question_en": "Will 9 Fed rate cuts happen in 2026?",
-            "question_ko": "Will 9 Fed rate cuts happen in 2026?",
-            "groupItemTitle_en": "9 (225 bps)",
-            "outcomes_en": [
-              "Yes",
-              "No"
-            ],
-            "outcomes_ko": [
-              "예",
-              "아니오"
-            ],
-            "prices": [
-              0.0055,
-              0.9945
-            ],
-            "volume": 277350.773367
-          },
-          {
-            "question_en": "Will 10 Fed rate cuts happen in 2026?",
-            "question_ko": "Will 10 Fed rate cuts happen in 2026?",
-            "groupItemTitle_en": "10 (250 bps)",
-            "outcomes_en": [
-              "Yes",
-              "No"
-            ],
-            "outcomes_ko": [
-              "예",
-              "아니오"
-            ],
-            "prices": [
-              0.0055,
-              0.9945
-            ],
-            "volume": 288560.51553
-          },
-          {
-            "question_en": "Will 11 Fed rate cuts happen in 2026?",
-            "question_ko": "Will 11 Fed rate cuts happen in 2026?",
-            "groupItemTitle_en": "11 (275 bps)",
-            "outcomes_en": [
-              "Yes",
-              "No"
-            ],
-            "outcomes_ko": [
-              "예",
-              "아니오"
-            ],
-            "prices": [
-              0.0045,
-              0.9955
-            ],
-            "volume": 336629.506478
-          },
-          {
-            "question_en": "Will 12 or more Fed rate cuts happen in 2026?",
-            "question_ko": "Will 12 or more Fed rate cuts happen in 2026?",
-            "groupItemTitle_en": "12+ (300+ bps)",
-            "outcomes_en": [
-              "Yes",
-              "No"
-            ],
-            "outcomes_ko": [
-              "예",
-              "아니오"
-            ],
-            "prices": [
-              0.0185,
-              0.9815
-            ],
-            "volume": 450031.741529
-          }
-        ]
-      }
-    ]
+  "fed_funds_target": {
+    "upper": 3.75,
+    "upper_date": "2026-02-10",
+    "lower": 3.5,
+    "lower_date": "2026-02-10"
   },
-  "kalshi": {
-    "KXFEDDECISION": [
-      {
-        "ticker": "KXFEDDECISION-28JAN-H26",
-        "title": "Will the Federal Reserve Hike rates by >25bps at their January 2028 meeting?",
-        "title_ko": "Will the Federal Reserve Hike rates by >25bps at their January 2028 meeting?",
-        "subtitle": "Hike >25bps",
-        "subtitle_ko": "Hike >25bps",
-        "yes_bid": 0,
-        "yes_ask": 55,
-        "last_price": 23,
-        "volume": 1286,
-        "open_interest": 675,
-        "close_time": "2028-01-26T18:59:00Z"
-      },
-      {
-        "ticker": "KXFEDDECISION-28JAN-H25",
-        "title": "Will the Federal Reserve Hike rates by 25bps at their January 2028 meeting?",
-        "title_ko": "Will the Federal Reserve Hike rates by 25bps at their January 2028 meeting?",
-        "subtitle": "Hike 25bps",
-        "subtitle_ko": "Hike 25bps",
-        "yes_bid": 0,
-        "yes_ask": 37,
-        "last_price": 1,
-        "volume": 220,
-        "open_interest": 10,
-        "close_time": "2028-01-26T18:59:00Z"
-      },
-      {
-        "ticker": "KXFEDDECISION-28JAN-H0",
-        "title": "Will the Federal Reserve Hike rates by 0bps at their January 2028 meeting?",
-        "title_ko": "Will the Federal Reserve Hike rates by 0bps at their January 2028 meeting?",
-        "subtitle": "Hike 0bps",
-        "subtitle_ko": "Hike 0bps",
-        "yes_bid": 63,
-        "yes_ask": 79,
-        "last_price": 75,
-        "volume": 670,
-        "open_interest": 179,
-        "close_time": "2028-01-26T18:59:00Z"
-      },
-      {
-        "ticker": "KXFEDDECISION-28JAN-C26",
-        "title": "Will the Federal Reserve Cut rates by >25bps at their January 2028 meeting?",
-        "title_ko": "Will the Federal Reserve Cut rates by >25bps at their January 2028 meeting?",
-        "subtitle": "Cut >25bps",
-        "subtitle_ko": "Cut >25bps",
-        "yes_bid": 0,
-        "yes_ask": 37,
-        "last_price": 1,
-        "volume": 270,
-        "open_interest": 50,
-        "close_time": "2028-01-26T18:59:00Z"
-      },
-      {
-        "ticker": "KXFEDDECISION-28JAN-C25",
-        "title": "Will the Federal Reserve Cut rates by 25bps at their January 2028 meeting?",
-        "title_ko": "Will the Federal Reserve Cut rates by 25bps at their January 2028 meeting?",
-        "subtitle": "Cut 25bps",
-        "subtitle_ko": "Cut 25bps",
-        "yes_bid": 12,
-        "yes_ask": 47,
-        "last_price": 27,
-        "volume": 563,
-        "open_interest": 563,
-        "close_time": "2028-01-26T18:59:00Z"
-      },
-      {
-        "ticker": "KXFEDDECISION-27DEC-H26",
-        "title": "Will the Federal Reserve Hike rates by >25bps at their December 2027 meeting?",
-        "title_ko": "Will the Federal Reserve Hike rates by >25bps at their December 2027 meeting?",
-        "subtitle": "Hike >25bps",
-        "subtitle_ko": "Hike >25bps",
-        "yes_bid": 0,
-        "yes_ask": 37,
-        "last_price": 10,
-        "volume": 105,
-        "open_interest": 105,
-        "close_time": "2027-12-08T18:59:00Z"
-      },
-      {
-        "ticker": "KXFEDDECISION-27DEC-H25",
-        "title": "Will the Federal Reserve Hike rates by 25bps at their December 2027 meeting?",
-        "title_ko": "Will the Federal Reserve Hike rates by 25bps at their December 2027 meeting?",
-        "subtitle": "Hike 25bps",
-        "subtitle_ko": "Hike 25bps",
-        "yes_bid": 0,
-        "yes_ask": 37,
-        "last_price": 10,
-        "volume": 105,
-        "open_interest": 105,
-        "close_time": "2027-12-08T18:59:00Z"
-      },
-      {
-        "ticker": "KXFEDDECISION-27DEC-H0",
-        "title": "Will the Federal Reserve Hike rates by 0bps at their December 2027 meeting?",
-        "title_ko": "Will the Federal Reserve Hike rates by 0bps at their December 2027 meeting?",
-        "subtitle": "Hike 0bps",
-        "subtitle_ko": "Hike 0bps",
-        "yes_bid": 58,
-        "yes_ask": 68,
-        "last_price": 58,
-        "volume": 116,
-        "open_interest": 81,
-        "close_time": "2027-12-08T18:59:00Z"
-      },
-      {
-        "ticker": "KXFEDDECISION-27DEC-C26",
-        "title": "Will the Federal Reserve Cut rates by >25bps at their December 2027 meeting?",
-        "title_ko": "Will the Federal Reserve Cut rates by >25bps at their December 2027 meeting?",
-        "subtitle": "Cut >25bps",
-        "subtitle_ko": "Cut >25bps",
-        "yes_bid": 0,
-        "yes_ask": 37,
-        "last_price": 9,
-        "volume": 100,
-        "open_interest": 100,
-        "close_time": "2027-12-08T18:59:00Z"
-      },
-      {
-        "ticker": "KXFEDDECISION-27DEC-C25",
-        "title": "Will the Federal Reserve Cut rates by 25bps at their December 2027 meeting?",
-        "title_ko": "Will the Federal Reserve Cut rates by 25bps at their December 2027 meeting?",
-        "subtitle": "Cut 25bps",
-        "subtitle_ko": "Cut 25bps",
-        "yes_bid": 10,
-        "yes_ask": 48,
-        "last_price": 0,
-        "volume": 0,
-        "open_interest": 0,
-        "close_time": "2027-12-08T18:59:00Z"
-      },
-      {
-        "ticker": "KXFEDDECISION-27OCT-H26",
-        "title": "Will the Federal Reserve Hike rates by >25bps at their October 2027 meeting?",
-        "title_ko": "Will the Federal Reserve Hike rates by >25bps at their October 2027 meeting?",
-        "subtitle": "Hike >25bps",
-        "subtitle_ko": "Hike >25bps",
-        "yes_bid": 0,
-        "yes_ask": 37,
-        "last_price": 1,
-        "volume": 210,
-        "open_interest": 5,
-        "close_time": "2027-10-27T17:59:00Z"
-      },
-      {
-        "ticker": "KXFEDDECISION-27OCT-H25",
-        "title": "Will the Federal Reserve Hike rates by 25bps at their October 2027 meeting?",
-        "title_ko": "Will the Federal Reserve Hike rates by 25bps at their October 2027 meeting?",
-        "subtitle": "Hike 25bps",
-        "subtitle_ko": "Hike 25bps",
-        "yes_bid": 0,
-        "yes_ask": 37,
-        "last_price": 1,
-        "volume": 62,
-        "open_interest": 0,
-        "close_time": "2027-10-27T17:59:00Z"
-      },
-      {
-        "ticker": "KXFEDDECISION-27OCT-H0",
-        "title": "Will the Federal Reserve Hike rates by 0bps at their October 2027 meeting?",
-        "title_ko": "Will the Federal Reserve Hike rates by 0bps at their October 2027 meeting?",
-        "subtitle": "Hike 0bps",
-        "subtitle_ko": "Hike 0bps",
-        "yes_bid": 42,
-        "yes_ask": 80,
-        "last_price": 0,
-        "volume": 0,
-        "open_interest": 0,
-        "close_time": "2027-10-27T17:59:00Z"
-      },
-      {
-        "ticker": "KXFEDDECISION-27OCT-C26",
-        "title": "Will the Federal Reserve Cut rates by >25bps at their October 2027 meeting?",
-        "title_ko": "Will the Federal Reserve Cut rates by >25bps at their October 2027 meeting?",
-        "subtitle": "Cut >25bps",
-        "subtitle_ko": "Cut >25bps",
-        "yes_bid": 0,
-        "yes_ask": 37,
-        "last_price": 1,
-        "volume": 210,
-        "open_interest": 5,
-        "close_time": "2027-10-27T17:59:00Z"
-      },
-      {
-        "ticker": "KXFEDDECISION-27OCT-C25",
-        "title": "Will the Federal Reserve Cut rates by 25bps at their October 2027 meeting?",
-        "title_ko": "Will the Federal Reserve Cut rates by 25bps at their October 2027 meeting?",
-        "subtitle": "Cut 25bps",
-        "subtitle_ko": "Cut 25bps",
-        "yes_bid": 10,
-        "yes_ask": 48,
-        "last_price": 0,
-        "volume": 0,
-        "open_interest": 0,
-        "close_time": "2027-10-27T17:59:00Z"
-      },
-      {
-        "ticker": "KXFEDDECISION-27SEP-H26",
-        "title": "Will the Federal Reserve Hike rates by >25bps at their September 2027 meeting?",
-        "title_ko": "Will the Federal Reserve Hike rates by >25bps at their September 2027 meeting?",
-        "subtitle": "Hike >25bps",
-        "subtitle_ko": "Hike >25bps",
-        "yes_bid": 0,
-        "yes_ask": 37,
-        "last_price": 1,
-        "volume": 210,
-        "open_interest": 5,
-        "close_time": "2027-09-15T17:59:00Z"
-      },
-      {
-        "ticker": "KXFEDDECISION-27SEP-H25",
-        "title": "Will the Federal Reserve Hike rates by 25bps at their September 2027 meeting?",
-        "title_ko": "Will the Federal Reserve Hike rates by 25bps at their September 2027 meeting?",
-        "subtitle": "Hike 25bps",
-        "subtitle_ko": "Hike 25bps",
-        "yes_bid": 0,
-        "yes_ask": 37,
-        "last_price": 1,
-        "volume": 22,
-        "open_interest": 0,
-        "close_time": "2027-09-15T17:59:00Z"
-      },
-      {
-        "ticker": "KXFEDDECISION-27SEP-H0",
-        "title": "Will the Federal Reserve Hike rates by 0bps at their September 2027 meeting?",
-        "title_ko": "Will the Federal Reserve Hike rates by 0bps at their September 2027 meeting?",
-        "subtitle": "Hike 0bps",
-        "subtitle_ko": "Hike 0bps",
-        "yes_bid": 42,
-        "yes_ask": 79,
-        "last_price": 0,
-        "volume": 0,
-        "open_interest": 0,
-        "close_time": "2027-09-15T17:59:00Z"
-      },
-      {
-        "ticker": "KXFEDDECISION-27SEP-C26",
-        "title": "Will the Federal Reserve Cut rates by >25bps at their September 2027 meeting?",
-        "title_ko": "Will the Federal Reserve Cut rates by >25bps at their September 2027 meeting?",
-        "subtitle": "Cut >25bps",
-        "subtitle_ko": "Cut >25bps",
-        "yes_bid": 0,
-        "yes_ask": 37,
-        "last_price": 1,
-        "volume": 22,
-        "open_interest": 0,
-        "close_time": "2027-09-15T17:59:00Z"
-      },
-      {
-        "ticker": "KXFEDDECISION-27SEP-C25",
-        "title": "Will the Federal Reserve Cut rates by 25bps at their September 2027 meeting?",
-        "title_ko": "Will the Federal Reserve Cut rates by 25bps at their September 2027 meeting?",
-        "subtitle": "Cut 25bps",
-        "subtitle_ko": "Cut 25bps",
-        "yes_bid": 31,
-        "yes_ask": 48,
-        "last_price": 31,
-        "volume": 157,
-        "open_interest": 157,
-        "close_time": "2027-09-15T17:59:00Z"
-      },
-      {
-        "ticker": "KXFEDDECISION-27JUL-H26",
-        "title": "Will the Federal Reserve Hike rates by >25bps at their July 2027 meeting?",
-        "title_ko": "Will the Federal Reserve Hike rates by >25bps at their July 2027 meeting?",
-        "subtitle": "Hike >25bps",
-        "subtitle_ko": "Hike >25bps",
-        "yes_bid": 0,
-        "yes_ask": 9,
-        "last_price": 0,
-        "volume": 0,
-        "open_interest": 0,
-        "close_time": "2027-07-28T17:59:00Z"
-      },
-      {
-        "ticker": "KXFEDDECISION-27JUL-H25",
-        "title": "Will the Federal Reserve Hike rates by 25bps at their July 2027 meeting?",
-        "title_ko": "Will the Federal Reserve Hike rates by 25bps at their July 2027 meeting?",
-        "subtitle": "Hike 25bps",
-        "subtitle_ko": "Hike 25bps",
-        "yes_bid": 0,
-        "yes_ask": 9,
-        "last_price": 0,
-        "volume": 0,
-        "open_interest": 0,
-        "close_time": "2027-07-28T17:59:00Z"
-      },
-      {
-        "ticker": "KXFEDDECISION-27JUL-H0",
-        "title": "Will the Federal Reserve Hike rates by 0bps at their July 2027 meeting?",
-        "title_ko": "Will the Federal Reserve Hike rates by 0bps at their July 2027 meeting?",
-        "subtitle": "Hike 0bps",
-        "subtitle_ko": "Hike 0bps",
-        "yes_bid": 42,
-        "yes_ask": 68,
-        "last_price": 0,
-        "volume": 0,
-        "open_interest": 0,
-        "close_time": "2027-07-28T17:59:00Z"
-      },
-      {
-        "ticker": "KXFEDDECISION-27JUL-C26",
-        "title": "Will the Federal Reserve Cut rates by >25bps at their July 2027 meeting?",
-        "title_ko": "Will the Federal Reserve Cut rates by >25bps at their July 2027 meeting?",
-        "subtitle": "Cut >25bps",
-        "subtitle_ko": "Cut >25bps",
-        "yes_bid": 0,
-        "yes_ask": 9,
-        "last_price": 0,
-        "volume": 0,
-        "open_interest": 0,
-        "close_time": "2027-07-28T17:59:00Z"
-      },
-      {
-        "ticker": "KXFEDDECISION-27JUL-C25",
-        "title": "Will the Federal Reserve Cut rates by 25bps at their July 2027 meeting?",
-        "title_ko": "Will the Federal Reserve Cut rates by 25bps at their July 2027 meeting?",
-        "subtitle": "Cut 25bps",
-        "subtitle_ko": "Cut 25bps",
-        "yes_bid": 10,
-        "yes_ask": 24,
-        "last_price": 0,
-        "volume": 0,
-        "open_interest": 0,
-        "close_time": "2027-07-28T17:59:00Z"
-      },
-      {
-        "ticker": "KXFEDDECISION-27JUN-H26",
-        "title": "Will the Federal Reserve Hike rates by >25bps at their June 2027 meeting?",
-        "title_ko": "Will the Federal Reserve Hike rates by >25bps at their June 2027 meeting?",
-        "subtitle": "Hike >25bps",
-        "subtitle_ko": "Hike >25bps",
-        "yes_bid": 0,
-        "yes_ask": 11,
-        "last_price": 0,
-        "volume": 0,
-        "open_interest": 0,
-        "close_time": "2027-06-09T17:59:00Z"
-      },
-      {
-        "ticker": "KXFEDDECISION-27JUN-H25",
-        "title": "Will the Federal Reserve Hike rates by 25bps at their June 2027 meeting?",
-        "title_ko": "Will the Federal Reserve Hike rates by 25bps at their June 2027 meeting?",
-        "subtitle": "Hike 25bps",
-        "subtitle_ko": "Hike 25bps",
-        "yes_bid": 0,
-        "yes_ask": 11,
-        "last_price": 0,
-        "volume": 0,
-        "open_interest": 0,
-        "close_time": "2027-06-09T17:59:00Z"
-      },
-      {
-        "ticker": "KXFEDDECISION-27JUN-H0",
-        "title": "Will the Federal Reserve Hike rates by 0bps at their June 2027 meeting?",
-        "title_ko": "Will the Federal Reserve Hike rates by 0bps at their June 2027 meeting?",
-        "subtitle": "Hike 0bps",
-        "subtitle_ko": "Hike 0bps",
-        "yes_bid": 60,
-        "yes_ask": 72,
-        "last_price": 60,
-        "volume": 141,
-        "open_interest": 100,
-        "close_time": "2027-06-09T17:59:00Z"
-      },
-      {
-        "ticker": "KXFEDDECISION-27JUN-C26",
-        "title": "Will the Federal Reserve Cut rates by >25bps at their June 2027 meeting?",
-        "title_ko": "Will the Federal Reserve Cut rates by >25bps at their June 2027 meeting?",
-        "subtitle": "Cut >25bps",
-        "subtitle_ko": "Cut >25bps",
-        "yes_bid": 0,
-        "yes_ask": 11,
-        "last_price": 0,
-        "volume": 0,
-        "open_interest": 0,
-        "close_time": "2027-06-09T17:59:00Z"
-      },
-      {
-        "ticker": "KXFEDDECISION-27JUN-C25",
-        "title": "Will the Federal Reserve Cut rates by 25bps at their June 2027 meeting?",
-        "title_ko": "Will the Federal Reserve Cut rates by 25bps at their June 2027 meeting?",
-        "subtitle": "Cut 25bps",
-        "subtitle_ko": "Cut 25bps",
-        "yes_bid": 13,
-        "yes_ask": 25,
-        "last_price": 0,
-        "volume": 0,
-        "open_interest": 0,
-        "close_time": "2027-06-09T17:59:00Z"
-      },
-      {
-        "ticker": "KXFEDDECISION-27APR-H26",
-        "title": "Will the Federal Reserve Hike rates by >25bps at their April 2027 meeting?",
-        "title_ko": "Will the Federal Reserve Hike rates by >25bps at their April 2027 meeting?",
-        "subtitle": "Hike >25bps",
-        "subtitle_ko": "Hike >25bps",
-        "yes_bid": 0,
-        "yes_ask": 8,
-        "last_price": 0,
-        "volume": 0,
-        "open_interest": 0,
-        "close_time": "2027-04-28T17:59:00Z"
-      },
-      {
-        "ticker": "KXFEDDECISION-27APR-H25",
-        "title": "Will the Federal Reserve Hike rates by 25bps at their April 2027 meeting?",
-        "title_ko": "Will the Federal Reserve Hike rates by 25bps at their April 2027 meeting?",
-        "subtitle": "Hike 25bps",
-        "subtitle_ko": "Hike 25bps",
-        "yes_bid": 0,
-        "yes_ask": 8,
-        "last_price": 0,
-        "volume": 0,
-        "open_interest": 0,
-        "close_time": "2027-04-28T17:59:00Z"
-      },
-      {
-        "ticker": "KXFEDDECISION-27APR-H0",
-        "title": "Will the Federal Reserve Hike rates by 0bps at their April 2027 meeting?",
-        "title_ko": "Will the Federal Reserve Hike rates by 0bps at their April 2027 meeting?",
-        "subtitle": "Hike 0bps",
-        "subtitle_ko": "Hike 0bps",
-        "yes_bid": 59,
-        "yes_ask": 68,
-        "last_price": 0,
-        "volume": 0,
-        "open_interest": 0,
-        "close_time": "2027-04-28T17:59:00Z"
-      },
-      {
-        "ticker": "KXFEDDECISION-27APR-C26",
-        "title": "Will the Federal Reserve Cut rates by >25bps at their April 2027 meeting?",
-        "title_ko": "Will the Federal Reserve Cut rates by >25bps at their April 2027 meeting?",
-        "subtitle": "Cut >25bps",
-        "subtitle_ko": "Cut >25bps",
-        "yes_bid": 0,
-        "yes_ask": 8,
-        "last_price": 0,
-        "volume": 0,
-        "open_interest": 0,
-        "close_time": "2027-04-28T17:59:00Z"
-      },
-      {
-        "ticker": "KXFEDDECISION-27APR-C25",
-        "title": "Will the Federal Reserve Cut rates by 25bps at their April 2027 meeting?",
-        "title_ko": "Will the Federal Reserve Cut rates by 25bps at their April 2027 meeting?",
-        "subtitle": "Cut 25bps",
-        "subtitle_ko": "Cut 25bps",
-        "yes_bid": 14,
-        "yes_ask": 23,
-        "last_price": 0,
-        "volume": 0,
-        "open_interest": 0,
-        "close_time": "2027-04-28T17:59:00Z"
-      },
-      {
-        "ticker": "KXFEDDECISION-27MAR-H26",
-        "title": "Will the Federal Reserve Hike rates by >25bps at their March 2027 meeting?",
-        "title_ko": "Will the Federal Reserve Hike rates by >25bps at their March 2027 meeting?",
-        "subtitle": "Hike >25bps",
-        "subtitle_ko": "Hike >25bps",
-        "yes_bid": 0,
-        "yes_ask": 37,
-        "last_price": 0,
-        "volume": 0,
-        "open_interest": 0,
-        "close_time": "2027-03-17T17:59:00Z"
-      },
-      {
-        "ticker": "KXFEDDECISION-27MAR-H25",
-        "title": "Will the Federal Reserve Hike rates by 25bps at their March 2027 meeting?",
-        "title_ko": "Will the Federal Reserve Hike rates by 25bps at their March 2027 meeting?",
-        "subtitle": "Hike 25bps",
-        "subtitle_ko": "Hike 25bps",
-        "yes_bid": 0,
-        "yes_ask": 37,
-        "last_price": 0,
-        "volume": 0,
-        "open_interest": 0,
-        "close_time": "2027-03-17T17:59:00Z"
-      },
-      {
-        "ticker": "KXFEDDECISION-27MAR-H0",
-        "title": "Will the Federal Reserve Hike rates by 0bps at their March 2027 meeting?",
-        "title_ko": "Will the Federal Reserve Hike rates by 0bps at their March 2027 meeting?",
-        "subtitle": "Hike 0bps",
-        "subtitle_ko": "Hike 0bps",
-        "yes_bid": 54,
-        "yes_ask": 66,
-        "last_price": 54,
-        "volume": 133,
-        "open_interest": 132,
-        "close_time": "2027-03-17T17:59:00Z"
-      },
-      {
-        "ticker": "KXFEDDECISION-27MAR-C26",
-        "title": "Will the Federal Reserve Cut rates by >25bps at their March 2027 meeting?",
-        "title_ko": "Will the Federal Reserve Cut rates by >25bps at their March 2027 meeting?",
-        "subtitle": "Cut >25bps",
-        "subtitle_ko": "Cut >25bps",
-        "yes_bid": 0,
-        "yes_ask": 37,
-        "last_price": 0,
-        "volume": 0,
-        "open_interest": 0,
-        "close_time": "2027-03-17T17:59:00Z"
-      },
-      {
-        "ticker": "KXFEDDECISION-27MAR-C25",
-        "title": "Will the Federal Reserve Cut rates by 25bps at their March 2027 meeting?",
-        "title_ko": "Will the Federal Reserve Cut rates by 25bps at their March 2027 meeting?",
-        "subtitle": "Cut 25bps",
-        "subtitle_ko": "Cut 25bps",
-        "yes_bid": 17,
-        "yes_ask": 54,
-        "last_price": 35,
-        "volume": 8,
-        "open_interest": 8,
-        "close_time": "2027-03-17T17:59:00Z"
-      }
-    ],
-    "KXRATECUTCOUNT": [
-      {
-        "ticker": "KXRATECUTCOUNT-26DEC31-T9",
-        "title": "Will the Fed cut rates 9 times?",
-        "title_ko": "Will the Fed cut rates 9 times?",
-        "subtitle": "9:: 225 bps",
-        "subtitle_ko": "9:: 225 bps",
-        "yes_bid": 0,
-        "yes_ask": 1,
-        "last_price": 1,
-        "volume": 36792,
-        "open_interest": 35128,
-        "close_time": "2027-01-01T04:59:00Z"
-      },
-      {
-        "ticker": "KXRATECUTCOUNT-26DEC31-T8",
-        "title": "Will the Fed cut rates 8 times?",
-        "title_ko": "Will the Fed cut rates 8 times?",
-        "subtitle": "8:: 200 bps",
-        "subtitle_ko": "8:: 200 bps",
-        "yes_bid": 1,
-        "yes_ask": 2,
-        "last_price": 1,
-        "volume": 38699,
-        "open_interest": 37111,
-        "close_time": "2027-01-01T04:59:00Z"
-      },
-      {
-        "ticker": "KXRATECUTCOUNT-26DEC31-T7",
-        "title": "Will the Fed cut rates 7 times?",
-        "title_ko": "Will the Fed cut rates 7 times?",
-        "subtitle": "7:: 175 bps",
-        "subtitle_ko": "7:: 175 bps",
-        "yes_bid": 1,
-        "yes_ask": 4,
-        "last_price": 4,
-        "volume": 68095,
-        "open_interest": 68095,
-        "close_time": "2027-01-01T04:59:00Z"
-      },
-      {
-        "ticker": "KXRATECUTCOUNT-26DEC31-T6",
-        "title": "Will the Fed cut rates 6 times?",
-        "title_ko": "Will the Fed cut rates 6 times?",
-        "subtitle": "6:: 150 bps",
-        "subtitle_ko": "6:: 150 bps",
-        "yes_bid": 5,
-        "yes_ask": 8,
-        "last_price": 8,
-        "volume": 92121,
-        "open_interest": 88586,
-        "close_time": "2027-01-01T04:59:00Z"
-      },
-      {
-        "ticker": "KXRATECUTCOUNT-26DEC31-T5",
-        "title": "Will the Fed cut rates 5 times?",
-        "title_ko": "Will the Fed cut rates 5 times?",
-        "subtitle": "5:: 125 bps",
-        "subtitle_ko": "5:: 125 bps",
-        "yes_bid": 5,
-        "yes_ask": 6,
-        "last_price": 6,
-        "volume": 66880,
-        "open_interest": 53334,
-        "close_time": "2027-01-01T04:59:00Z"
-      },
-      {
-        "ticker": "KXRATECUTCOUNT-26DEC31-T4",
-        "title": "Will the Fed cut rates 4 times?",
-        "title_ko": "Will the Fed cut rates 4 times?",
-        "subtitle": "4:: 100 bps",
-        "subtitle_ko": "4:: 100 bps",
-        "yes_bid": 14,
-        "yes_ask": 15,
-        "last_price": 15,
-        "volume": 54722,
-        "open_interest": 51700,
-        "close_time": "2027-01-01T04:59:00Z"
-      },
-      {
-        "ticker": "KXRATECUTCOUNT-26DEC31-T3",
-        "title": "Will the Fed cut rates 3 times?",
-        "title_ko": "Will the Fed cut rates 3 times?",
-        "subtitle": "3:: 75 bps",
-        "subtitle_ko": "3:: 75 bps",
-        "yes_bid": 23,
-        "yes_ask": 24,
-        "last_price": 24,
-        "volume": 65547,
-        "open_interest": 51152,
-        "close_time": "2027-01-01T04:59:00Z"
-      },
-      {
-        "ticker": "KXRATECUTCOUNT-26DEC31-T20",
-        "title": "Will the Fed cut rates 20 times?",
-        "title_ko": "Will the Fed cut rates 20 times?",
-        "subtitle": "20:: 500 bps",
-        "subtitle_ko": "20:: 500 bps",
-        "yes_bid": 0,
-        "yes_ask": 1,
-        "last_price": 1,
-        "volume": 1,
-        "open_interest": 1,
-        "close_time": "2027-01-01T04:59:00Z"
-      },
-      {
-        "ticker": "KXRATECUTCOUNT-26DEC31-T2",
-        "title": "Will the Fed cut rates 2 times?",
-        "title_ko": "Will the Fed cut rates 2 times?",
-        "subtitle": "2:: 50 bps",
-        "subtitle_ko": "2:: 50 bps",
-        "yes_bid": 23,
-        "yes_ask": 25,
-        "last_price": 25,
-        "volume": 106620,
-        "open_interest": 82173,
-        "close_time": "2027-01-01T04:59:00Z"
-      },
-      {
-        "ticker": "KXRATECUTCOUNT-26DEC31-T19",
-        "title": "Will the Fed cut rates 19 times?",
-        "title_ko": "Will the Fed cut rates 19 times?",
-        "subtitle": "19:: 475 bps",
-        "subtitle_ko": "19:: 475 bps",
-        "yes_bid": 0,
-        "yes_ask": 1,
-        "last_price": 1,
-        "volume": 1,
-        "open_interest": 1,
-        "close_time": "2027-01-01T04:59:00Z"
-      },
-      {
-        "ticker": "KXRATECUTCOUNT-26DEC31-T18",
-        "title": "Will the Fed cut rates 18 times?",
-        "title_ko": "Will the Fed cut rates 18 times?",
-        "subtitle": "18:: 450 bps",
-        "subtitle_ko": "18:: 450 bps",
-        "yes_bid": 0,
-        "yes_ask": 1,
-        "last_price": 1,
-        "volume": 1,
-        "open_interest": 1,
-        "close_time": "2027-01-01T04:59:00Z"
-      },
-      {
-        "ticker": "KXRATECUTCOUNT-26DEC31-T17",
-        "title": "Will the Fed cut rates 17 times?",
-        "title_ko": "Will the Fed cut rates 17 times?",
-        "subtitle": "17:: 425 bps",
-        "subtitle_ko": "17:: 425 bps",
-        "yes_bid": 0,
-        "yes_ask": 1,
-        "last_price": 1,
-        "volume": 1,
-        "open_interest": 1,
-        "close_time": "2027-01-01T04:59:00Z"
-      },
-      {
-        "ticker": "KXRATECUTCOUNT-26DEC31-T16",
-        "title": "Will the Fed cut rates 16 times?",
-        "title_ko": "Will the Fed cut rates 16 times?",
-        "subtitle": "16:: 400 bps",
-        "subtitle_ko": "16:: 400 bps",
-        "yes_bid": 0,
-        "yes_ask": 1,
-        "last_price": 1,
-        "volume": 1,
-        "open_interest": 1,
-        "close_time": "2027-01-01T04:59:00Z"
-      },
-      {
-        "ticker": "KXRATECUTCOUNT-26DEC31-T15",
-        "title": "Will the Fed cut rates 15 times?",
-        "title_ko": "Will the Fed cut rates 15 times?",
-        "subtitle": "15:: 375 bps",
-        "subtitle_ko": "15:: 375 bps",
-        "yes_bid": 0,
-        "yes_ask": 1,
-        "last_price": 1,
-        "volume": 601,
-        "open_interest": 601,
-        "close_time": "2027-01-01T04:59:00Z"
-      },
-      {
-        "ticker": "KXRATECUTCOUNT-26DEC31-T14",
-        "title": "Will the Fed cut rates 14 times?",
-        "title_ko": "Will the Fed cut rates 14 times?",
-        "subtitle": "14:: 350 bps",
-        "subtitle_ko": "14:: 350 bps",
-        "yes_bid": 0,
-        "yes_ask": 1,
-        "last_price": 1,
-        "volume": 19227,
-        "open_interest": 19227,
-        "close_time": "2027-01-01T04:59:00Z"
-      },
-      {
-        "ticker": "KXRATECUTCOUNT-26DEC31-T13",
-        "title": "Will the Fed cut rates 13 times?",
-        "title_ko": "Will the Fed cut rates 13 times?",
-        "subtitle": "13:: 325 bps",
-        "subtitle_ko": "13:: 325 bps",
-        "yes_bid": 0,
-        "yes_ask": 1,
-        "last_price": 1,
-        "volume": 3988,
-        "open_interest": 3988,
-        "close_time": "2027-01-01T04:59:00Z"
-      },
-      {
-        "ticker": "KXRATECUTCOUNT-26DEC31-T12",
-        "title": "Will the Fed cut rates 12 times?",
-        "title_ko": "Will the Fed cut rates 12 times?",
-        "subtitle": "12:: 300 bps",
-        "subtitle_ko": "12:: 300 bps",
-        "yes_bid": 0,
-        "yes_ask": 1,
-        "last_price": 1,
-        "volume": 5263,
-        "open_interest": 5263,
-        "close_time": "2027-01-01T04:59:00Z"
-      },
-      {
-        "ticker": "KXRATECUTCOUNT-26DEC31-T11",
-        "title": "Will the Fed cut rates 11 times?",
-        "title_ko": "Will the Fed cut rates 11 times?",
-        "subtitle": "11:: 275 bps",
-        "subtitle_ko": "11:: 275 bps",
-        "yes_bid": 0,
-        "yes_ask": 1,
-        "last_price": 1,
-        "volume": 5053,
-        "open_interest": 5053,
-        "close_time": "2027-01-01T04:59:00Z"
-      },
-      {
-        "ticker": "KXRATECUTCOUNT-26DEC31-T10",
-        "title": "Will the Fed cut rates 10 times?",
-        "title_ko": "Will the Fed cut rates 10 times?",
-        "subtitle": "10:: 250 bps",
-        "subtitle_ko": "10:: 250 bps",
-        "yes_bid": 0,
-        "yes_ask": 1,
-        "last_price": 1,
-        "volume": 13053,
-        "open_interest": 11389,
-        "close_time": "2027-01-01T04:59:00Z"
-      },
-      {
-        "ticker": "KXRATECUTCOUNT-26DEC31-T1",
-        "title": "Will the Fed cut rates 1 times?",
-        "title_ko": "Will the Fed cut rates 1 times?",
-        "subtitle": "1:: 25 bps",
-        "subtitle_ko": "1:: 25 bps",
-        "yes_bid": 15,
-        "yes_ask": 17,
-        "last_price": 17,
-        "volume": 86752,
-        "open_interest": 56543,
-        "close_time": "2027-01-01T04:59:00Z"
-      },
-      {
-        "ticker": "KXRATECUTCOUNT-26DEC31-T0",
-        "title": "Will the Fed cut rates 0 times?",
-        "title_ko": "Will the Fed cut rates 0 times?",
-        "subtitle": "0:: 0 bps",
-        "subtitle_ko": "0:: 0 bps",
-        "yes_bid": 7,
-        "yes_ask": 8,
-        "last_price": 7,
-        "volume": 241905,
-        "open_interest": 147909,
-        "close_time": "2027-01-01T04:59:00Z"
-      }
-    ],
-    "KXFED": [
-      {
-        "ticker": "KXFED-27APR-T4.25",
-        "title": "Will the upper bound of the federal funds rate be above 4.25% following the Fed's Apr 28, 2027 meeting?",
-        "title_ko": "Will the upper bound of the federal funds rate be above 4.25% following the Fed's Apr 28, 2027 meeting?",
-        "subtitle": "4.25%",
-        "subtitle_ko": "4.25%",
-        "yes_bid": 0,
-        "yes_ask": 8,
-        "last_price": 8,
-        "volume": 99,
-        "open_interest": 52,
-        "close_time": "2027-04-28T17:55:00Z"
-      },
-      {
-        "ticker": "KXFED-27APR-T4.00",
-        "title": "Will the upper bound of the federal funds rate be above 4.00% following the Fed's Apr 28, 2027 meeting?",
-        "title_ko": "Will the upper bound of the federal funds rate be above 4.00% following the Fed's Apr 28, 2027 meeting?",
-        "subtitle": "4.00%",
-        "subtitle_ko": "4.00%",
-        "yes_bid": 3,
-        "yes_ask": 11,
-        "last_price": 4,
-        "volume": 91,
-        "open_interest": 25,
-        "close_time": "2027-04-28T17:55:00Z"
-      },
-      {
-        "ticker": "KXFED-27APR-T3.75",
-        "title": "Will the upper bound of the federal funds rate be above 3.75% following the Fed's Apr 28, 2027 meeting?",
-        "title_ko": "Will the upper bound of the federal funds rate be above 3.75% following the Fed's Apr 28, 2027 meeting?",
-        "subtitle": "3.75%",
-        "subtitle_ko": "3.75%",
-        "yes_bid": 10,
-        "yes_ask": 17,
-        "last_price": 17,
-        "volume": 312,
-        "open_interest": 266,
-        "close_time": "2027-04-28T17:55:00Z"
-      },
-      {
-        "ticker": "KXFED-27APR-T3.50",
-        "title": "Will the upper bound of the federal funds rate be above 3.50% following the Fed's Apr 28, 2027 meeting?",
-        "title_ko": "Will the upper bound of the federal funds rate be above 3.50% following the Fed's Apr 28, 2027 meeting?",
-        "subtitle": "3.50%",
-        "subtitle_ko": "3.50%",
-        "yes_bid": 18,
-        "yes_ask": 27,
-        "last_price": 22,
-        "volume": 40,
-        "open_interest": 10,
-        "close_time": "2027-04-28T17:55:00Z"
-      },
-      {
-        "ticker": "KXFED-27APR-T3.25",
-        "title": "Will the upper bound of the federal funds rate be above 3.25% following the Fed's Apr 28, 2027 meeting?",
-        "title_ko": "Will the upper bound of the federal funds rate be above 3.25% following the Fed's Apr 28, 2027 meeting?",
-        "subtitle": "3.25%",
-        "subtitle_ko": "3.25%",
-        "yes_bid": 28,
-        "yes_ask": 36,
-        "last_price": 36,
-        "volume": 1662,
-        "open_interest": 60,
-        "close_time": "2027-04-28T17:55:00Z"
-      },
-      {
-        "ticker": "KXFED-27APR-T3.00",
-        "title": "Will the upper bound of the federal funds rate be above 3.00% following the Fed's Apr 28, 2027 meeting?",
-        "title_ko": "Will the upper bound of the federal funds rate be above 3.00% following the Fed's Apr 28, 2027 meeting?",
-        "subtitle": "3.00%",
-        "subtitle_ko": "3.00%",
-        "yes_bid": 43,
-        "yes_ask": 51,
-        "last_price": 43,
-        "volume": 261,
-        "open_interest": 65,
-        "close_time": "2027-04-28T17:55:00Z"
-      },
-      {
-        "ticker": "KXFED-27APR-T2.75",
-        "title": "Will the upper bound of the federal funds rate be above 2.75% following the Fed's Apr 28, 2027 meeting?",
-        "title_ko": "Will the upper bound of the federal funds rate be above 2.75% following the Fed's Apr 28, 2027 meeting?",
-        "subtitle": "2.75%",
-        "subtitle_ko": "2.75%",
-        "yes_bid": 54,
-        "yes_ask": 63,
-        "last_price": 63,
-        "volume": 79,
-        "open_interest": 49,
-        "close_time": "2027-04-28T17:55:00Z"
-      },
-      {
-        "ticker": "KXFED-27APR-T2.50",
-        "title": "Will the upper bound of the federal funds rate be above 2.50% following the Fed's Apr 28, 2027 meeting?",
-        "title_ko": "Will the upper bound of the federal funds rate be above 2.50% following the Fed's Apr 28, 2027 meeting?",
-        "subtitle": "2.50%",
-        "subtitle_ko": "2.50%",
-        "yes_bid": 64,
-        "yes_ask": 73,
-        "last_price": 74,
-        "volume": 40,
-        "open_interest": 10,
-        "close_time": "2027-04-28T17:55:00Z"
-      },
-      {
-        "ticker": "KXFED-27APR-T2.25",
-        "title": "Will the upper bound of the federal funds rate be above 2.25% following the Fed's Apr 28, 2027 meeting?",
-        "title_ko": "Will the upper bound of the federal funds rate be above 2.25% following the Fed's Apr 28, 2027 meeting?",
-        "subtitle": "2.25%",
-        "subtitle_ko": "2.25%",
-        "yes_bid": 74,
-        "yes_ask": 83,
-        "last_price": 83,
-        "volume": 40,
-        "open_interest": 10,
-        "close_time": "2027-04-28T17:55:00Z"
-      },
-      {
-        "ticker": "KXFED-27APR-T2.00",
-        "title": "Will the upper bound of the federal funds rate be above 2.00% following the Fed's Apr 28, 2027 meeting?",
-        "title_ko": "Will the upper bound of the federal funds rate be above 2.00% following the Fed's Apr 28, 2027 meeting?",
-        "subtitle": "2.00%",
-        "subtitle_ko": "2.00%",
-        "yes_bid": 81,
-        "yes_ask": 90,
-        "last_price": 0,
-        "volume": 0,
-        "open_interest": 0,
-        "close_time": "2027-04-28T17:55:00Z"
-      },
-      {
-        "ticker": "KXFED-27APR-T1.75",
-        "title": "Will the upper bound of the federal funds rate be above 1.75% following the Fed's Apr 28, 2027 meeting?",
-        "title_ko": "Will the upper bound of the federal funds rate be above 1.75% following the Fed's Apr 28, 2027 meeting?",
-        "subtitle": "1.75%",
-        "subtitle_ko": "1.75%",
-        "yes_bid": 86,
-        "yes_ask": 95,
-        "last_price": 86,
-        "volume": 2,
-        "open_interest": 0,
-        "close_time": "2027-04-28T17:55:00Z"
-      },
-      {
-        "ticker": "KXFED-27APR-T1.50",
-        "title": "Will the upper bound of the federal funds rate be above 1.50% following the Fed's Apr 28, 2027 meeting?",
-        "title_ko": "Will the upper bound of the federal funds rate be above 1.50% following the Fed's Apr 28, 2027 meeting?",
-        "subtitle": "1.50%",
-        "subtitle_ko": "1.50%",
-        "yes_bid": 87,
-        "yes_ask": 96,
-        "last_price": 87,
-        "volume": 10,
-        "open_interest": 10,
-        "close_time": "2027-04-28T17:55:00Z"
-      },
-      {
-        "ticker": "KXFED-27APR-T1.25",
-        "title": "Will the upper bound of the federal funds rate be above 1.25% following the Fed's Apr 28, 2027 meeting?",
-        "title_ko": "Will the upper bound of the federal funds rate be above 1.25% following the Fed's Apr 28, 2027 meeting?",
-        "subtitle": "1.25%",
-        "subtitle_ko": "1.25%",
-        "yes_bid": 88,
-        "yes_ask": 97,
-        "last_price": 0,
-        "volume": 0,
-        "open_interest": 0,
-        "close_time": "2027-04-28T17:55:00Z"
-      },
-      {
-        "ticker": "KXFED-27APR-T1.00",
-        "title": "Will the upper bound of the federal funds rate be above 1.00% following the Fed's Apr 28, 2027 meeting?",
-        "title_ko": "Will the upper bound of the federal funds rate be above 1.00% following the Fed's Apr 28, 2027 meeting?",
-        "subtitle": "1.00%",
-        "subtitle_ko": "1.00%",
-        "yes_bid": 89,
-        "yes_ask": 98,
-        "last_price": 0,
-        "volume": 0,
-        "open_interest": 0,
-        "close_time": "2027-04-28T17:55:00Z"
-      },
-      {
-        "ticker": "KXFED-27APR-T0.75",
-        "title": "Will the upper bound of the federal funds rate be above 0.75% following the Fed's Apr 28, 2027 meeting?",
-        "title_ko": "Will the upper bound of the federal funds rate be above 0.75% following the Fed's Apr 28, 2027 meeting?",
-        "subtitle": "0.75%",
-        "subtitle_ko": "0.75%",
-        "yes_bid": 90,
-        "yes_ask": 99,
-        "last_price": 0,
-        "volume": 0,
-        "open_interest": 0,
-        "close_time": "2027-04-28T17:55:00Z"
-      },
-      {
-        "ticker": "KXFED-27APR-T0.50",
-        "title": "Will the upper bound of the federal funds rate be above 0.50% following the Fed's Apr 28, 2027 meeting?",
-        "title_ko": "Will the upper bound of the federal funds rate be above 0.50% following the Fed's Apr 28, 2027 meeting?",
-        "subtitle": "0.50%",
-        "subtitle_ko": "0.50%",
-        "yes_bid": 91,
-        "yes_ask": 100,
-        "last_price": 0,
-        "volume": 0,
-        "open_interest": 0,
-        "close_time": "2027-04-28T17:55:00Z"
-      },
-      {
-        "ticker": "KXFED-27APR-T0.25",
-        "title": "Will the upper bound of the federal funds rate be above 0.25% following the Fed's Apr 28, 2027 meeting?",
-        "title_ko": "Will the upper bound of the federal funds rate be above 0.25% following the Fed's Apr 28, 2027 meeting?",
-        "subtitle": "0.25%",
-        "subtitle_ko": "0.25%",
-        "yes_bid": 92,
-        "yes_ask": 100,
-        "last_price": 0,
-        "volume": 0,
-        "open_interest": 0,
-        "close_time": "2027-04-28T17:55:00Z"
-      },
-      {
-        "ticker": "KXFED-27APR-T0.00",
-        "title": "Will the upper bound of the federal funds rate be above 0.00% following the Fed's Apr 28, 2027 meeting?",
-        "title_ko": "Will the upper bound of the federal funds rate be above 0.00% following the Fed's Apr 28, 2027 meeting?",
-        "subtitle": "0.00%",
-        "subtitle_ko": "0.00%",
-        "yes_bid": 99,
-        "yes_ask": 100,
-        "last_price": 63,
-        "volume": 1,
-        "open_interest": 1,
-        "close_time": "2027-04-28T17:55:00Z"
-      },
-      {
-        "ticker": "KXFED-27MAR-T4.25",
-        "title": "Will the upper bound of the federal funds rate be above 4.25% following the Fed's Mar 17, 2027 meeting?",
-        "title_ko": "Will the upper bound of the federal funds rate be above 4.25% following the Fed's Mar 17, 2027 meeting?",
-        "subtitle": "4.25%",
-        "subtitle_ko": "4.25%",
-        "yes_bid": 0,
-        "yes_ask": 8,
-        "last_price": 0,
-        "volume": 0,
-        "open_interest": 0,
-        "close_time": "2027-03-17T17:55:00Z"
-      },
-      {
-        "ticker": "KXFED-27MAR-T4.00",
-        "title": "Will the upper bound of the federal funds rate be above 4.00% following the Fed's Mar 17, 2027 meeting?",
-        "title_ko": "Will the upper bound of the federal funds rate be above 4.00% following the Fed's Mar 17, 2027 meeting?",
-        "subtitle": "4.00%",
-        "subtitle_ko": "4.00%",
-        "yes_bid": 3,
-        "yes_ask": 11,
-        "last_price": 11,
-        "volume": 132,
-        "open_interest": 25,
-        "close_time": "2027-03-17T17:55:00Z"
-      },
-      {
-        "ticker": "KXFED-27MAR-T3.75",
-        "title": "Will the upper bound of the federal funds rate be above 3.75% following the Fed's Mar 17, 2027 meeting?",
-        "title_ko": "Will the upper bound of the federal funds rate be above 3.75% following the Fed's Mar 17, 2027 meeting?",
-        "subtitle": "3.75%",
-        "subtitle_ko": "3.75%",
-        "yes_bid": 6,
-        "yes_ask": 15,
-        "last_price": 15,
-        "volume": 92,
-        "open_interest": 10,
-        "close_time": "2027-03-17T17:55:00Z"
-      },
-      {
-        "ticker": "KXFED-27MAR-T3.50",
-        "title": "Will the upper bound of the federal funds rate be above 3.50% following the Fed's Mar 17, 2027 meeting?",
-        "title_ko": "Will the upper bound of the federal funds rate be above 3.50% following the Fed's Mar 17, 2027 meeting?",
-        "subtitle": "3.50%",
-        "subtitle_ko": "3.50%",
-        "yes_bid": 15,
-        "yes_ask": 24,
-        "last_price": 15,
-        "volume": 66,
-        "open_interest": 0,
-        "close_time": "2027-03-17T17:55:00Z"
-      },
-      {
-        "ticker": "KXFED-27MAR-T3.25",
-        "title": "Will the upper bound of the federal funds rate be above 3.25% following the Fed's Mar 17, 2027 meeting?",
-        "title_ko": "Will the upper bound of the federal funds rate be above 3.25% following the Fed's Mar 17, 2027 meeting?",
-        "subtitle": "3.25%",
-        "subtitle_ko": "3.25%",
-        "yes_bid": 28,
-        "yes_ask": 37,
-        "last_price": 28,
-        "volume": 1674,
-        "open_interest": 5,
-        "close_time": "2027-03-17T17:55:00Z"
-      },
-      {
-        "ticker": "KXFED-27MAR-T3.00",
-        "title": "Will the upper bound of the federal funds rate be above 3.00% following the Fed's Mar 17, 2027 meeting?",
-        "title_ko": "Will the upper bound of the federal funds rate be above 3.00% following the Fed's Mar 17, 2027 meeting?",
-        "subtitle": "3.00%",
-        "subtitle_ko": "3.00%",
-        "yes_bid": 42,
-        "yes_ask": 51,
-        "last_price": 0,
-        "volume": 0,
-        "open_interest": 0,
-        "close_time": "2027-03-17T17:55:00Z"
-      },
-      {
-        "ticker": "KXFED-27MAR-T2.75",
-        "title": "Will the upper bound of the federal funds rate be above 2.75% following the Fed's Mar 17, 2027 meeting?",
-        "title_ko": "Will the upper bound of the federal funds rate be above 2.75% following the Fed's Mar 17, 2027 meeting?",
-        "subtitle": "2.75%",
-        "subtitle_ko": "2.75%",
-        "yes_bid": 57,
-        "yes_ask": 64,
-        "last_price": 63,
-        "volume": 260,
-        "open_interest": 250,
-        "close_time": "2027-03-17T17:55:00Z"
-      },
-      {
-        "ticker": "KXFED-27MAR-T2.50",
-        "title": "Will the upper bound of the federal funds rate be above 2.50% following the Fed's Mar 17, 2027 meeting?",
-        "title_ko": "Will the upper bound of the federal funds rate be above 2.50% following the Fed's Mar 17, 2027 meeting?",
-        "subtitle": "2.50%",
-        "subtitle_ko": "2.50%",
-        "yes_bid": 66,
-        "yes_ask": 75,
-        "last_price": 0,
-        "volume": 0,
-        "open_interest": 0,
-        "close_time": "2027-03-17T17:55:00Z"
-      },
-      {
-        "ticker": "KXFED-27MAR-T2.25",
-        "title": "Will the upper bound of the federal funds rate be above 2.25% following the Fed's Mar 17, 2027 meeting?",
-        "title_ko": "Will the upper bound of the federal funds rate be above 2.25% following the Fed's Mar 17, 2027 meeting?",
-        "subtitle": "2.25%",
-        "subtitle_ko": "2.25%",
-        "yes_bid": 75,
-        "yes_ask": 84,
-        "last_price": 0,
-        "volume": 0,
-        "open_interest": 0,
-        "close_time": "2027-03-17T17:55:00Z"
-      },
-      {
-        "ticker": "KXFED-27MAR-T2.00",
-        "title": "Will the upper bound of the federal funds rate be above 2.00% following the Fed's Mar 17, 2027 meeting?",
-        "title_ko": "Will the upper bound of the federal funds rate be above 2.00% following the Fed's Mar 17, 2027 meeting?",
-        "subtitle": "2.00%",
-        "subtitle_ko": "2.00%",
-        "yes_bid": 82,
-        "yes_ask": 91,
-        "last_price": 80,
-        "volume": 2,
-        "open_interest": 0,
-        "close_time": "2027-03-17T17:55:00Z"
-      },
-      {
-        "ticker": "KXFED-27MAR-T1.75",
-        "title": "Will the upper bound of the federal funds rate be above 1.75% following the Fed's Mar 17, 2027 meeting?",
-        "title_ko": "Will the upper bound of the federal funds rate be above 1.75% following the Fed's Mar 17, 2027 meeting?",
-        "subtitle": "1.75%",
-        "subtitle_ko": "1.75%",
-        "yes_bid": 87,
-        "yes_ask": 96,
-        "last_price": 0,
-        "volume": 0,
-        "open_interest": 0,
-        "close_time": "2027-03-17T17:55:00Z"
-      },
-      {
-        "ticker": "KXFED-27MAR-T1.50",
-        "title": "Will the upper bound of the federal funds rate be above 1.50% following the Fed's Mar 17, 2027 meeting?",
-        "title_ko": "Will the upper bound of the federal funds rate be above 1.50% following the Fed's Mar 17, 2027 meeting?",
-        "subtitle": "1.50%",
-        "subtitle_ko": "1.50%",
-        "yes_bid": 99,
-        "yes_ask": 100,
-        "last_price": 91,
-        "volume": 1,
-        "open_interest": 1,
-        "close_time": "2027-03-17T17:55:00Z"
-      },
-      {
-        "ticker": "KXFED-27MAR-T1.25",
-        "title": "Will the upper bound of the federal funds rate be above 1.25% following the Fed's Mar 17, 2027 meeting?",
-        "title_ko": "Will the upper bound of the federal funds rate be above 1.25% following the Fed's Mar 17, 2027 meeting?",
-        "subtitle": "1.25%",
-        "subtitle_ko": "1.25%",
-        "yes_bid": 94,
-        "yes_ask": 100,
-        "last_price": 0,
-        "volume": 0,
-        "open_interest": 0,
-        "close_time": "2027-03-17T17:55:00Z"
-      },
-      {
-        "ticker": "KXFED-27MAR-T1.00",
-        "title": "Will the upper bound of the federal funds rate be above 1.00% following the Fed's Mar 17, 2027 meeting?",
-        "title_ko": "Will the upper bound of the federal funds rate be above 1.00% following the Fed's Mar 17, 2027 meeting?",
-        "subtitle": "1.00%",
-        "subtitle_ko": "1.00%",
-        "yes_bid": 95,
-        "yes_ask": 100,
-        "last_price": 0,
-        "volume": 0,
-        "open_interest": 0,
-        "close_time": "2027-03-17T17:55:00Z"
-      },
-      {
-        "ticker": "KXFED-27MAR-T0.75",
-        "title": "Will the upper bound of the federal funds rate be above 0.75% following the Fed's Mar 17, 2027 meeting?",
-        "title_ko": "Will the upper bound of the federal funds rate be above 0.75% following the Fed's Mar 17, 2027 meeting?",
-        "subtitle": "0.75%",
-        "subtitle_ko": "0.75%",
-        "yes_bid": 95,
-        "yes_ask": 100,
-        "last_price": 0,
-        "volume": 0,
-        "open_interest": 0,
-        "close_time": "2027-03-17T17:55:00Z"
-      },
-      {
-        "ticker": "KXFED-27MAR-T0.50",
-        "title": "Will the upper bound of the federal funds rate be above 0.50% following the Fed's Mar 17, 2027 meeting?",
-        "title_ko": "Will the upper bound of the federal funds rate be above 0.50% following the Fed's Mar 17, 2027 meeting?",
-        "subtitle": "0.50%",
-        "subtitle_ko": "0.50%",
-        "yes_bid": 95,
-        "yes_ask": 100,
-        "last_price": 95,
-        "volume": 1,
-        "open_interest": 1,
-        "close_time": "2027-03-17T17:55:00Z"
-      },
-      {
-        "ticker": "KXFED-27MAR-T0.25",
-        "title": "Will the upper bound of the federal funds rate be above 0.25% following the Fed's Mar 17, 2027 meeting?",
-        "title_ko": "Will the upper bound of the federal funds rate be above 0.25% following the Fed's Mar 17, 2027 meeting?",
-        "subtitle": "0.25%",
-        "subtitle_ko": "0.25%",
-        "yes_bid": 95,
-        "yes_ask": 100,
-        "last_price": 0,
-        "volume": 0,
-        "open_interest": 0,
-        "close_time": "2027-03-17T17:55:00Z"
-      },
-      {
-        "ticker": "KXFED-27MAR-T0.00",
-        "title": "Will the upper bound of the federal funds rate be above 0.00% following the Fed's Mar 17, 2027 meeting?",
-        "title_ko": "Will the upper bound of the federal funds rate be above 0.00% following the Fed's Mar 17, 2027 meeting?",
-        "subtitle": "0.00%",
-        "subtitle_ko": "0.00%",
-        "yes_bid": 95,
-        "yes_ask": 100,
-        "last_price": 95,
-        "volume": 1,
-        "open_interest": 1,
-        "close_time": "2027-03-17T17:55:00Z"
-      },
-      {
-        "ticker": "KXFED-27JAN-T4.25",
-        "title": "Will the upper bound of the federal funds rate be above 4.25% following the Fed's Jan 27, 2027 meeting?",
-        "title_ko": "Will the upper bound of the federal funds rate be above 4.25% following the Fed's Jan 27, 2027 meeting?",
-        "subtitle": "4.25%",
-        "subtitle_ko": "4.25%",
-        "yes_bid": 0,
-        "yes_ask": 37,
-        "last_price": 0,
-        "volume": 0,
-        "open_interest": 0,
-        "close_time": "2027-01-27T18:55:00Z"
-      },
-      {
-        "ticker": "KXFED-27JAN-T4.00",
-        "title": "Will the upper bound of the federal funds rate be above 4.00% following the Fed's Jan 27, 2027 meeting?",
-        "title_ko": "Will the upper bound of the federal funds rate be above 4.00% following the Fed's Jan 27, 2027 meeting?",
-        "subtitle": "4.00%",
-        "subtitle_ko": "4.00%",
-        "yes_bid": 0,
-        "yes_ask": 43,
-        "last_price": 0,
-        "volume": 0,
-        "open_interest": 0,
-        "close_time": "2027-01-27T18:55:00Z"
-      },
-      {
-        "ticker": "KXFED-27JAN-T3.75",
-        "title": "Will the upper bound of the federal funds rate be above 3.75% following the Fed's Jan 27, 2027 meeting?",
-        "title_ko": "Will the upper bound of the federal funds rate be above 3.75% following the Fed's Jan 27, 2027 meeting?",
-        "subtitle": "3.75%",
-        "subtitle_ko": "3.75%",
-        "yes_bid": 0,
-        "yes_ask": 48,
-        "last_price": 12,
-        "volume": 2,
-        "open_interest": 1,
-        "close_time": "2027-01-27T18:55:00Z"
-      },
-      {
-        "ticker": "KXFED-27JAN-T3.50",
-        "title": "Will the upper bound of the federal funds rate be above 3.50% following the Fed's Jan 27, 2027 meeting?",
-        "title_ko": "Will the upper bound of the federal funds rate be above 3.50% following the Fed's Jan 27, 2027 meeting?",
-        "subtitle": "3.50%",
-        "subtitle_ko": "3.50%",
-        "yes_bid": 20,
-        "yes_ask": 32,
-        "last_price": 16,
-        "volume": 2869,
-        "open_interest": 664,
-        "close_time": "2027-01-27T18:55:00Z"
-      }
-    ]
-  }
+  "polymarket": [
+    {
+      "slug": "fed-decision-in-january",
+      "title": "Fed decision in January?",
+      "title_ko": "1월 FOMC 금리 결정",
+      "endDate": "2026-01-28T00:00:00Z",
+      "closed": true,
+      "markets": [
+        {
+          "question_en": "Fed decreases interest rates by 50+ bps after January 2026 meeting?",
+          "question_ko": "Fed decreases interest rates by 50+ bps after January 2026 meeting?",
+          "groupItemTitle_en": "50+ bps decrease",
+          "outcomes_en": [
+            "Yes",
+            "No"
+          ],
+          "outcomes_ko": [
+            "예",
+            "아니오"
+          ],
+          "prices": [
+            0.0,
+            1.0
+          ],
+          "volume": 235065166.637259
+        },
+        {
+          "question_en": "Fed decreases interest rates by 25 bps after January 2026 meeting?",
+          "question_ko": "Fed decreases interest rates by 25 bps after January 2026 meeting?",
+          "groupItemTitle_en": "25 bps decrease",
+          "outcomes_en": [
+            "Yes",
+            "No"
+          ],
+          "outcomes_ko": [
+            "예",
+            "아니오"
+          ],
+          "prices": [
+            0.0,
+            1.0
+          ],
+          "volume": 101211542.667667
+        },
+        {
+          "question_en": "No change in Fed interest rates after January 2026 meeting?",
+          "question_ko": "No change in Fed interest rates after January 2026 meeting?",
+          "groupItemTitle_en": "No change",
+          "outcomes_en": [
+            "Yes",
+            "No"
+          ],
+          "outcomes_ko": [
+            "예",
+            "아니오"
+          ],
+          "prices": [
+            1.0,
+            0.0
+          ],
+          "volume": 106767096.072298
+        },
+        {
+          "question_en": "Fed increases interest rates by 25+ bps after January 2026 meeting?",
+          "question_ko": "Fed increases interest rates by 25+ bps after January 2026 meeting?",
+          "groupItemTitle_en": "25+ bps increase",
+          "outcomes_en": [
+            "Yes",
+            "No"
+          ],
+          "outcomes_ko": [
+            "예",
+            "아니오"
+          ],
+          "prices": [
+            0.0,
+            1.0
+          ],
+          "volume": 216455743.153891
+        }
+      ]
+    },
+    {
+      "slug": "fed-decision-in-april",
+      "title": "Fed decision in April?",
+      "title_ko": "4월 FOMC 금리 결정",
+      "endDate": "2026-04-29T00:00:00Z",
+      "closed": false,
+      "markets": [
+        {
+          "question_en": "Will the Fed decrease interest rates by 50+ bps after the April 2026 meeting?",
+          "question_ko": "Will the Fed decrease interest rates by 50+ bps after the April 2026 meeting?",
+          "groupItemTitle_en": "50+ bps decrease",
+          "outcomes_en": [
+            "Yes",
+            "No"
+          ],
+          "outcomes_ko": [
+            "예",
+            "아니오"
+          ],
+          "prices": [
+            0.0265,
+            0.9735
+          ],
+          "volume": 616417.644333
+        },
+        {
+          "question_en": "Will the Fed decrease interest rates by 25 bps after the April 2026 meeting?",
+          "question_ko": "Will the Fed decrease interest rates by 25 bps after the April 2026 meeting?",
+          "groupItemTitle_en": "25 bps decrease",
+          "outcomes_en": [
+            "Yes",
+            "No"
+          ],
+          "outcomes_ko": [
+            "예",
+            "아니오"
+          ],
+          "prices": [
+            0.27,
+            0.73
+          ],
+          "volume": 412955.418332
+        },
+        {
+          "question_en": "Will there be no change in Fed interest rates after the April 2026 meeting?",
+          "question_ko": "Will there be no change in Fed interest rates after the April 2026 meeting?",
+          "groupItemTitle_en": "No change",
+          "outcomes_en": [
+            "Yes",
+            "No"
+          ],
+          "outcomes_ko": [
+            "예",
+            "아니오"
+          ],
+          "prices": [
+            0.69,
+            0.31
+          ],
+          "volume": 206581.232837
+        },
+        {
+          "question_en": "Will the Fed increase interest rates by 25+ bps after the April 2026 meeting?",
+          "question_ko": "Will the Fed increase interest rates by 25+ bps after the April 2026 meeting?",
+          "groupItemTitle_en": "25+ bps increase",
+          "outcomes_en": [
+            "Yes",
+            "No"
+          ],
+          "outcomes_ko": [
+            "예",
+            "아니오"
+          ],
+          "prices": [
+            0.0165,
+            0.9835
+          ],
+          "volume": 300499.623376
+        }
+      ]
+    },
+    {
+      "slug": "what-will-the-fed-rate-be-at-the-end-of-2026",
+      "title": "What will the Fed rate be at the end of 2026?",
+      "title_ko": "2026년 말 Fed 기준금리 전망",
+      "endDate": "2026-12-09T00:00:00Z",
+      "closed": false,
+      "markets": [
+        {
+          "question_en": "Will the upper bound of the target federal funds rate be 4.25% at the end of 2026?",
+          "question_ko": "Will the upper bound of the target federal funds rate be 4.25% at the end of 2026?",
+          "groupItemTitle_en": "4.25%",
+          "outcomes_en": [
+            "Yes",
+            "No"
+          ],
+          "outcomes_ko": [
+            "예",
+            "아니오"
+          ],
+          "prices": [
+            0.0025,
+            0.9975
+          ],
+          "volume": 5223.19881
+        },
+        {
+          "question_en": "Will the upper bound of the target federal funds rate be 2.25% at the end of 2026?",
+          "question_ko": "Will the upper bound of the target federal funds rate be 2.25% at the end of 2026?",
+          "groupItemTitle_en": "2.25%",
+          "outcomes_en": [
+            "Yes",
+            "No"
+          ],
+          "outcomes_ko": [
+            "예",
+            "아니오"
+          ],
+          "prices": [
+            0.033,
+            0.967
+          ],
+          "volume": 5550.284511
+        },
+        {
+          "question_en": "Will the upper bound of the target federal funds rate be 3.25% at the end of 2026?",
+          "question_ko": "Will the upper bound of the target federal funds rate be 3.25% at the end of 2026?",
+          "groupItemTitle_en": "3.25%",
+          "outcomes_en": [
+            "Yes",
+            "No"
+          ],
+          "outcomes_ko": [
+            "예",
+            "아니오"
+          ],
+          "prices": [
+            0.27,
+            0.73
+          ],
+          "volume": 11143.775327
+        },
+        {
+          "question_en": "Will the upper bound of the target federal funds rate be 3.75% at the end of 2026?",
+          "question_ko": "Will the upper bound of the target federal funds rate be 3.75% at the end of 2026?",
+          "groupItemTitle_en": "3.75%",
+          "outcomes_en": [
+            "Yes",
+            "No"
+          ],
+          "outcomes_ko": [
+            "예",
+            "아니오"
+          ],
+          "prices": [
+            0.0645,
+            0.9355
+          ],
+          "volume": 19970.430539
+        },
+        {
+          "question_en": "Will the upper bound of the target federal funds rate be 3.0% at the end of 2026?",
+          "question_ko": "Will the upper bound of the target federal funds rate be 3.0% at the end of 2026?",
+          "groupItemTitle_en": "3.0%",
+          "outcomes_en": [
+            "Yes",
+            "No"
+          ],
+          "outcomes_ko": [
+            "예",
+            "아니오"
+          ],
+          "prices": [
+            0.26,
+            0.74
+          ],
+          "volume": 10640.610818
+        },
+        {
+          "question_en": "Will the upper bound of the target federal funds rate be 2.5% at the end of 2026?",
+          "question_ko": "Will the upper bound of the target federal funds rate be 2.5% at the end of 2026?",
+          "groupItemTitle_en": "2.5%",
+          "outcomes_en": [
+            "Yes",
+            "No"
+          ],
+          "outcomes_ko": [
+            "예",
+            "아니오"
+          ],
+          "prices": [
+            0.0535,
+            0.9465
+          ],
+          "volume": 6374.18885
+        },
+        {
+          "question_en": "Will the upper bound of the target federal funds rate be 2.75% at the end of 2026?",
+          "question_ko": "Will the upper bound of the target federal funds rate be 2.75% at the end of 2026?",
+          "groupItemTitle_en": "2.75%",
+          "outcomes_en": [
+            "Yes",
+            "No"
+          ],
+          "outcomes_ko": [
+            "예",
+            "아니오"
+          ],
+          "prices": [
+            0.115,
+            0.885
+          ],
+          "volume": 7253.275799
+        },
+        {
+          "question_en": "Will the upper bound of the target federal funds rate be 3.5% at the end of 2026?",
+          "question_ko": "Will the upper bound of the target federal funds rate be 3.5% at the end of 2026?",
+          "groupItemTitle_en": "3.5%",
+          "outcomes_en": [
+            "Yes",
+            "No"
+          ],
+          "outcomes_ko": [
+            "예",
+            "아니오"
+          ],
+          "prices": [
+            0.175,
+            0.825
+          ],
+          "volume": 14572.273332
+        },
+        {
+          "question_en": "Will the upper bound of the target federal funds rate be 4.0% at the end of 2026?",
+          "question_ko": "Will the upper bound of the target federal funds rate be 4.0% at the end of 2026?",
+          "groupItemTitle_en": "4.0%",
+          "outcomes_en": [
+            "Yes",
+            "No"
+          ],
+          "outcomes_ko": [
+            "예",
+            "아니오"
+          ],
+          "prices": [
+            0.0035,
+            0.9965
+          ],
+          "volume": 5988.521352
+        },
+        {
+          "question_en": "Will the upper bound of the target federal funds rate be ≥ 4.5% at the end of 2026?",
+          "question_ko": "Will the upper bound of the target federal funds rate be ≥ 4.5% at the end of 2026?",
+          "groupItemTitle_en": "≥ 4.5%",
+          "outcomes_en": [
+            "Yes",
+            "No"
+          ],
+          "outcomes_ko": [
+            "예",
+            "아니오"
+          ],
+          "prices": [
+            0.0025,
+            0.9975
+          ],
+          "volume": 5962.150917
+        },
+        {
+          "question_en": "Will the upper bound of the target federal funds rate be ≤1.0% at the end of 2026?",
+          "question_ko": "Will the upper bound of the target federal funds rate be ≤1.0% at the end of 2026?",
+          "groupItemTitle_en": "≤1.0%",
+          "outcomes_en": [
+            "Yes",
+            "No"
+          ],
+          "outcomes_ko": [
+            "예",
+            "아니오"
+          ],
+          "prices": [
+            0.0245,
+            0.9755
+          ],
+          "volume": 27966.826729
+        },
+        {
+          "question_en": "Will the upper bound of the target federal funds rate be 1.25% at the end of 2026?",
+          "question_ko": "Will the upper bound of the target federal funds rate be 1.25% at the end of 2026?",
+          "groupItemTitle_en": "1.25",
+          "outcomes_en": [
+            "Yes",
+            "No"
+          ],
+          "outcomes_ko": [
+            "예",
+            "아니오"
+          ],
+          "prices": [
+            0.0065,
+            0.9935
+          ],
+          "volume": 31193.216683
+        },
+        {
+          "question_en": "Will the upper bound of the target federal funds rate be 1.5% at the end of 2026?",
+          "question_ko": "Will the upper bound of the target federal funds rate be 1.5% at the end of 2026?",
+          "groupItemTitle_en": "1.5%",
+          "outcomes_en": [
+            "Yes",
+            "No"
+          ],
+          "outcomes_ko": [
+            "예",
+            "아니오"
+          ],
+          "prices": [
+            0.005,
+            0.995
+          ],
+          "volume": 3812.234952
+        },
+        {
+          "question_en": "Will the upper bound of the target federal funds rate be 1.75% at the end of 2026?",
+          "question_ko": "Will the upper bound of the target federal funds rate be 1.75% at the end of 2026?",
+          "groupItemTitle_en": "1.75%",
+          "outcomes_en": [
+            "Yes",
+            "No"
+          ],
+          "outcomes_ko": [
+            "예",
+            "아니오"
+          ],
+          "prices": [
+            0.0035,
+            0.9965
+          ],
+          "volume": 3603.95895
+        },
+        {
+          "question_en": "Will the upper bound of the target federal funds rate be 2.0% at the end of 2026?",
+          "question_ko": "Will the upper bound of the target federal funds rate be 2.0% at the end of 2026?",
+          "groupItemTitle_en": "2.0%",
+          "outcomes_en": [
+            "Yes",
+            "No"
+          ],
+          "outcomes_ko": [
+            "예",
+            "아니오"
+          ],
+          "prices": [
+            0.0055,
+            0.9945
+          ],
+          "volume": 3903.370467
+        }
+      ]
+    },
+    {
+      "slug": "how-many-fed-rate-cuts-in-2026",
+      "title": "How many Fed rate cuts in 2026?",
+      "title_ko": "2026년 Fed 금리 인하 횟수",
+      "endDate": "2026-12-31T00:00:00Z",
+      "closed": false,
+      "markets": [
+        {
+          "question_en": "Will no Fed rate cuts happen in 2026?",
+          "question_ko": "Will no Fed rate cuts happen in 2026?",
+          "groupItemTitle_en": "0 (0 bps)",
+          "outcomes_en": [
+            "Yes",
+            "No"
+          ],
+          "outcomes_ko": [
+            "예",
+            "아니오"
+          ],
+          "prices": [
+            0.0535,
+            0.9465
+          ],
+          "volume": 955051.22565
+        },
+        {
+          "question_en": "Will 1 Fed rate cut happen in 2026?",
+          "question_ko": "Will 1 Fed rate cut happen in 2026?",
+          "groupItemTitle_en": "1 (25 bps)",
+          "outcomes_en": [
+            "Yes",
+            "No"
+          ],
+          "outcomes_ko": [
+            "예",
+            "아니오"
+          ],
+          "prices": [
+            0.175,
+            0.825
+          ],
+          "volume": 441114.234717
+        },
+        {
+          "question_en": "Will 2 Fed rate cuts happen in 2026?",
+          "question_ko": "Will 2 Fed rate cuts happen in 2026?",
+          "groupItemTitle_en": "2 (50 bps)",
+          "outcomes_en": [
+            "Yes",
+            "No"
+          ],
+          "outcomes_ko": [
+            "예",
+            "아니오"
+          ],
+          "prices": [
+            0.255,
+            0.745
+          ],
+          "volume": 411852.182309
+        },
+        {
+          "question_en": "Will 3 Fed rate cuts happen in 2026?",
+          "question_ko": "Will 3 Fed rate cuts happen in 2026?",
+          "groupItemTitle_en": "3 (75 bps)",
+          "outcomes_en": [
+            "Yes",
+            "No"
+          ],
+          "outcomes_ko": [
+            "예",
+            "아니오"
+          ],
+          "prices": [
+            0.245,
+            0.755
+          ],
+          "volume": 290795.36952
+        },
+        {
+          "question_en": "Will 4 Fed rate cuts happen in 2026?",
+          "question_ko": "Will 4 Fed rate cuts happen in 2026?",
+          "groupItemTitle_en": "4 (100 bps)",
+          "outcomes_en": [
+            "Yes",
+            "No"
+          ],
+          "outcomes_ko": [
+            "예",
+            "아니오"
+          ],
+          "prices": [
+            0.165,
+            0.835
+          ],
+          "volume": 284282.500364
+        },
+        {
+          "question_en": "Will 5 Fed rate cuts happen in 2026?",
+          "question_ko": "Will 5 Fed rate cuts happen in 2026?",
+          "groupItemTitle_en": "5 (125 bps)",
+          "outcomes_en": [
+            "Yes",
+            "No"
+          ],
+          "outcomes_ko": [
+            "예",
+            "아니오"
+          ],
+          "prices": [
+            0.055,
+            0.945
+          ],
+          "volume": 265599.890095
+        },
+        {
+          "question_en": "Will 6 Fed rate cuts happen in 2026?",
+          "question_ko": "Will 6 Fed rate cuts happen in 2026?",
+          "groupItemTitle_en": "6 (150 bps)",
+          "outcomes_en": [
+            "Yes",
+            "No"
+          ],
+          "outcomes_ko": [
+            "예",
+            "아니오"
+          ],
+          "prices": [
+            0.0175,
+            0.9825
+          ],
+          "volume": 683171.826289
+        },
+        {
+          "question_en": "Will 7 Fed rate cuts happen in 2026?",
+          "question_ko": "Will 7 Fed rate cuts happen in 2026?",
+          "groupItemTitle_en": "7 (175 bps)",
+          "outcomes_en": [
+            "Yes",
+            "No"
+          ],
+          "outcomes_ko": [
+            "예",
+            "아니오"
+          ],
+          "prices": [
+            0.0055,
+            0.9945
+          ],
+          "volume": 291884.821504
+        },
+        {
+          "question_en": "Will 8 Fed rate cuts happen in 2026?",
+          "question_ko": "Will 8 Fed rate cuts happen in 2026?",
+          "groupItemTitle_en": "8 (200 bps)",
+          "outcomes_en": [
+            "Yes",
+            "No"
+          ],
+          "outcomes_ko": [
+            "예",
+            "아니오"
+          ],
+          "prices": [
+            0.007,
+            0.993
+          ],
+          "volume": 367450.881371
+        },
+        {
+          "question_en": "Will 9 Fed rate cuts happen in 2026?",
+          "question_ko": "Will 9 Fed rate cuts happen in 2026?",
+          "groupItemTitle_en": "9 (225 bps)",
+          "outcomes_en": [
+            "Yes",
+            "No"
+          ],
+          "outcomes_ko": [
+            "예",
+            "아니오"
+          ],
+          "prices": [
+            0.0055,
+            0.9945
+          ],
+          "volume": 277350.773367
+        },
+        {
+          "question_en": "Will 10 Fed rate cuts happen in 2026?",
+          "question_ko": "Will 10 Fed rate cuts happen in 2026?",
+          "groupItemTitle_en": "10 (250 bps)",
+          "outcomes_en": [
+            "Yes",
+            "No"
+          ],
+          "outcomes_ko": [
+            "예",
+            "아니오"
+          ],
+          "prices": [
+            0.0055,
+            0.9945
+          ],
+          "volume": 288560.51553
+        },
+        {
+          "question_en": "Will 11 Fed rate cuts happen in 2026?",
+          "question_ko": "Will 11 Fed rate cuts happen in 2026?",
+          "groupItemTitle_en": "11 (275 bps)",
+          "outcomes_en": [
+            "Yes",
+            "No"
+          ],
+          "outcomes_ko": [
+            "예",
+            "아니오"
+          ],
+          "prices": [
+            0.0045,
+            0.9955
+          ],
+          "volume": 336629.506478
+        },
+        {
+          "question_en": "Will 12 or more Fed rate cuts happen in 2026?",
+          "question_ko": "Will 12 or more Fed rate cuts happen in 2026?",
+          "groupItemTitle_en": "12+ (300+ bps)",
+          "outcomes_en": [
+            "Yes",
+            "No"
+          ],
+          "outcomes_ko": [
+            "예",
+            "아니오"
+          ],
+          "prices": [
+            0.0185,
+            0.9815
+          ],
+          "volume": 450031.741529
+        }
+      ]
+    }
+  ]
 }
