@@ -1,9 +1,91 @@
 {
   "meta": {
-    "updated_at": "2026-02-11T12:12:42.437927Z",
+    "updated_at": "2026-02-11T12:24:36.382717Z",
     "year": 2026,
-    "version": "2.2"
+    "version": "2.3"
   },
+  "fomc_calendar": [
+    {
+      "date": "2026-01-25",
+      "month": 1,
+      "year": 2026,
+      "label": "1월",
+      "end_day": 26,
+      "is_past": true
+    },
+    {
+      "date": "2026-01-27",
+      "month": 1,
+      "year": 2026,
+      "label": "1월",
+      "end_day": 28,
+      "is_past": true
+    },
+    {
+      "date": "2026-03-17",
+      "month": 3,
+      "year": 2026,
+      "label": "3월",
+      "end_day": 18,
+      "is_past": false
+    },
+    {
+      "date": "2026-05-05",
+      "month": 5,
+      "year": 2026,
+      "label": "5월",
+      "end_day": 6,
+      "is_past": false
+    },
+    {
+      "date": "2026-06-16",
+      "month": 6,
+      "year": 2026,
+      "label": "6월",
+      "end_day": 17,
+      "is_past": false
+    },
+    {
+      "date": "2026-07-28",
+      "month": 7,
+      "year": 2026,
+      "label": "7월",
+      "end_day": 29,
+      "is_past": false
+    },
+    {
+      "date": "2026-09-15",
+      "month": 9,
+      "year": 2026,
+      "label": "9월",
+      "end_day": 16,
+      "is_past": false
+    },
+    {
+      "date": "2026-10-27",
+      "month": 10,
+      "year": 2026,
+      "label": "10월",
+      "end_day": 28,
+      "is_past": false
+    },
+    {
+      "date": "2026-12-08",
+      "month": 12,
+      "year": 2026,
+      "label": "12월",
+      "end_day": 9,
+      "is_past": false
+    },
+    {
+      "date": "2027-01-25",
+      "month": 1,
+      "year": 2027,
+      "label": "1월",
+      "end_day": 26,
+      "is_past": false
+    }
+  ],
   "sofr": [
     {
       "date": "2025-11-12",
@@ -1248,12 +1330,12 @@
         "title_ko": "3월 FOMC 금리 결정",
         "endDate": "2025-03-19T12:00:00Z",
         "closed": true,
-        "active": true,
         "markets": [
           {
             "question": "Fed decreases interest rates by 50+ bps after March 2025 meeting?",
             "question_en": "Fed decreases interest rates by 50+ bps after March 2025 meeting?",
             "groupItemTitle": "50+ bps decrease",
+            "groupItemTitle_en": "50+ bps decrease",
             "outcomes": [
               "예",
               "아니오"
@@ -1267,14 +1349,13 @@
               1.0
             ],
             "volume": 22150914.603213,
-            "liquidity": 0.0,
-            "active": true,
-            "closed": true
+            "liquidity": 0.0
           },
           {
             "question": "Fed decreases interest rates by 25 bps after March 2025 meeting?",
             "question_en": "Fed decreases interest rates by 25 bps after March 2025 meeting?",
             "groupItemTitle": "25 bps decrease",
+            "groupItemTitle_en": "25 bps decrease",
             "outcomes": [
               "예",
               "아니오"
@@ -1288,14 +1369,13 @@
               1.0
             ],
             "volume": 17180913.164155,
-            "liquidity": 0.0,
-            "active": true,
-            "closed": true
+            "liquidity": 0.0
           },
           {
             "question": "No change in Fed interest rates after March 2025 meeting?",
             "question_en": "No change in Fed interest rates after March 2025 meeting?",
             "groupItemTitle": "No Change",
+            "groupItemTitle_en": "No Change",
             "outcomes": [
               "예",
               "아니오"
@@ -1309,14 +1389,13 @@
               0.0
             ],
             "volume": 17161804.938166,
-            "liquidity": 0.0,
-            "active": true,
-            "closed": true
+            "liquidity": 0.0
           },
           {
             "question": "Fed increases interest rates by 25+ bps after March 2025 meeting?",
             "question_en": "Fed increases interest rates by 25+ bps after March 2025 meeting?",
             "groupItemTitle": "25+ bps increase",
+            "groupItemTitle_en": "25+ bps increase",
             "outcomes": [
               "예",
               "아니오"
@@ -1330,9 +1409,7 @@
               1.0
             ],
             "volume": 21544318.532625,
-            "liquidity": 0.0,
-            "active": true,
-            "closed": true
+            "liquidity": 0.0
           }
         ]
       },
@@ -1342,12 +1419,12 @@
         "title_ko": "6월 FOMC 금리 결정",
         "endDate": "2025-06-18T12:00:00Z",
         "closed": true,
-        "active": true,
         "markets": [
           {
             "question": "No change in Fed interest rates after June 2025 meeting?",
             "question_en": "No change in Fed interest rates after June 2025 meeting?",
             "groupItemTitle": "No change",
+            "groupItemTitle_en": "No change",
             "outcomes": [
               "예",
               "아니오"
@@ -1361,14 +1438,13 @@
               0.0
             ],
             "volume": 28071372.791282,
-            "liquidity": 0.0,
-            "active": true,
-            "closed": true
+            "liquidity": 0.0
           },
           {
             "question": "Fed decreases interest rates by 50+ bps after June 2025 meeting?",
             "question_en": "Fed decreases interest rates by 50+ bps after June 2025 meeting?",
             "groupItemTitle": "50+ bps decrease",
+            "groupItemTitle_en": "50+ bps decrease",
             "outcomes": [
               "예",
               "아니오"
@@ -1382,14 +1458,13 @@
               1.0
             ],
             "volume": 29564378.908894,
-            "liquidity": 0.0,
-            "active": true,
-            "closed": true
+            "liquidity": 0.0
           },
           {
             "question": "Fed decreases interest rates by 25 bps after June 2025 meeting?",
             "question_en": "Fed decreases interest rates by 25 bps after June 2025 meeting?",
             "groupItemTitle": "25 bps decrease",
+            "groupItemTitle_en": "25 bps decrease",
             "outcomes": [
               "예",
               "아니오"
@@ -1403,14 +1478,13 @@
               1.0
             ],
             "volume": 22347675.300958,
-            "liquidity": 0.0,
-            "active": true,
-            "closed": true
+            "liquidity": 0.0
           },
           {
             "question": "Fed increases interest rates by 25+ bps after June 2025 meeting?",
             "question_en": "Fed increases interest rates by 25+ bps after June 2025 meeting?",
             "groupItemTitle": "25+ bps increase",
+            "groupItemTitle_en": "25+ bps increase",
             "outcomes": [
               "예",
               "아니오"
@@ -1424,9 +1498,7 @@
               1.0
             ],
             "volume": 26912558.981079,
-            "liquidity": 0.0,
-            "active": true,
-            "closed": true
+            "liquidity": 0.0
           }
         ]
       },
@@ -1436,12 +1508,12 @@
         "title_ko": "7월 FOMC 금리 결정",
         "endDate": "2025-07-30T12:00:00Z",
         "closed": true,
-        "active": true,
         "markets": [
           {
             "question": "Fed decreases interest rates by 50+ bps after July 2025 meeting?",
             "question_en": "Fed decreases interest rates by 50+ bps after July 2025 meeting?",
             "groupItemTitle": "50+ bps decrease",
+            "groupItemTitle_en": "50+ bps decrease",
             "outcomes": [
               "예",
               "아니오"
@@ -1455,14 +1527,13 @@
               1.0
             ],
             "volume": 40912544.015545,
-            "liquidity": 0.0,
-            "active": true,
-            "closed": true
+            "liquidity": 0.0
           },
           {
             "question": "Fed decreases interest rates by 25 bps after July 2025 meeting?",
             "question_en": "Fed decreases interest rates by 25 bps after July 2025 meeting?",
             "groupItemTitle": "25 bps decrease",
+            "groupItemTitle_en": "25 bps decrease",
             "outcomes": [
               "예",
               "아니오"
@@ -1476,14 +1547,13 @@
               1.0
             ],
             "volume": 23551704.395621,
-            "liquidity": 0.0,
-            "active": true,
-            "closed": true
+            "liquidity": 0.0
           },
           {
             "question": "No change in Fed interest rates after July 2025 meeting?",
             "question_en": "No change in Fed interest rates after July 2025 meeting?",
             "groupItemTitle": "No change",
+            "groupItemTitle_en": "No change",
             "outcomes": [
               "예",
               "아니오"
@@ -1497,14 +1567,13 @@
               0.0
             ],
             "volume": 28670116.640169,
-            "liquidity": 0.0,
-            "active": true,
-            "closed": true
+            "liquidity": 0.0
           },
           {
             "question": "Fed increases interest rates by 25+ bps after July 2025 meeting?",
             "question_en": "Fed increases interest rates by 25+ bps after July 2025 meeting?",
             "groupItemTitle": "25+ bps increase",
+            "groupItemTitle_en": "25+ bps increase",
             "outcomes": [
               "예",
               "아니오"
@@ -1518,9 +1587,7 @@
               1.0
             ],
             "volume": 43479262.352112,
-            "liquidity": 0.0,
-            "active": true,
-            "closed": true
+            "liquidity": 0.0
           }
         ]
       },
@@ -1530,12 +1597,12 @@
         "title_ko": "9월 FOMC 금리 결정",
         "endDate": "2025-09-17T12:00:00Z",
         "closed": true,
-        "active": true,
         "markets": [
           {
             "question": "Fed decreases interest rates by 50+ bps after September 2025 meeting?",
             "question_en": "Fed decreases interest rates by 50+ bps after September 2025 meeting?",
             "groupItemTitle": "50+ bps decrease",
+            "groupItemTitle_en": "50+ bps decrease",
             "outcomes": [
               "예",
               "아니오"
@@ -1549,14 +1616,13 @@
               1.0
             ],
             "volume": 49890284.071409,
-            "liquidity": 0.0,
-            "active": true,
-            "closed": true
+            "liquidity": 0.0
           },
           {
             "question": "Fed decreases interest rates by 25 bps after September 2025 meeting?",
             "question_en": "Fed decreases interest rates by 25 bps after September 2025 meeting?",
             "groupItemTitle": "25 bps decrease",
+            "groupItemTitle_en": "25 bps decrease",
             "outcomes": [
               "예",
               "아니오"
@@ -1570,14 +1636,13 @@
               0.0
             ],
             "volume": 36329925.673244,
-            "liquidity": 0.0,
-            "active": true,
-            "closed": true
+            "liquidity": 0.0
           },
           {
             "question": "No change in Fed interest rates after September 2025 meeting?",
             "question_en": "No change in Fed interest rates after September 2025 meeting?",
             "groupItemTitle": "No change",
+            "groupItemTitle_en": "No change",
             "outcomes": [
               "예",
               "아니오"
@@ -1591,14 +1656,13 @@
               1.0
             ],
             "volume": 67368762.49652,
-            "liquidity": 0.0,
-            "active": true,
-            "closed": true
+            "liquidity": 0.0
           },
           {
             "question": "Fed increases interest rates by 25+ bps after September 2025 meeting?",
             "question_en": "Fed increases interest rates by 25+ bps after September 2025 meeting?",
             "groupItemTitle": "25+ bps increase",
+            "groupItemTitle_en": "25+ bps increase",
             "outcomes": [
               "예",
               "아니오"
@@ -1612,9 +1676,7 @@
               1.0
             ],
             "volume": 67002488.50419,
-            "liquidity": 0.0,
-            "active": true,
-            "closed": true
+            "liquidity": 0.0
           }
         ]
       },
@@ -1624,12 +1686,12 @@
         "title_ko": "10월 FOMC 금리 결정",
         "endDate": "2025-10-29T12:00:00Z",
         "closed": true,
-        "active": true,
         "markets": [
           {
             "question": "Fed decreases interest rates by 50+ bps after October 2025 meeting?",
             "question_en": "Fed decreases interest rates by 50+ bps after October 2025 meeting?",
             "groupItemTitle": "50+ bps decrease",
+            "groupItemTitle_en": "50+ bps decrease",
             "outcomes": [
               "예",
               "아니오"
@@ -1643,14 +1705,13 @@
               1.0
             ],
             "volume": 52589989.131546,
-            "liquidity": 0.0,
-            "active": true,
-            "closed": true
+            "liquidity": 0.0
           },
           {
             "question": "Fed decreases interest rates by 25 bps after October 2025 meeting?",
             "question_en": "Fed decreases interest rates by 25 bps after October 2025 meeting?",
             "groupItemTitle": "25 bps decrease",
+            "groupItemTitle_en": "25 bps decrease",
             "outcomes": [
               "예",
               "아니오"
@@ -1664,14 +1725,13 @@
               0.0
             ],
             "volume": 51626217.76071,
-            "liquidity": 0.0,
-            "active": true,
-            "closed": true
+            "liquidity": 0.0
           },
           {
             "question": "No change in Fed interest rates after October 2025 meeting?",
             "question_en": "No change in Fed interest rates after October 2025 meeting?",
             "groupItemTitle": "No change",
+            "groupItemTitle_en": "No change",
             "outcomes": [
               "예",
               "아니오"
@@ -1685,14 +1745,13 @@
               1.0
             ],
             "volume": 46052653.992844,
-            "liquidity": 0.0,
-            "active": true,
-            "closed": true
+            "liquidity": 0.0
           },
           {
             "question": "Fed increases interest rates by 25+ bps after October 2025 meeting?",
             "question_en": "Fed increases interest rates by 25+ bps after October 2025 meeting?",
             "groupItemTitle": "25+ bps increase",
+            "groupItemTitle_en": "25+ bps increase",
             "outcomes": [
               "예",
               "아니오"
@@ -1706,9 +1765,7 @@
               1.0
             ],
             "volume": 102216689.131463,
-            "liquidity": 0.0,
-            "active": true,
-            "closed": true
+            "liquidity": 0.0
           }
         ]
       },
@@ -1718,12 +1775,12 @@
         "title_ko": "12월 FOMC 금리 결정",
         "endDate": "2025-12-10T00:00:00Z",
         "closed": true,
-        "active": true,
         "markets": [
           {
             "question": "Fed decreases interest rates by 50+ bps after December 2025 meeting?",
             "question_en": "Fed decreases interest rates by 50+ bps after December 2025 meeting?",
             "groupItemTitle": "50+ bps decrease",
+            "groupItemTitle_en": "50+ bps decrease",
             "outcomes": [
               "예",
               "아니오"
@@ -1737,14 +1794,13 @@
               1.0
             ],
             "volume": 161574382.129451,
-            "liquidity": 0.0,
-            "active": true,
-            "closed": true
+            "liquidity": 0.0
           },
           {
             "question": "Fed decreases interest rates by 25 bps after December 2025 meeting?",
             "question_en": "Fed decreases interest rates by 25 bps after December 2025 meeting?",
             "groupItemTitle": "25 bps decrease",
+            "groupItemTitle_en": "25 bps decrease",
             "outcomes": [
               "예",
               "아니오"
@@ -1758,14 +1814,13 @@
               0.0
             ],
             "volume": 54634506.683355,
-            "liquidity": 0.0,
-            "active": true,
-            "closed": true
+            "liquidity": 0.0
           },
           {
             "question": "No change in Fed interest rates after December 2025 meeting?",
             "question_en": "No change in Fed interest rates after December 2025 meeting?",
             "groupItemTitle": "No change",
+            "groupItemTitle_en": "No change",
             "outcomes": [
               "예",
               "아니오"
@@ -1779,14 +1834,13 @@
               1.0
             ],
             "volume": 44523455.111481,
-            "liquidity": 0.0,
-            "active": true,
-            "closed": true
+            "liquidity": 0.0
           },
           {
             "question": "Fed increases interest rates by 25+ bps after December 2025 meeting?",
             "question_en": "Fed increases interest rates by 25+ bps after December 2025 meeting?",
             "groupItemTitle": "25+ bps increase",
+            "groupItemTitle_en": "25+ bps increase",
             "outcomes": [
               "예",
               "아니오"
@@ -1800,9 +1854,7 @@
               1.0
             ],
             "volume": 133173605.453166,
-            "liquidity": 0.0,
-            "active": true,
-            "closed": true
+            "liquidity": 0.0
           }
         ]
       },
@@ -1812,12 +1864,12 @@
         "title_ko": "1월 FOMC 금리 결정",
         "endDate": "2026-01-28T00:00:00Z",
         "closed": true,
-        "active": true,
         "markets": [
           {
             "question": "Fed decreases interest rates by 50+ bps after January 2026 meeting?",
             "question_en": "Fed decreases interest rates by 50+ bps after January 2026 meeting?",
             "groupItemTitle": "50+ bps decrease",
+            "groupItemTitle_en": "50+ bps decrease",
             "outcomes": [
               "예",
               "아니오"
@@ -1831,14 +1883,13 @@
               1.0
             ],
             "volume": 235065166.637259,
-            "liquidity": 0.0,
-            "active": true,
-            "closed": true
+            "liquidity": 0.0
           },
           {
             "question": "Fed decreases interest rates by 25 bps after January 2026 meeting?",
             "question_en": "Fed decreases interest rates by 25 bps after January 2026 meeting?",
             "groupItemTitle": "25 bps decrease",
+            "groupItemTitle_en": "25 bps decrease",
             "outcomes": [
               "예",
               "아니오"
@@ -1852,14 +1903,13 @@
               1.0
             ],
             "volume": 101211542.667667,
-            "liquidity": 0.0,
-            "active": true,
-            "closed": true
+            "liquidity": 0.0
           },
           {
             "question": "No change in Fed interest rates after January 2026 meeting?",
             "question_en": "No change in Fed interest rates after January 2026 meeting?",
             "groupItemTitle": "No change",
+            "groupItemTitle_en": "No change",
             "outcomes": [
               "예",
               "아니오"
@@ -1873,14 +1923,13 @@
               0.0
             ],
             "volume": 106767096.072298,
-            "liquidity": 0.0,
-            "active": true,
-            "closed": true
+            "liquidity": 0.0
           },
           {
             "question": "Fed increases interest rates by 25+ bps after January 2026 meeting?",
             "question_en": "Fed increases interest rates by 25+ bps after January 2026 meeting?",
             "groupItemTitle": "25+ bps increase",
+            "groupItemTitle_en": "25+ bps increase",
             "outcomes": [
               "예",
               "아니오"
@@ -1894,9 +1943,7 @@
               1.0
             ],
             "volume": 216455743.153891,
-            "liquidity": 0.0,
-            "active": true,
-            "closed": true
+            "liquidity": 0.0
           }
         ]
       },
@@ -1906,12 +1953,12 @@
         "title_ko": "4월 FOMC 금리 결정",
         "endDate": "2026-04-29T00:00:00Z",
         "closed": false,
-        "active": true,
         "markets": [
           {
             "question": "Will the Fed decrease interest rates by 50+ bps after the April 2026 meeting?",
             "question_en": "Will the Fed decrease interest rates by 50+ bps after the April 2026 meeting?",
             "groupItemTitle": "50+ bps decrease",
+            "groupItemTitle_en": "50+ bps decrease",
             "outcomes": [
               "예",
               "아니오"
@@ -1924,15 +1971,14 @@
               0.0265,
               0.9735
             ],
-            "volume": 615581.934333,
-            "liquidity": 148182.60105,
-            "active": true,
-            "closed": false
+            "volume": 615601.314333,
+            "liquidity": 148056.96322
           },
           {
             "question": "Will the Fed decrease interest rates by 25 bps after the April 2026 meeting?",
             "question_en": "Will the Fed decrease interest rates by 25 bps after the April 2026 meeting?",
             "groupItemTitle": "25 bps decrease",
+            "groupItemTitle_en": "25 bps decrease",
             "outcomes": [
               "예",
               "아니오"
@@ -1946,14 +1992,13 @@
               0.735
             ],
             "volume": 412021.994113,
-            "liquidity": 58801.3739,
-            "active": true,
-            "closed": false
+            "liquidity": 58995.9739
           },
           {
             "question": "Will there be no change in Fed interest rates after the April 2026 meeting?",
             "question_en": "Will there be no change in Fed interest rates after the April 2026 meeting?",
             "groupItemTitle": "No change",
+            "groupItemTitle_en": "No change",
             "outcomes": [
               "예",
               "아니오"
@@ -1967,14 +2012,13 @@
               0.305
             ],
             "volume": 205753.152837,
-            "liquidity": 53311.8724,
-            "active": true,
-            "closed": false
+            "liquidity": 52974.0592
           },
           {
             "question": "Will the Fed increase interest rates by 25+ bps after the April 2026 meeting?",
             "question_en": "Will the Fed increase interest rates by 25+ bps after the April 2026 meeting?",
             "groupItemTitle": "25+ bps increase",
+            "groupItemTitle_en": "25+ bps increase",
             "outcomes": [
               "예",
               "아니오"
@@ -1988,9 +2032,7 @@
               0.983
             ],
             "volume": 299104.220627,
-            "liquidity": 138684.10696,
-            "active": true,
-            "closed": false
+            "liquidity": 138845.32303
           }
         ]
       }
@@ -2002,12 +2044,12 @@
         "title_ko": "2026년 말 Fed 기준금리 전망",
         "endDate": "2026-12-09T00:00:00Z",
         "closed": false,
-        "active": true,
         "markets": [
           {
             "question": "Will the upper bound of the target federal funds rate be 4.25% at the end of 2026?",
             "question_en": "Will the upper bound of the target federal funds rate be 4.25% at the end of 2026?",
             "groupItemTitle": "4.25%",
+            "groupItemTitle_en": "4.25%",
             "outcomes": [
               "예",
               "아니오"
@@ -2021,14 +2063,13 @@
               0.9975
             ],
             "volume": 5223.19881,
-            "liquidity": 13357.62962,
-            "active": true,
-            "closed": false
+            "liquidity": 13479.26373
           },
           {
             "question": "Will the upper bound of the target federal funds rate be 2.25% at the end of 2026?",
             "question_en": "Will the upper bound of the target federal funds rate be 2.25% at the end of 2026?",
             "groupItemTitle": "2.25%",
+            "groupItemTitle_en": "2.25%",
             "outcomes": [
               "예",
               "아니오"
@@ -2042,14 +2083,13 @@
               0.967
             ],
             "volume": 5550.284511,
-            "liquidity": 13263.93264,
-            "active": true,
-            "closed": false
+            "liquidity": 12983.42234
           },
           {
             "question": "Will the upper bound of the target federal funds rate be 3.25% at the end of 2026?",
             "question_en": "Will the upper bound of the target federal funds rate be 3.25% at the end of 2026?",
             "groupItemTitle": "3.25%",
+            "groupItemTitle_en": "3.25%",
             "outcomes": [
               "예",
               "아니오"
@@ -2063,14 +2103,13 @@
               0.73
             ],
             "volume": 11143.775327,
-            "liquidity": 14824.0673,
-            "active": true,
-            "closed": false
+            "liquidity": 15179.6773
           },
           {
             "question": "Will the upper bound of the target federal funds rate be 3.75% at the end of 2026?",
             "question_en": "Will the upper bound of the target federal funds rate be 3.75% at the end of 2026?",
             "groupItemTitle": "3.75%",
+            "groupItemTitle_en": "3.75%",
             "outcomes": [
               "예",
               "아니오"
@@ -2084,14 +2123,13 @@
               0.9355
             ],
             "volume": 19970.430539,
-            "liquidity": 16599.29598,
-            "active": true,
-            "closed": false
+            "liquidity": 15995.82998
           },
           {
             "question": "Will the upper bound of the target federal funds rate be 3.0% at the end of 2026?",
             "question_en": "Will the upper bound of the target federal funds rate be 3.0% at the end of 2026?",
             "groupItemTitle": "3.0%",
+            "groupItemTitle_en": "3.0%",
             "outcomes": [
               "예",
               "아니오"
@@ -2105,14 +2143,13 @@
               0.74
             ],
             "volume": 10640.610818,
-            "liquidity": 13883.993,
-            "active": true,
-            "closed": false
+            "liquidity": 14410.0048
           },
           {
             "question": "Will the upper bound of the target federal funds rate be 2.5% at the end of 2026?",
             "question_en": "Will the upper bound of the target federal funds rate be 2.5% at the end of 2026?",
             "groupItemTitle": "2.5%",
+            "groupItemTitle_en": "2.5%",
             "outcomes": [
               "예",
               "아니오"
@@ -2126,14 +2163,13 @@
               0.9465
             ],
             "volume": 6374.18885,
-            "liquidity": 12698.87602,
-            "active": true,
-            "closed": false
+            "liquidity": 13143.46752
           },
           {
             "question": "Will the upper bound of the target federal funds rate be 2.75% at the end of 2026?",
             "question_en": "Will the upper bound of the target federal funds rate be 2.75% at the end of 2026?",
             "groupItemTitle": "2.75%",
+            "groupItemTitle_en": "2.75%",
             "outcomes": [
               "예",
               "아니오"
@@ -2147,14 +2183,13 @@
               0.885
             ],
             "volume": 7253.275799,
-            "liquidity": 12747.2982,
-            "active": true,
-            "closed": false
+            "liquidity": 12973.2189
           },
           {
             "question": "Will the upper bound of the target federal funds rate be 3.5% at the end of 2026?",
             "question_en": "Will the upper bound of the target federal funds rate be 3.5% at the end of 2026?",
             "groupItemTitle": "3.5%",
+            "groupItemTitle_en": "3.5%",
             "outcomes": [
               "예",
               "아니오"
@@ -2168,14 +2203,13 @@
               0.825
             ],
             "volume": 14572.273332,
-            "liquidity": 15033.1208,
-            "active": true,
-            "closed": false
+            "liquidity": 15237.5869
           },
           {
             "question": "Will the upper bound of the target federal funds rate be 4.0% at the end of 2026?",
             "question_en": "Will the upper bound of the target federal funds rate be 4.0% at the end of 2026?",
             "groupItemTitle": "4.0%",
+            "groupItemTitle_en": "4.0%",
             "outcomes": [
               "예",
               "아니오"
@@ -2189,14 +2223,13 @@
               0.9965
             ],
             "volume": 5988.521352,
-            "liquidity": 14429.5205,
-            "active": true,
-            "closed": false
+            "liquidity": 14474.60995
           },
           {
             "question": "Will the upper bound of the target federal funds rate be ≥ 4.5% at the end of 2026?",
             "question_en": "Will the upper bound of the target federal funds rate be ≥ 4.5% at the end of 2026?",
             "groupItemTitle": "≥ 4.5%",
+            "groupItemTitle_en": "≥ 4.5%",
             "outcomes": [
               "예",
               "아니오"
@@ -2210,14 +2243,13 @@
               0.9975
             ],
             "volume": 5962.150917,
-            "liquidity": 11448.14479,
-            "active": true,
-            "closed": false
+            "liquidity": 11443.28347
           },
           {
             "question": "Will the upper bound of the target federal funds rate be ≤1.0% at the end of 2026?",
             "question_en": "Will the upper bound of the target federal funds rate be ≤1.0% at the end of 2026?",
             "groupItemTitle": "≤1.0%",
+            "groupItemTitle_en": "≤1.0%",
             "outcomes": [
               "예",
               "아니오"
@@ -2231,14 +2263,13 @@
               0.9755
             ],
             "volume": 27966.826729,
-            "liquidity": 9657.61543,
-            "active": true,
-            "closed": false
+            "liquidity": 8932.01088
           },
           {
             "question": "Will the upper bound of the target federal funds rate be 1.25% at the end of 2026?",
             "question_en": "Will the upper bound of the target federal funds rate be 1.25% at the end of 2026?",
             "groupItemTitle": "1.25",
+            "groupItemTitle_en": "1.25",
             "outcomes": [
               "예",
               "아니오"
@@ -2252,14 +2283,13 @@
               0.9935
             ],
             "volume": 31193.216683,
-            "liquidity": 10734.6511,
-            "active": true,
-            "closed": false
+            "liquidity": 10734.80116
           },
           {
             "question": "Will the upper bound of the target federal funds rate be 1.5% at the end of 2026?",
             "question_en": "Will the upper bound of the target federal funds rate be 1.5% at the end of 2026?",
             "groupItemTitle": "1.5%",
+            "groupItemTitle_en": "1.5%",
             "outcomes": [
               "예",
               "아니오"
@@ -2269,18 +2299,17 @@
               "No"
             ],
             "prices": [
-              0.0045,
-              0.9955
+              0.005,
+              0.995
             ],
             "volume": 3812.234952,
-            "liquidity": 11337.32048,
-            "active": true,
-            "closed": false
+            "liquidity": 11337.68966
           },
           {
             "question": "Will the upper bound of the target federal funds rate be 1.75% at the end of 2026?",
             "question_en": "Will the upper bound of the target federal funds rate be 1.75% at the end of 2026?",
             "groupItemTitle": "1.75%",
+            "groupItemTitle_en": "1.75%",
             "outcomes": [
               "예",
               "아니오"
@@ -2294,14 +2323,13 @@
               0.9965
             ],
             "volume": 3603.95895,
-            "liquidity": 12096.27218,
-            "active": true,
-            "closed": false
+            "liquidity": 12814.37448
           },
           {
             "question": "Will the upper bound of the target federal funds rate be 2.0% at the end of 2026?",
             "question_en": "Will the upper bound of the target federal funds rate be 2.0% at the end of 2026?",
             "groupItemTitle": "2.0%",
+            "groupItemTitle_en": "2.0%",
             "outcomes": [
               "예",
               "아니오"
@@ -2315,9 +2343,7 @@
               0.9945
             ],
             "volume": 3903.370467,
-            "liquidity": 12242.90156,
-            "active": true,
-            "closed": false
+            "liquidity": 12805.58341
           }
         ]
       },
@@ -2327,12 +2353,12 @@
         "title_ko": "2026년 Fed 금리 인하 횟수",
         "endDate": "2026-12-31T00:00:00Z",
         "closed": false,
-        "active": true,
         "markets": [
           {
             "question": "Will no Fed rate cuts happen in 2026?",
             "question_en": "Will no Fed rate cuts happen in 2026?",
             "groupItemTitle": "0 (0 bps)",
+            "groupItemTitle_en": "0 (0 bps)",
             "outcomes": [
               "예",
               "아니오"
@@ -2342,18 +2368,17 @@
               "No"
             ],
             "prices": [
-              0.0565,
-              0.9435
+              0.058,
+              0.942
             ],
-            "volume": 953539.761584,
-            "liquidity": 70699.43249,
-            "active": true,
-            "closed": false
+            "volume": 954039.081584,
+            "liquidity": 69672.81919
           },
           {
             "question": "Will 1 Fed rate cut happen in 2026?",
             "question_en": "Will 1 Fed rate cut happen in 2026?",
             "groupItemTitle": "1 (25 bps)",
+            "groupItemTitle_en": "1 (25 bps)",
             "outcomes": [
               "예",
               "아니오"
@@ -2367,14 +2392,13 @@
               0.825
             ],
             "volume": 440092.186529,
-            "liquidity": 64228.236,
-            "active": true,
-            "closed": false
+            "liquidity": 64068.386
           },
           {
             "question": "Will 2 Fed rate cuts happen in 2026?",
             "question_en": "Will 2 Fed rate cuts happen in 2026?",
             "groupItemTitle": "2 (50 bps)",
+            "groupItemTitle_en": "2 (50 bps)",
             "outcomes": [
               "예",
               "아니오"
@@ -2388,14 +2412,13 @@
               0.745
             ],
             "volume": 411850.852309,
-            "liquidity": 87946.0819,
-            "active": true,
-            "closed": false
+            "liquidity": 87103.4433
           },
           {
             "question": "Will 3 Fed rate cuts happen in 2026?",
             "question_en": "Will 3 Fed rate cuts happen in 2026?",
             "groupItemTitle": "3 (75 bps)",
+            "groupItemTitle_en": "3 (75 bps)",
             "outcomes": [
               "예",
               "아니오"
@@ -2409,14 +2432,13 @@
               0.755
             ],
             "volume": 290795.36952,
-            "liquidity": 80914.1749,
-            "active": true,
-            "closed": false
+            "liquidity": 80133.612
           },
           {
             "question": "Will 4 Fed rate cuts happen in 2026?",
             "question_en": "Will 4 Fed rate cuts happen in 2026?",
             "groupItemTitle": "4 (100 bps)",
+            "groupItemTitle_en": "4 (100 bps)",
             "outcomes": [
               "예",
               "아니오"
@@ -2430,14 +2452,13 @@
               0.825
             ],
             "volume": 284179.580364,
-            "liquidity": 73916.9019,
-            "active": true,
-            "closed": false
+            "liquidity": 75543.5137
           },
           {
             "question": "Will 5 Fed rate cuts happen in 2026?",
             "question_en": "Will 5 Fed rate cuts happen in 2026?",
             "groupItemTitle": "5 (125 bps)",
+            "groupItemTitle_en": "5 (125 bps)",
             "outcomes": [
               "예",
               "아니오"
@@ -2451,14 +2472,13 @@
               0.945
             ],
             "volume": 265579.890095,
-            "liquidity": 87517.0037,
-            "active": true,
-            "closed": false
+            "liquidity": 87385.6938
           },
           {
             "question": "Will 6 Fed rate cuts happen in 2026?",
             "question_en": "Will 6 Fed rate cuts happen in 2026?",
             "groupItemTitle": "6 (150 bps)",
+            "groupItemTitle_en": "6 (150 bps)",
             "outcomes": [
               "예",
               "아니오"
@@ -2468,18 +2488,17 @@
               "No"
             ],
             "prices": [
-              0.0155,
-              0.9845
+              0.017,
+              0.983
             ],
-            "volume": 682905.549642,
-            "liquidity": 52127.59164,
-            "active": true,
-            "closed": false
+            "volume": 683025.549642,
+            "liquidity": 51369.45808
           },
           {
             "question": "Will 7 Fed rate cuts happen in 2026?",
             "question_en": "Will 7 Fed rate cuts happen in 2026?",
             "groupItemTitle": "7 (175 bps)",
+            "groupItemTitle_en": "7 (175 bps)",
             "outcomes": [
               "예",
               "아니오"
@@ -2492,15 +2511,14 @@
               0.0055,
               0.9945
             ],
-            "volume": 291741.281504,
-            "liquidity": 55277.43904,
-            "active": true,
-            "closed": false
+            "volume": 291884.821504,
+            "liquidity": 55089.88825
           },
           {
             "question": "Will 8 Fed rate cuts happen in 2026?",
             "question_en": "Will 8 Fed rate cuts happen in 2026?",
             "groupItemTitle": "8 (200 bps)",
+            "groupItemTitle_en": "8 (200 bps)",
             "outcomes": [
               "예",
               "아니오"
@@ -2513,15 +2531,14 @@
               0.007,
               0.993
             ],
-            "volume": 367321.605871,
-            "liquidity": 49130.80221,
-            "active": true,
-            "closed": false
+            "volume": 367450.881371,
+            "liquidity": 49840.87192
           },
           {
             "question": "Will 9 Fed rate cuts happen in 2026?",
             "question_en": "Will 9 Fed rate cuts happen in 2026?",
             "groupItemTitle": "9 (225 bps)",
+            "groupItemTitle_en": "9 (225 bps)",
             "outcomes": [
               "예",
               "아니오"
@@ -2535,14 +2552,13 @@
               0.9945
             ],
             "volume": 277350.773367,
-            "liquidity": 52755.0218,
-            "active": true,
-            "closed": false
+            "liquidity": 52750.38833
           },
           {
             "question": "Will 10 Fed rate cuts happen in 2026?",
             "question_en": "Will 10 Fed rate cuts happen in 2026?",
             "groupItemTitle": "10 (250 bps)",
+            "groupItemTitle_en": "10 (250 bps)",
             "outcomes": [
               "예",
               "아니오"
@@ -2556,14 +2572,13 @@
               0.9945
             ],
             "volume": 288560.51553,
-            "liquidity": 49627.26935,
-            "active": true,
-            "closed": false
+            "liquidity": 49602.54466
           },
           {
             "question": "Will 11 Fed rate cuts happen in 2026?",
             "question_en": "Will 11 Fed rate cuts happen in 2026?",
             "groupItemTitle": "11 (275 bps)",
+            "groupItemTitle_en": "11 (275 bps)",
             "outcomes": [
               "예",
               "아니오"
@@ -2576,15 +2591,14 @@
               0.0045,
               0.9955
             ],
-            "volume": 334659.636728,
-            "liquidity": 69638.4109,
-            "active": true,
-            "closed": false
+            "volume": 336629.506478,
+            "liquidity": 68660.35641
           },
           {
             "question": "Will 12 or more Fed rate cuts happen in 2026?",
             "question_en": "Will 12 or more Fed rate cuts happen in 2026?",
             "groupItemTitle": "12+ (300+ bps)",
+            "groupItemTitle_en": "12+ (300+ bps)",
             "outcomes": [
               "예",
               "아니오"
@@ -2598,9 +2612,7 @@
               0.9815
             ],
             "volume": 450031.741529,
-            "liquidity": 44477.10265,
-            "active": true,
-            "closed": false
+            "liquidity": 44417.85507
           }
         ]
       }
@@ -3861,8 +3873,8 @@
           "yes_bid": 23,
           "yes_ask": 25,
           "last_price": 25,
-          "volume": 106563,
-          "open_interest": 82116,
+          "volume": 106620,
+          "open_interest": 82173,
           "close_time": "2027-01-01T04:59:00Z",
           "expiration_time": "2027-01-01T15:00:00Z"
         },
@@ -4014,8 +4026,8 @@
           "subtitle_ko": "1:: 25 bps",
           "yes_bid": 15,
           "yes_ask": 17,
-          "last_price": 15,
-          "volume": 86725,
+          "last_price": 17,
+          "volume": 86752,
           "open_interest": 56543,
           "close_time": "2027-01-01T04:59:00Z",
           "expiration_time": "2027-01-01T15:00:00Z"
