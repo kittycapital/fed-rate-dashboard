@@ -1,39 +1,98 @@
 #!/usr/bin/env python3
 """
-Fed Rate Dashboard - 자동 연도 대응 데이터 수집기
-==================================================
-하드코딩된 연도/날짜 없이, API에서 활성 마켓을 자동 탐색합니다.
-2026년이든 2027년이든 자동으로 해당 연도의 FOMC 데이터를 수집합니다.
-
-무료 API만 사용:
-  1. NY Fed Markets API  → SOFR 현재/과거 금리 (무료, 인증 불필요)
-  2. Polymarket Gamma API → Fed 금리 예측 (무료, 인증 불필요)
-  3. Kalshi Public API    → Fed 금리 예측 (무료, 인증 불필요)
-  4. FRED API             → SOFR 장기 히스토리 (무료, API키 필요)
-
-사용법:
-  pip install requests
-  python fetch_rate_data.py
-
-GitHub Actions로 매일 자동 실행 → data/rate_data.json 생성
+Fed Rate Dashboard - 자동 연도 대응 데이터 수집기 v2.1
+======================================================
+무료 API만 사용. 하드코딩된 연도 없이 동적 탐색.
+한글 번역 포함.
 """
 
 import json
 import requests
+import re
 import os
 from datetime import datetime, timedelta
 
 TIMEOUT = 15
-HEADERS = {"User-Agent": "FedRateDashboard/2.0", "Accept": "application/json"}
+HEADERS = {"User-Agent": "FedRateDashboard/2.1", "Accept": "application/json"}
 NOW = datetime.utcnow()
 THIS_YEAR = NOW.year
 
+MONTHS = [
+    "january", "february", "march", "april", "may", "june",
+    "july", "august", "september", "october", "november", "december",
+]
+MONTH_KO = {
+    "january": "1월", "february": "2월", "march": "3월", "april": "4월",
+    "may": "5월", "june": "6월", "july": "7월", "august": "8월",
+    "september": "9월", "october": "10월", "november": "11월", "december": "12월",
+}
+
 
 # ─────────────────────────────────────────────
-# 1. NY Fed - SOFR (무료, 인증 불필요)
+# 한글 번역
+# ─────────────────────────────────────────────
+def translate_title(title):
+    t = title
+    for eng, ko in MONTH_KO.items():
+        t = re.sub(rf"(?i)Fed [Dd]ecision in {eng}\??", f"{ko} FOMC 금리 결정", t)
+    t = re.sub(r"(?i)what will the fed (funds )?rate be at the end of (\d{4})\??",
+               lambda m: f"{m.group(2)}년 말 Fed 기준금리 전망", t)
+    t = re.sub(r"(?i)how many fed rate cuts in (\d{4})\??",
+               lambda m: f"{m.group(1)}년 Fed 금리 인하 횟수", t)
+    t = re.sub(r"(?i)will the fed (raise|hike) rates.*?(\d{4})\??",
+               lambda m: f"{m.group(2)}년 Fed 금리 인상 여부", t)
+    t = re.sub(r"(?i)will the fed cut rates.*?(\d{4})\??",
+               lambda m: f"{m.group(2)}년 Fed 금리 인하 여부", t)
+    t = re.sub(r"(?i)fed rate (cut|hike|increase|decrease)",
+               lambda m: "금리 " + ("인하" if m.group(1) in ("cut","decrease") else "인상"), t)
+    t = re.sub(r"(?i)us inflation rate", "미국 인플레이션율", t)
+    return t
+
+
+def translate_outcome(outcome):
+    o = outcome.strip()
+    mappings = {
+        "Yes": "예", "No": "아니오",
+        "No change": "동결",
+        "25 bps decrease": "25bp 인하", "25 bps cut": "25bp 인하",
+        "50 bps decrease": "50bp 인하", "50 bps cut": "50bp 인하",
+        "75 bps decrease": "75bp 인하", "100 bps decrease": "100bp 인하",
+        "25 bps increase": "25bp 인상", "50 bps increase": "50bp 인상",
+        "Increase": "인상", "Decrease": "인하",
+    }
+    if o in mappings:
+        return mappings[o]
+    m = re.match(r"(\d+)\s*bps?\s*(decrease|cut)", o, re.I)
+    if m: return f"{m.group(1)}bp 인하"
+    m = re.match(r"(\d+)\s*bps?\s*(increase|hike)", o, re.I)
+    if m: return f"{m.group(1)}bp 인상"
+    m = re.match(r"(\d+\.\d+)\s*[-–]\s*(\d+\.\d+)", o)
+    if m: return f"{m.group(1)}~{m.group(2)}%"
+    m = re.match(r"(\d+)\s*cuts?", o, re.I)
+    if m: return f"{m.group(1)}회 인하"
+    m = re.match(r"(\d+)\s*or more", o, re.I)
+    if m: return f"{m.group(1)}회 이상"
+    return o
+
+
+# ─────────────────────────────────────────────
+# Fed 관련 필터
+# ─────────────────────────────────────────────
+FED_KEYWORDS = [
+    "fed ", "fomc", "federal reserve", "fed funds", "rate cut", "rate hike",
+    "interest rate", "monetary policy", "basis point", "bps",
+    "rate decision", "fed decision",
+]
+
+def is_fed_related(title):
+    tl = title.lower()
+    return any(kw in tl for kw in FED_KEYWORDS)
+
+
+# ─────────────────────────────────────────────
+# 1. NY Fed - SOFR
 # ─────────────────────────────────────────────
 def fetch_sofr():
-    """최근 60일 SOFR + 최신 값"""
     print("[1/4] NY Fed SOFR ...")
     url = "https://markets.newyorkfed.org/api/rates/secured/sofr/last/60.json"
     try:
@@ -53,15 +112,13 @@ def fetch_sofr():
 
 
 # ─────────────────────────────────────────────
-# 2. FRED - SOFR 장기 히스토리 (무료, API키 필요)
+# 2. FRED - SOFR 장기 히스토리
 # ─────────────────────────────────────────────
 def fetch_fred_sofr():
-    """최근 1년 SOFR (FRED API 키가 있을 때만)"""
     api_key = os.environ.get("FRED_API_KEY", "")
     if not api_key:
-        print("[2/4] FRED ⏭️  (FRED_API_KEY 미설정 - 선택사항)")
+        print("[2/4] FRED ⏭️  (FRED_API_KEY 미설정)")
         return []
-
     print("[2/4] FRED SOFR ...")
     start = (NOW - timedelta(days=365)).strftime("%Y-%m-%d")
     url = (
@@ -85,69 +142,55 @@ def fetch_fred_sofr():
 
 
 # ─────────────────────────────────────────────
-# 3. Polymarket - 동적 Fed 마켓 탐색 (무료, 인증 불필요)
+# 3. Polymarket - 다중 전략 탐색
 # ─────────────────────────────────────────────
 def fetch_polymarket():
-    """
-    Polymarket에서 '현재 활성 상태'인 Fed 관련 마켓을 모두 수집합니다.
-    하드코딩된 슬러그/연도 없이, 태그 검색 + 키워드 검색으로 자동 탐색합니다.
-    """
     print("[3/4] Polymarket ...")
     BASE = "https://gamma-api.polymarket.com"
+    seen_slugs = set()
     results = {"fomc_decisions": [], "other_markets": []}
 
-    # ── 3a. 태그 기반 검색: 활성 Fed 마켓 전부 가져오기 ──
-    active_events = {}  # slug → event (중복 제거)
-
-    for tag in ["fed-rates", "fed", "federal-reserve", "interest-rates"]:
+    def try_fetch_events(params, label=""):
+        """이벤트 목록 가져오기"""
+        found = []
         try:
-            r = requests.get(
-                f"{BASE}/events",
-                params={"tag": tag, "active": "true", "closed": "false", "limit": "50"},
-                headers=HEADERS, timeout=TIMEOUT,
-            )
+            r = requests.get(f"{BASE}/events", params=params,
+                             headers=HEADERS, timeout=TIMEOUT)
             if r.status_code == 200:
-                for ev in r.json():
-                    slug = ev.get("slug", "")
-                    if slug and slug not in active_events:
-                        active_events[slug] = ev
+                data = r.json()
+                if isinstance(data, list):
+                    found = data
+                elif isinstance(data, dict) and data.get("slug"):
+                    found = [data]
         except:
             pass
+        return found
 
-    # ── 3b. 키워드 검색으로 추가 탐색 ──
-    for q in ["fed decision", "fed rate", "fomc", "rate cut", "rate hike"]:
-        try:
-            r = requests.get(
-                f"{BASE}/events",
-                params={"tag": q, "active": "true", "closed": "false", "limit": "20"},
-                headers=HEADERS, timeout=TIMEOUT,
-            )
-            if r.status_code == 200:
-                for ev in r.json():
-                    slug = ev.get("slug", "")
-                    if slug and slug not in active_events:
-                        active_events[slug] = ev
-        except:
-            pass
+    def parse_event(ev):
+        slug = ev.get("slug", "")
+        if slug in seen_slugs or not slug:
+            return
+        seen_slugs.add(slug)
 
-    # ── 3c. 각 이벤트 파싱 ──
-    for slug, ev in active_events.items():
         title = ev.get("title", "")
-        title_lower = title.lower()
-        markets_raw = ev.get("markets", [])
+        if not is_fed_related(title):
+            return
 
+        title_ko = translate_title(title)
+        markets_raw = ev.get("markets", [])
         parsed_markets = []
+
         for m in markets_raw:
-            try:
-                outcomes = json.loads(m.get("outcomes", "[]"))
-                prices = json.loads(m.get("outcomePrices", "[]"))
-            except:
-                outcomes, prices = [], []
+            try: outcomes = json.loads(m.get("outcomes", "[]"))
+            except: outcomes = []
+            try: prices = json.loads(m.get("outcomePrices", "[]"))
+            except: prices = []
 
             parsed_markets.append({
-                "question": m.get("question", ""),
-                "groupItemTitle": m.get("groupItemTitle", ""),
-                "outcomes": outcomes,
+                "question": translate_title(m.get("question", "")),
+                "groupItemTitle": translate_title(m.get("groupItemTitle", "")),
+                "outcomes": [translate_outcome(o) for o in outcomes],
+                "outcomes_en": outcomes,
                 "prices": [float(p) for p in prices] if prices else [],
                 "volume": float(m.get("volume", 0) or 0),
                 "liquidity": float(m.get("liquidity", 0) or 0),
@@ -156,74 +199,71 @@ def fetch_polymarket():
         event_obj = {
             "slug": slug,
             "title": title,
+            "title_ko": title_ko,
             "endDate": ev.get("endDate", ""),
             "markets": parsed_markets,
         }
 
-        # FOMC 개별 미팅 결정인지 판단
-        is_fomc = any(kw in title_lower for kw in [
-            "fed decision in", "fed decision", "fomc",
-            "interest rate", "rate decision",
-        ]) and any(kw in title_lower for kw in [
-            "january", "february", "march", "april", "may", "june",
-            "july", "august", "september", "october", "november", "december",
-        ])
+        tl = title.lower()
+        is_fomc = ("fed decision" in tl or "fomc" in tl) and \
+                  any(mo in tl for mo in MONTHS)
 
         if is_fomc:
             results["fomc_decisions"].append(event_obj)
         else:
             results["other_markets"].append(event_obj)
 
-    # 종료일 기준 정렬
+    # ── 전략 A: 슬러그 패턴 직접 조회 ──
+    print("  📌 전략A: 슬러그 패턴")
+    for month in MONTHS:
+        for ev in try_fetch_events({"slug": f"fed-decision-in-{month}"}):
+            parse_event(ev)
+
+    extra_slugs = [
+        "how-many-fed-rate-cuts",
+        f"how-many-fed-rate-cuts-in-{THIS_YEAR}",
+        f"how-many-fed-rate-cuts-in-{THIS_YEAR+1}",
+        "what-will-the-fed-rate-be",
+        f"what-will-the-fed-rate-be-at-the-end-of-{THIS_YEAR}",
+        f"what-will-the-fed-rate-be-at-the-end-of-{THIS_YEAR+1}",
+        "will-the-fed-raise-rates",
+        "fed-rate-cut",
+        "federal-funds-rate",
+    ]
+    for slug in extra_slugs:
+        for ev in try_fetch_events({"slug": slug}):
+            parse_event(ev)
+
+    print(f"    → FOMC {len(results['fomc_decisions'])}개, 기타 {len(results['other_markets'])}개")
+
+    # ── 전략 B: 태그 검색 ──
+    print("  📌 전략B: 태그 검색")
+    for tag in ["fed-rates", "fed", "federal-reserve", "interest-rates", "fomc"]:
+        for ev in try_fetch_events({"tag": tag, "active": "true", "closed": "false", "limit": "50"}):
+            parse_event(ev)
+
+    # ── 전략 C: 텍스트 검색 ──
+    print("  📌 전략C: 텍스트 검색")
+    for q in ["fed rate", "fomc", "federal reserve", f"rate cut {THIS_YEAR}", f"rate cut {THIS_YEAR+1}"]:
+        for ev in try_fetch_events({"title": q, "active": "true", "closed": "false", "limit": "20"}):
+            parse_event(ev)
+
     results["fomc_decisions"].sort(key=lambda x: x.get("endDate", ""))
     results["other_markets"].sort(key=lambda x: x.get("endDate", ""))
 
-    total = len(results["fomc_decisions"]) + len(results["other_markets"])
-    print(f"  ✅ FOMC 결정: {len(results['fomc_decisions'])}개, 기타: {len(results['other_markets'])}개")
+    print(f"  ✅ 최종: FOMC {len(results['fomc_decisions'])}개, 기타 {len(results['other_markets'])}개")
     return results
 
 
 # ─────────────────────────────────────────────
-# 4. Kalshi - 동적 Fed 마켓 탐색 (무료, 인증 불필요)
+# 4. Kalshi - Fed 시리즈만
 # ─────────────────────────────────────────────
 def fetch_kalshi():
-    """
-    Kalshi에서 Fed 관련 활성 마켓을 자동으로 탐색합니다.
-    시리즈 티커를 검색해서 현재 열려있는 마켓만 수집합니다.
-    """
     print("[4/4] Kalshi ...")
     BASE = "https://api.elections.kalshi.com/trade-api/v2"
     results = []
 
-    # ── 4a. Fed 관련 시리즈 자동 탐색 ──
-    # 먼저 알려진 Fed 시리즈 확인 + 동적 검색
-    known_prefixes = [
-        "KXFEDDECISION", "KXFED", "KXRATECUTCOUNT",
-        "KXLARGECUT", "KXFEDCOMBO",
-    ]
-
-    discovered_tickers = set(known_prefixes)
-
-    # 이벤트 검색으로 추가 시리즈 발견
-    for query in ["fed", "fomc", "interest rate", "rate cut"]:
-        try:
-            r = requests.get(
-                f"{BASE}/events",
-                params={"status": "open", "limit": "50",
-                        "series_ticker": "", "with_nested_markets": "true"},
-                headers=HEADERS, timeout=TIMEOUT,
-            )
-            if r.status_code == 200:
-                for ev in r.json().get("events", []):
-                    st = ev.get("series_ticker", "")
-                    title = (ev.get("title", "") + ev.get("sub_title", "")).lower()
-                    if st and any(kw in title for kw in ["fed", "fomc", "rate cut", "rate hike", "funds rate"]):
-                        discovered_tickers.add(st)
-        except:
-            pass
-
-    # ── 4b. 각 시리즈에서 열린 마켓 수집 ──
-    for ticker in discovered_tickers:
+    for ticker in ["KXFEDDECISION", "KXFED", "KXRATECUTCOUNT", "KXLARGECUT"]:
         try:
             r = requests.get(
                 f"{BASE}/markets",
@@ -232,32 +272,26 @@ def fetch_kalshi():
             )
             if r.status_code != 200:
                 continue
-
             markets_raw = r.json().get("markets", [])
             if not markets_raw:
                 continue
 
-            series_obj = {
-                "series_ticker": ticker,
-                "markets": [],
-            }
-
+            series_obj = {"series_ticker": ticker, "markets": []}
             for m in markets_raw:
                 series_obj["markets"].append({
                     "ticker": m.get("ticker", ""),
                     "title": m.get("title", ""),
+                    "title_ko": translate_title(m.get("title", "")),
                     "subtitle": m.get("subtitle", ""),
+                    "subtitle_ko": translate_title(m.get("subtitle", "")) if m.get("subtitle") else "",
                     "yes_bid": m.get("yes_bid"),
                     "yes_ask": m.get("yes_ask"),
-                    "no_bid": m.get("no_bid"),
-                    "no_ask": m.get("no_ask"),
                     "last_price": m.get("last_price"),
                     "volume": m.get("volume"),
                     "open_interest": m.get("open_interest"),
                     "close_time": m.get("close_time", ""),
                     "expiration_time": m.get("expiration_time", ""),
                 })
-
             results.append(series_obj)
             print(f"  📊 {ticker}: {len(markets_raw)}개 마켓")
         except Exception as e:
@@ -267,12 +301,9 @@ def fetch_kalshi():
     return results
 
 
-# ─────────────────────────────────────────────
-# Main
-# ─────────────────────────────────────────────
 def main():
     print("=" * 55)
-    print("🏦 Fed Rate Dashboard - Data Fetcher")
+    print("🏦 Fed Rate Dashboard - Data Fetcher v2.1")
     print(f"📅 {NOW.strftime('%Y-%m-%d %H:%M UTC')}")
     print("=" * 55)
 
@@ -280,7 +311,7 @@ def main():
         "meta": {
             "updated_at": NOW.isoformat() + "Z",
             "year": THIS_YEAR,
-            "note": "All data from free public APIs. No hardcoded years.",
+            "version": "2.1",
         },
         "sofr": fetch_sofr(),
         "fred_sofr": fetch_fred_sofr(),
@@ -294,8 +325,8 @@ def main():
 
     print()
     print("✅ 저장 완료: data/rate_data.json")
-    print(f"   SOFR: {len(output['sofr'])}일")
     pm = output["polymarket"]
+    print(f"   SOFR: {len(output['sofr'])}일")
     print(f"   Polymarket: FOMC {len(pm['fomc_decisions'])}개 + 기타 {len(pm['other_markets'])}개")
     print(f"   Kalshi: {len(output['kalshi'])}개 시리즈")
 
