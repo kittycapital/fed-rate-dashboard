@@ -191,7 +191,7 @@ function buildFOMC(cal, polyEvents){
     meetings.push({
       title: MO_KO[c.month],
       dateLabel: `${+dd[1]}/${+dd[2]}~${+ed[2]}`,
-      fullDate: `${YEAR}년 ${+dd[1]}월 ${+dd[2]}~${+ed[2]}일`,
+      fullDate: `${c.year}년 ${+dd[1]}월 ${+dd[2]}~${+ed[2]}일`,
       month: c.month,
       noChange:Math.round(nc), cut25:Math.round(c25), cut50:Math.round(c50), hike:Math.round(hk),
       hasData:has, isPast:past,
