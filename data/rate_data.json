@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-02-17T23:00:51.290549Z",
+    "updated_at": "2026-02-17T23:49:30.270953Z",
     "year": 2026,
     "version": "3.4"
   },
@@ -543,7 +543,7 @@
             0.0115,
             0.9885
           ],
-          "volume": 191875.258787
+          "volume": 191876.379968
         }
       ]
     },
@@ -567,10 +567,10 @@
             "아니오"
           ],
           "prices": [
-            0.0525,
-            0.9475
+            0.0555,
+            0.9445
           ],
-          "volume": 192795.420855
+          "volume": 192799.275118
         }
       ]
     },
@@ -594,10 +594,10 @@
             "아니오"
           ],
           "prices": [
-            0.0055,
-            0.9945
+            0.006,
+            0.994
           ],
-          "volume": 4708501.510766
+          "volume": 4730817.240803
         }
       ]
     },
@@ -621,10 +621,10 @@
             "아니오"
           ],
           "prices": [
-            0.0205,
-            0.9795
+            0.019,
+            0.981
           ],
-          "volume": 45120.011642
+          "volume": 45330.128775
         }
       ]
     },
@@ -651,7 +651,7 @@
             0.0075,
             0.9925
           ],
-          "volume": 53709857.422128
+          "volume": 53770296.424836
         },
         {
           "question_en": "Will the Fed decrease interest rates by 25 bps after the March 2026 meeting?",
@@ -669,7 +669,7 @@
             0.065,
             0.935
           ],
-          "volume": 16290260.362506
+          "volume": 16437377.383929
         },
         {
           "question_en": "Will there be no change in Fed interest rates after the March 2026 meeting?",
@@ -687,7 +687,7 @@
             0.925,
             0.075
           ],
-          "volume": 15748145.435047
+          "volume": 15802832.437231
         },
         {
           "question_en": "Will the Fed increase interest rates by 25+ bps after the March 2026 meeting?",
@@ -705,7 +705,7 @@
             0.0055,
             0.9945
           ],
-          "volume": 45884711.085788
+          "volume": 46057830.257054
         }
       ]
     },
@@ -729,8 +729,8 @@
             "아니오"
           ],
           "prices": [
-            0.0615,
-            0.9385
+            0.0505,
+            0.9495
           ],
           "volume": 20633.352457
         }
@@ -759,7 +759,7 @@
             0.0245,
             0.9755
           ],
-          "volume": 774494.773537
+          "volume": 774495.843537
         },
         {
           "question_en": "Will the Fed decrease interest rates by 25 bps after the April 2026 meeting?",
@@ -774,10 +774,10 @@
             "아니오"
           ],
           "prices": [
-            0.21,
-            0.79
+            0.22,
+            0.78
           ],
-          "volume": 479722.36658
+          "volume": 479867.44658
         },
         {
           "question_en": "Will there be no change in Fed interest rates after the April 2026 meeting?",
@@ -792,10 +792,10 @@
             "아니오"
           ],
           "prices": [
-            0.755,
-            0.245
+            0.745,
+            0.255
           ],
-          "volume": 284132.714765
+          "volume": 284491.684765
         },
         {
           "question_en": "Will the Fed increase interest rates by 25+ bps after the April 2026 meeting?",
@@ -813,7 +813,7 @@
             0.0115,
             0.9885
           ],
-          "volume": 384996.459481
+          "volume": 385134.902299
         }
       ]
     },
@@ -840,7 +840,7 @@
             0.54,
             0.46
           ],
-          "volume": 63809.951261
+          "volume": 63810.531261
         },
         {
           "question_en": "Will the Fed increase interest rates by 25 bps after the June 2026 meeting?",
@@ -909,8 +909,8 @@
             "아니오"
           ],
           "prices": [
-            0.018,
-            0.982
+            0.0175,
+            0.9825
           ],
           "volume": 45648.641812
         }
@@ -957,7 +957,7 @@
             0.0345,
             0.9655
           ],
-          "volume": 225510.043395
+          "volume": 225673.373395
         },
         {
           "question_en": "Macron out by October 31, 2025?",
@@ -1278,10 +1278,10 @@
             "아니오"
           ],
           "prices": [
-            0.068,
-            0.932
+            0.0685,
+            0.9315
           ],
-          "volume": 1367616.194067
+          "volume": 1368939.594067
         },
         {
           "question_en": "Will 1 Fed rate cut happen in 2026?",
@@ -1296,10 +1296,10 @@
             "아니오"
           ],
           "prices": [
-            0.17,
-            0.83
+            0.165,
+            0.835
           ],
-          "volume": 501005.758698
+          "volume": 501023.758698
         },
         {
           "question_en": "Will 2 Fed rate cuts happen in 2026?",
@@ -1314,10 +1314,10 @@
             "아니오"
           ],
           "prices": [
-            0.26,
-            0.74
+            0.255,
+            0.745
           ],
-          "volume": 442387.156705
+          "volume": 442398.266705
         },
         {
           "question_en": "Will 3 Fed rate cuts happen in 2026?",
@@ -1335,7 +1335,7 @@
             0.24,
             0.76
           ],
-          "volume": 313711.731504
+          "volume": 313723.731504
         },
         {
           "question_en": "Will 4 Fed rate cuts happen in 2026?",
@@ -1386,10 +1386,10 @@
             "아니오"
           ],
           "prices": [
-            0.033,
-            0.967
+            0.0355,
+            0.9645
           ],
-          "volume": 1003810.348543
+          "volume": 1006027.105366
         },
         {
           "question_en": "Will 7 Fed rate cuts happen in 2026?",
@@ -1422,10 +1422,10 @@
             "아니오"
           ],
           "prices": [
-            0.01,
-            0.99
+            0.0105,
+            0.9895
           ],
-          "volume": 424148.892933
+          "volume": 424273.892933
         },
         {
           "question_en": "Will 9 Fed rate cuts happen in 2026?",
@@ -1497,7 +1497,7 @@
             0.0235,
             0.9765
           ],
-          "volume": 540846.923136
+          "volume": 541501.563136
         }
       ]
     },
