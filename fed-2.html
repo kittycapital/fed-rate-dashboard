@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Fed 금리 — FOMC 전망 | Herdvibe</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;900&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Bebas+Neue&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<script src="https://t1.kakaocdn.net/kakao_js_sdk/2.7.1/kakao.min.js" crossorigin="anonymous" async></script>
+<style>
+:root {
+  --hv-primary:#3b82f6;--hv-primary-light:#60a5fa;--hv-primary-dark:#2563eb;
+  --hv-primary-glow:rgba(59,130,246,0.12);
+  --hv-up:#22c55e;--hv-up-bg:rgba(34,197,94,0.1);
+  --hv-down:#ef4444;--hv-down-bg:rgba(239,68,68,0.1);
+  --hv-warning:#f59e0b;
+  --hv-neutral:#6b7280;
+  --hv-bg-base:#000;--hv-bg-surface:#0a0a0a;--hv-bg-card:#111;
+  --hv-bg-card-hover:#181818;--hv-bg-elevated:#1a1a1a;
+  --hv-text-primary:#e5e5e5;--hv-text-secondary:#8a8a8a;
+  --hv-text-tertiary:#555;--hv-text-muted:#3a3a3a;
+  --hv-border:rgba(255,255,255,0.06);--hv-border-strong:rgba(255,255,255,0.12);
+  --hv-font-display:'Plus Jakarta Sans',sans-serif;
+  --hv-font-body:'Noto Sans KR',-apple-system,BlinkMacSystemFont,sans-serif;
+  --hv-font-mono:'JetBrains Mono','SF Mono',monospace;
+  --hv-space-xs:8px;--hv-space-sm:12px;--hv-space-md:16px;
+  --hv-space-lg:24px;--hv-space-xl:32px;
+  --hv-radius-sm:6px;--hv-radius-md:10px;--hv-radius-lg:14px;
+  --hv-shadow-sm:0 1px 3px rgba(0,0,0,.5);--hv-shadow-lg:0 8px 32px rgba(0,0,0,.7);
+  --hv-transition-fast:150ms ease;--hv-transition:250ms ease;
+  --hv-max-width:1280px;--hv-header-height:60px;
+  --cyan:#06b6d4;--orange:#ff8c42;--purple:#a855f7;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px;scroll-behavior:smooth;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body{font-family:var(--hv-font-body);background:var(--hv-bg-base);color:var(--hv-text-primary);line-height:1.6;min-height:100vh;overflow-x:hidden}
+::selection{background:var(--hv-primary);color:#fff}
+::-webkit-scrollbar{width:5px;height:5px}
+::-webkit-scrollbar-track{background:var(--hv-bg-base)}
+::-webkit-scrollbar-thumb{background:#333;border-radius:3px}
+
+.hv-header{position:sticky;top:0;z-index:100;height:var(--hv-header-height);background:rgba(0,0,0,.9);backdrop-filter:blur(20px) saturate(180%);-webkit-backdrop-filter:blur(20px) saturate(180%);border-bottom:1px solid var(--hv-border);display:flex;align-items:center;padding:0 var(--hv-space-lg)}
+.hv-header-inner{width:100%;max-width:var(--hv-max-width);margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:var(--hv-space-md)}
+.hv-header-center{display:flex;flex-direction:column;min-width:0}
+.hv-header-center h1{font-family:var(--hv-font-display);font-size:.938rem;font-weight:600;color:var(--hv-text-primary);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.hv-header-category{font-size:.7rem;color:var(--hv-text-tertiary);font-weight:500;text-transform:uppercase;letter-spacing:.08em}
+.hv-header-right{display:flex;align-items:center;gap:var(--hv-space-xs);flex-shrink:0}
+.hv-update-badge{font-family:var(--hv-font-mono);font-size:.688rem;color:var(--hv-text-tertiary);white-space:nowrap;display:flex;align-items:center;gap:6px}
+.hv-live-dot{width:5px;height:5px;background:var(--hv-up);border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+
+.hv-page{max-width:var(--hv-max-width);margin:0 auto;padding:var(--hv-space-lg)}
+
+/* CARDS */
+.hv-card{background:var(--hv-bg-card);border:1px solid var(--hv-border);border-radius:var(--hv-radius-lg);overflow:hidden;margin-bottom:var(--hv-space-lg)}
+.hv-card-head{display:flex;align-items:center;justify-content:space-between;padding:14px var(--hv-space-lg);border-bottom:1px solid var(--hv-border)}
+.hv-card-head h2{font-size:.875rem;font-weight:600;color:var(--hv-text-primary);display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+.hv-card-body{padding:var(--hv-space-lg)}
+.badge{font-size:9px;padding:2px 7px;border-radius:8px;font-weight:500}
+.b-poly{background:rgba(59,130,246,.12);color:#60a5fa}
+.b-fred{background:rgba(245,158,11,.12);color:#fbbf24}
+.chart-wrap{position:relative;width:100%;height:280px}
+.chart-wrap canvas{width:100%!important;height:100%!important}
+
+/* LEGEND */
+.leg{display:flex;flex-wrap:wrap;gap:12px;margin-top:12px;justify-content:center}
+.leg-i{display:flex;align-items:center;gap:4px;font-size:10px;color:var(--hv-text-secondary)}
+.leg-d{width:9px;height:9px;border-radius:50%}
+
+/* FOMC CARDS */
+.fomc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.fomc-item{background:var(--hv-bg-base);border:1px solid var(--hv-border);border-radius:var(--hv-radius-md);padding:16px;transition:all var(--hv-transition)}
+.fomc-item:hover{border-color:var(--hv-border-strong)}
+.fomc-item--next{border-color:rgba(245,158,11,.35);background:rgba(245,158,11,.03)}
+.fomc-item--done{opacity:.45}
+.fomc-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:4px}
+.fomc-month{font-family:var(--hv-font-display);font-size:1rem;font-weight:700;color:var(--hv-text-primary)}
+.fomc-badge{font-size:9px;padding:3px 9px;border-radius:6px;font-weight:600;white-space:nowrap}
+.fb-done{background:rgba(16,185,129,.12);color:#34d399}
+.fb-next{background:rgba(245,158,11,.15);color:#fbbf24}
+.fb-future{background:rgba(100,116,139,.1);color:#94a3b8}
+.fomc-date{font-size:.75rem;color:var(--hv-text-secondary);margin-bottom:14px}
+.fomc-bars{display:flex;flex-direction:column;gap:8px}
+.fomc-bar-row{display:flex;align-items:center;gap:8px}
+.fomc-bar-label{font-size:.688rem;color:var(--hv-text-secondary);min-width:68px;flex-shrink:0}
+.fomc-bar-track{flex:1;height:8px;background:rgba(255,255,255,.04);border-radius:4px;overflow:hidden}
+.fomc-bar-fill{height:100%;border-radius:4px;transition:width .5s ease}
+.fomc-bar-pct{font-family:var(--hv-font-mono);font-size:.75rem;font-weight:600;min-width:38px;text-align:right}
+.fomc-waiting{font-size:.75rem;color:var(--hv-text-muted);text-align:center;padding:10px 0}
+
+/* SHARE BAR */
+.share-bar{display:flex;align-items:center;justify-content:space-between;padding:12px var(--hv-space-lg);border-top:1px solid var(--hv-border);background:var(--hv-bg-surface);border-radius:0 0 var(--hv-radius-lg) var(--hv-radius-lg)}
+.share-bar-preview{font-size:.75rem;color:var(--hv-text-tertiary);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:50%;line-height:1.4;font-family:var(--hv-font-mono)}
+.share-bar-preview span{color:var(--hv-text-secondary);font-weight:500}
+.share-bar-buttons{display:flex;align-items:center;gap:6px;flex-shrink:0}
+.share-btn{display:inline-flex;align-items:center;gap:6px;padding:7px 14px;border-radius:6px;font-size:.75rem;font-weight:600;font-family:var(--hv-font-body);cursor:pointer;transition:all var(--hv-transition-fast);border:1px solid var(--hv-border-strong);background:var(--hv-bg-card);color:#999;white-space:nowrap}
+.share-btn:hover{transform:translateY(-1px);box-shadow:var(--hv-shadow-sm);color:var(--hv-text-primary)}
+.share-btn svg{flex-shrink:0}
+.share-btn--x:hover{border-color:#fff;color:#fff;background:#111}
+.share-btn--kakao:hover{border-color:#FEE500;color:#191919;background:#FEE500}
+.share-btn--tg:hover{border-color:#26A5E4;color:#fff;background:rgba(38,165,228,.15)}
+.share-btn--copy:hover{border-color:var(--hv-primary);color:var(--hv-primary-light);background:var(--hv-primary-glow)}
+
+/* TOAST */
+.toast-wrap{position:fixed;bottom:20px;right:20px;z-index:200;display:flex;flex-direction:column;gap:8px}
+.toast{background:var(--hv-bg-elevated);border:1px solid var(--hv-border-strong);border-radius:var(--hv-radius-md);padding:10px 18px;font-size:.788rem;color:var(--hv-text-primary);box-shadow:var(--hv-shadow-lg);animation:toastIn .3s ease;border-left:3px solid var(--hv-up)}
+@keyframes toastIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+
+@media(max-width:768px){
+  :root{--hv-header-height:52px}
+  .hv-page{padding:var(--hv-space-md)}
+  .hv-header{padding:0 var(--hv-space-md)}
+  .hv-update-badge{display:none}
+  .chart-wrap{height:240px}
+  .fomc-grid{grid-template-columns:1fr}
+  .share-bar{flex-direction:column;gap:10px;align-items:stretch}
+  .share-bar-preview{max-width:100%}
+  .share-bar-buttons{justify-content:center;flex-wrap:wrap}
+  .share-btn span.label-text{display:none}
+  .share-btn{padding:8px 10px}
+}
+</style>
+</head>
+<body>
+
+<header class="hv-header">
+  <div class="hv-header-inner">
+    <div class="hv-header-center">
+      <h1>Fed 금리 — FOMC 전망</h1>
+      <span class="hv-header-category">Fed Rate · Forecast</span>
+    </div>
+    <div class="hv-header-right">
+      <div class="hv-update-badge"><span class="hv-live-dot"></span><span id="lastUpdate">업데이트 중...</span></div>
+    </div>
+  </div>
+</header>
+
+<div class="hv-page">
+
+  <!-- FOMC BAR CHART -->
+  <div class="hv-card" id="fomcCard">
+    <div class="hv-card-head"><h2>🎯 FOMC 미팅별 금리 전망 <span class="badge b-poly">Polymarket</span></h2></div>
+    <div class="hv-card-body">
+      <div class="chart-wrap"><canvas id="cFOMC"></canvas></div>
+      <div class="leg">
+        <div class="leg-i"><div class="leg-d" style="background:#64748b"></div>동결</div>
+        <div class="leg-i"><div class="leg-d" style="background:#3b82f6"></div>25bp 인하</div>
+        <div class="leg-i"><div class="leg-d" style="background:#06b6d4"></div>50bp+ 인하</div>
+        <div class="leg-i"><div class="leg-d" style="background:#ef4444"></div>인상</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RATE PATH -->
+  <div class="hv-card" id="pathCard">
+    <div class="hv-card-head"><h2>📉 예상 금리 경로 <span class="badge b-poly">Polymarket</span><span class="badge b-fred">FRED</span></h2></div>
+    <div class="hv-card-body">
+      <div class="chart-wrap"><canvas id="cPath"></canvas></div>
+    </div>
+  </div>
+
+  <!-- FOMC TABLE -->
+  <div class="hv-card" id="tableCard">
+    <div class="hv-card-head"><h2>📋 2026 FOMC 전체 일정</h2></div>
+    <div class="hv-card-body">
+      <div class="fomc-grid" id="fomcGrid"></div>
+    </div>
+  </div>
+
+  <!-- SHARE BAR -->
+  <div style="background:var(--hv-bg-card);border:1px solid var(--hv-border);border-radius:var(--hv-radius-lg);overflow:hidden">
+    <div class="share-bar" style="border-top:none">
+      <div class="share-bar-preview"><span>Fed 금리 — FOMC 전망</span> — herdvibe.com</div>
+      <div class="share-bar-buttons">
+        <button class="share-btn share-btn--x" onclick="doShare('twitter')"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg><span class="label-text">트위터</span></button>
+        <button class="share-btn share-btn--kakao" onclick="doShare('kakao')"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3C6.477 3 2 6.463 2 10.691c0 2.724 1.8 5.112 4.508 6.458l-1.148 4.265a.5.5 0 0 0 .764.533l4.94-3.26c.304.02.612.03.936.03 5.523 0 10-3.462 10-7.735C22 6.463 17.523 3 12 3z"/></svg><span class="label-text">카카오톡</span></button>
+        <button class="share-btn share-btn--tg" onclick="doShare('telegram')"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg><span class="label-text">텔레그램</span></button>
+        <button class="share-btn" onclick="doShare('instagram',this)" style="border-color:var(--hv-border-strong)"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg><span class="label-text">인스타</span></button>
+        <button class="share-btn share-btn--copy" onclick="doShare('link',this)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg><span class="label-text">링크 복사</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ===== SHARE ===== */
+var SHARE_URL='https://herdvibe.com/65';
+function ensureKakao(){try{if(typeof Kakao!=='undefined'&&!Kakao.isInitialized())Kakao.init('a43ed7b39fac35458f4f9df925a279b5');return typeof Kakao!=='undefined'&&Kakao.isInitialized();}catch(e){return false;}}
+ensureKakao();
+function kakaoShare(t,d){if(!ensureKakao()){copyToClipboard(SHARE_URL);toast('링크 복사완료!');return;}try{Kakao.Share.sendDefault({objectType:'feed',content:{title:t||'Fed FOMC 금리 전망',description:d||'FOMC 미팅별 확률, 예상 금리 경로',imageUrl:'https://raw.githubusercontent.com/kittycapital/kittycapital.github.io/main/assets/herdvibe-og.png',link:{mobileWebUrl:SHARE_URL,webUrl:SHARE_URL}},buttons:[{title:'대시보드 보기',link:{mobileWebUrl:SHARE_URL,webUrl:SHARE_URL}}]});}catch(e){copyToClipboard(SHARE_URL);toast('링크 복사완료!');}}
+function copyToClipboard(t){try{window.parent.postMessage({type:'clipboard',text:t},'*');}catch(e){}}
+function flashCopied(b){if(!b)return;var o=b.innerHTML;b.style.background='#22c55e';b.style.color='#fff';b.style.borderColor='#22c55e';var h=b.querySelector('.label-text');b.innerHTML='<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round"><path d="M5 13l4 4L19 7"/></svg>'+(h?'<span class="label-text" style="color:#fff">복사됨!</span>':'');setTimeout(function(){b.style.background='';b.style.color='';b.style.borderColor='';b.innerHTML=o;},2000);}
+function doShare(p,b){var u=SHARE_URL,t=encodeURIComponent('Fed FOMC 금리 전망 | herdvibe.com'),eu=encodeURIComponent(u);switch(p){case'twitter':window.open('https://twitter.com/intent/tweet?text='+t+'&url='+eu,'_blank');break;case'telegram':window.open('https://t.me/share/url?url='+eu+'&text='+t,'_blank');break;case'kakao':kakaoShare();break;case'instagram':copyToClipboard(u);flashCopied(b);toast('링크 복사완료! 인스타그램에 붙여넣기 하세요');break;case'link':copyToClipboard(u);flashCopied(b);toast('링크가 복사되었습니다 ✓');break;}}
+function toast(m){var c=document.querySelector('.toast-wrap');if(!c){c=document.createElement('div');c.className='toast-wrap';document.body.appendChild(c);}var t=document.createElement('div');t.className='toast';t.textContent=m;c.appendChild(t);setTimeout(function(){t.style.opacity='0';t.style.transform='translateY(12px)';t.style.transition='.3s';setTimeout(function(){t.remove();},300);},3000);}
+
+/* ===== CHART ===== */
+var watermarkPlugin={id:'herdvibeWatermark',beforeDraw:function(ch){var ctx=ch.ctx,ca=ch.chartArea;if(!ca)return;ctx.save();ctx.font='700 28px "Plus Jakarta Sans",sans-serif';ctx.fillStyle='rgba(255,255,255,0.03)';ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText('Herdvibe.com',(ca.left+ca.right)/2,(ca.top+ca.bottom)/2);ctx.restore()}};
+Chart.register(watermarkPlugin);
+Chart.defaults.color='#94a3b8';Chart.defaults.borderColor='#1a2332';
+Chart.defaults.font.family="'JetBrains Mono','Noto Sans KR',sans-serif";Chart.defaults.font.size=10;
+Chart.defaults.responsive=true;Chart.defaults.maintainAspectRatio=false;
+Chart.defaults.plugins.legend.display=false;
+Chart.defaults.elements.point.radius=0;Chart.defaults.elements.point.hoverRadius=4;
+Chart.defaults.elements.line.borderWidth=2;Chart.defaults.animation.duration=600;
+
+const MO_KO={1:"1월",2:"2월",3:"3월",4:"4월",5:"5월",6:"6월",7:"7월",8:"8월",9:"9월",10:"10월",11:"11월",12:"12월"};
+const MO_EN={january:1,february:2,march:3,april:4,may:5,june:6,july:7,august:8,september:9,october:10,november:11,december:12};
+const DATA_BASE='';
+
+async function loadData(){
+  try{const r=await fetch(DATA_BASE+'data/rate_data.json');if(r.ok){const j=await r.json();if(j.fomc_calendar?.length)return j;}}catch(_){}
+  return{meta:{updated_at:new Date().toISOString()},fomc_calendar:[],sofr:[],fed_funds_target:null,polymarket:[]};
+}
+
+function buildFOMC(cal,polyEvents){
+  const now=new Date(),yr=now.getFullYear();
+  const pByMonth={};
+  for(const ev of polyEvents){const tl=ev.title.toLowerCase();let mo=null;for(const[en,num]of Object.entries(MO_EN)){if(tl.includes(en)){mo=num;break;}}if(!mo)continue;let eyr=yr;if(ev.endDate){try{eyr=new Date(ev.endDate).getFullYear();}catch(_){}}if(eyr===yr)pByMonth[mo]=ev;}
+  const meetings=[];
+  for(const c of cal){
+    const pev=pByMonth[c.month]||null;const endD=new Date(c.end_date+"T23:59:59Z");const past=endD<now;
+    let nc=0,c25=0,c50=0,hk=0,has=false;
+    if(pev){has=true;for(const m of pev.markets){const oc=m.outcomes_en||[];oc.forEach((o,i)=>{const ol=o.toLowerCase(),p=(m.prices[i]||0)*100;if(ol.includes("no change"))nc=Math.max(nc,p);else if(ol.includes("25")&&(ol.includes("decrease")||ol.includes("cut")))c25=Math.max(c25,p);else if((ol.includes("50")||ol.includes("75")||ol.includes("100"))&&(ol.includes("decrease")||ol.includes("cut")))c50=Math.max(c50,p);else if(ol.includes("hike")||ol.includes("increase"))hk=Math.max(hk,p);});if(oc.length===2){const q=(m.question_en+" "+m.groupItemTitle_en).toLowerCase();const p0=(m.prices[0]||0)*100;if(q.includes("no change"))nc=Math.max(nc,p0);else if(q.includes("25")&&(q.includes("decrease")||q.includes("cut")))c25=Math.max(c25,p0);else if(q.includes("50")&&(q.includes("decrease")||q.includes("cut")))c50=Math.max(c50,p0);else if(q.includes("increase")||q.includes("hike"))hk=Math.max(hk,p0);}}}
+    const dd=c.date.split("-"),ed=c.end_date.split("-");
+    meetings.push({title:MO_KO[c.month],dateLabel:`${+dd[1]}/${+dd[2]}~${+ed[2]}`,fullDate:`${c.year}년 ${+dd[1]}월 ${+dd[2]}~${+ed[2]}일`,month:c.month,noChange:Math.round(nc),cut25:Math.round(c25),cut50:Math.round(c50),hike:Math.round(hk),hasData:has,isPast:past});
+  }
+  const fi=meetings.findIndex(m=>!m.isPast);meetings.forEach((m,i)=>{m.status=m.isPast?"done":i===fi?"next":"future";});
+  return meetings;
+}
+
+function drawFOMC(fomc){
+  if(!fomc.length)return;
+  const ctx=document.getElementById("cFOMC").getContext("2d");
+  new Chart(ctx,{type:"bar",data:{labels:fomc.map(m=>{let l=m.title;if(!m.hasData&&!m.isPast)l+="\n(대기)";if(m.isPast)l+="\n(완료)";return l;}),datasets:[
+    {label:"동결",data:fomc.map(m=>m.noChange),backgroundColor:fomc.map(m=>m.isPast?"rgba(71,85,105,.3)":m.hasData?"#475569":"#2a3040"),borderRadius:3,barPercentage:.72},
+    {label:"25bp 인하",data:fomc.map(m=>m.cut25),backgroundColor:fomc.map(m=>m.isPast?"rgba(59,130,246,.3)":m.hasData?"#3b82f6":"#1e3a5f"),borderRadius:3,barPercentage:.72},
+    {label:"50bp+ 인하",data:fomc.map(m=>m.cut50),backgroundColor:fomc.map(m=>m.isPast?"rgba(6,182,212,.3)":m.hasData?"#06b6d4":"#0a4a54"),borderRadius:3,barPercentage:.72},
+    {label:"인상",data:fomc.map(m=>m.hike),backgroundColor:fomc.map(m=>m.isPast?"rgba(239,68,68,.3)":m.hasData?"#ef4444":"#5a2020"),borderRadius:3,barPercentage:.72}
+  ]},options:{plugins:{tooltip:{backgroundColor:"#1e293b",borderColor:"#334155",borderWidth:1,padding:8,callbacks:{label:c=>c.raw?`${c.dataset.label}: ${c.raw}%`:''}}},scales:{x:{stacked:true,grid:{display:false},ticks:{font:{size:10}}},y:{stacked:true,max:100,grid:{color:"rgba(255,255,255,0.04)"},ticks:{callback:v=>v+"%",font:{size:10}}}}}});
+}
+
+function drawPath(fomc,targetUpper){
+  const future=fomc.filter(m=>!m.isPast);if(!future.length)return;
+  let u=targetUpper||3.75;
+  const p=[{l:"현재",u,lo:u-.25}];
+  for(const m of future){const e=m.hasData?(m.cut25*-.25+m.cut50*-.5+m.hike*.25)/100:0;u=Math.round((u+e)*100)/100;p.push({l:m.title,u,lo:u-.25});}
+  const ctx=document.getElementById("cPath").getContext("2d");
+  new Chart(ctx,{type:"line",data:{labels:p.map(x=>x.l),datasets:[
+    {label:"내재 금리 상한",data:p.map(x=>x.u),borderColor:"#3b82f6",backgroundColor:"rgba(59,130,246,.06)",borderWidth:2.5,fill:true,tension:.4,pointRadius:5,pointBackgroundColor:"#3b82f6",pointBorderColor:"#0d1117",pointBorderWidth:2},
+    {label:"내재 금리 하한",data:p.map(x=>x.lo),borderColor:"#8b5cf6",backgroundColor:"rgba(139,92,246,.06)",borderWidth:2,borderDash:[5,5],fill:true,tension:.4,pointRadius:4,pointBackgroundColor:"#8b5cf6",pointBorderColor:"#0d1117",pointBorderWidth:2}
+  ]},options:{interaction:{mode:"index",intersect:false},plugins:{legend:{display:true,position:"bottom",labels:{boxWidth:10,padding:14,font:{size:10},usePointStyle:true}},tooltip:{backgroundColor:"#1e293b",borderColor:"#334155",borderWidth:1,padding:8,callbacks:{label:c=>`${c.dataset.label}: ${c.raw.toFixed(2)}%`}}},scales:{x:{grid:{display:false},ticks:{font:{size:10}}},y:{grid:{color:"rgba(255,255,255,0.04)"},ticks:{callback:v=>v.toFixed(2)+"%",stepSize:.25,font:{size:10}},suggestedMin:2.0}}}});
+}
+
+function drawTable(fomc){
+  const g=document.getElementById("fomcGrid");
+  if(!fomc.length){g.innerHTML='<div class="fomc-waiting">데이터 없음</div>';return;}
+  g.innerHTML=fomc.map(f=>{
+    const cls=f.status==="next"?" fomc-item--next":f.isPast?" fomc-item--done":"";
+    const bc=f.status==="done"?"fb-done":f.status==="next"?"fb-next":"fb-future";
+    const bl=f.status==="done"?"완료":f.status==="next"?"▶ 다음":"예정";
+    const bar=(label,pct,color)=>`<div class="fomc-bar-row"><div class="fomc-bar-label">${label}</div><div class="fomc-bar-track"><div class="fomc-bar-fill" style="width:${pct}%;background:${color}"></div></div><div class="fomc-bar-pct" style="color:${color}">${pct}%</div></div>`;
+    const bars=f.hasData||f.isPast?
+      bar("동결",f.noChange,"#64748b")+bar("25bp 인하",f.cut25,"#3b82f6")+bar("50bp+ 인하",f.cut50,"#06b6d4")+bar("인상",f.hike,"#ef4444"):
+      '<div class="fomc-waiting">예측 데이터 대기</div>';
+    return`<div class="fomc-item${cls}"><div class="fomc-top"><div class="fomc-month">${f.title}</div><span class="fomc-badge ${bc}">${bl}</span></div><div class="fomc-date">${f.fullDate}</div><div class="fomc-bars">${bars}</div></div>`;
+  }).join("");
+}
+
+async function init(){
+  try{
+    const data=await loadData();
+    const fomc=buildFOMC(data.fomc_calendar||[],data.polymarket||[]);
+    const tgt=data.fed_funds_target;
+    const targetUpper=(tgt&&tgt.upper!=null)?tgt.upper:null;
+    drawFOMC(fomc);drawPath(fomc,targetUpper);drawTable(fomc);
+    const ts=data.meta?.updated_at||new Date().toISOString();const d=new Date(ts);
+    document.getElementById("lastUpdate").textContent=`${d.toLocaleDateString("ko-KR")} ${d.toLocaleTimeString("ko-KR",{hour:"2-digit",minute:"2-digit"})} 업데이트`;
+  }catch(e){console.error(e);document.getElementById("lastUpdate").textContent="로드 실패";}
+  sendHeight();window.addEventListener('resize',sendHeight);new MutationObserver(sendHeight).observe(document.body,{childList:true,subtree:true});
+}
+
+var _lastH=0,_ht;
+function sendHeight(){clearTimeout(_ht);_ht=setTimeout(function(){var h=document.body.offsetHeight;if(Math.abs(h-_lastH)>5){_lastH=h;window.parent.postMessage({type:'resize',height:h},'*');}},150);}
+window.addEventListener('message',function(e){if(e.data&&e.data.type==='requestResize'){_lastH=0;sendHeight();}});
+init();
+</script>
+</body>
+</html>
