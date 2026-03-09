@@ -2,10 +2,8 @@ name: Update Fed Rate Data
 
 on:
   schedule:
-    # 매일 KST 07:00 (UTC 22:00)
-    - cron: '0 22 * * *'
-    # 평일 미국장 마감 후 추가 (KST 07:30)
-    - cron: '30 22 * * 1-5'
+    # 평일만 KST 07:00 (Sun-Thu UTC 22:00 = Mon-Fri KST)
+    - cron: '0 22 * * 0-4'
   workflow_dispatch:
 
 permissions:
