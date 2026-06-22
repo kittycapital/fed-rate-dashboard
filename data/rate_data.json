@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-06-21T22:31:53.309009Z",
+    "updated_at": "2026-06-22T22:38:39.650699Z",
     "year": 2026,
     "version": "3.4"
   },
@@ -71,10 +71,6 @@
     }
   ],
   "sofr": [
-    {
-      "date": "2026-02-09",
-      "rate": 3.63
-    },
     {
       "date": "2026-02-10",
       "rate": 3.65
@@ -430,13 +426,17 @@
     {
       "date": "2026-06-17",
       "rate": 3.63
+    },
+    {
+      "date": "2026-06-18",
+      "rate": 3.62
     }
   ],
   "fed_funds_target": {
     "upper": 3.75,
-    "upper_date": "2026-06-21",
+    "upper_date": "2026-06-22",
     "lower": 3.5,
-    "lower_date": "2026-06-21"
+    "lower_date": "2026-06-22"
   },
   "polymarket": [
     {
@@ -819,10 +819,10 @@
             "아니오"
           ],
           "prices": [
-            0.0025,
-            0.9975
+            0.0015,
+            0.9985
           ],
-          "volume": 450072.8323240003
+          "volume": 450615.05232400034
         },
         {
           "question_en": "Macron out by October 31, 2025?",
@@ -885,7 +885,7 @@
             0.51,
             0.49
           ],
-          "volume": 833065.1242780071
+          "volume": 834617.5590030076
         },
         {
           "question_en": "New Playboi Carti Album before GTA VI?",
@@ -900,10 +900,10 @@
             "아니오"
           ],
           "prices": [
-            0.515,
-            0.485
+            0.53,
+            0.47
           ],
-          "volume": 742215.415489946
+          "volume": 743230.9148259462
         },
         {
           "question_en": "Will Jesus Christ return before GTA VI?",
@@ -921,7 +921,7 @@
             0.495,
             0.505
           ],
-          "volume": 11605102.300400712
+          "volume": 11634285.439745707
         },
         {
           "question_en": "Trump out as President before GTA VI?",
@@ -939,7 +939,7 @@
             0.505,
             0.495
           ],
-          "volume": 671463.7376070076
+          "volume": 673254.9576070075
         },
         {
           "question_en": "Will China invades Taiwan before GTA VI?",
@@ -957,7 +957,7 @@
             0.505,
             0.495
           ],
-          "volume": 1874066.4678720655
+          "volume": 1874698.6478720657
         },
         {
           "question_en": "Will bitcoin hit $1m before GTA VI?",
@@ -975,7 +975,7 @@
             0.4945,
             0.5055
           ],
-          "volume": 4505510.296651513
+          "volume": 4510380.933667513
         },
         {
           "question_en": "Will GPT-6 be released before GTA VI?",
@@ -990,10 +990,10 @@
             "아니오"
           ],
           "prices": [
-            0.52,
-            0.48
+            0.525,
+            0.475
           ],
-          "volume": 662652.0529389968
+          "volume": 662724.8078479969
         },
         {
           "question_en": "Will Drake release Iceman before GTA VI?",
@@ -1029,7 +1029,7 @@
             0.505,
             0.495
           ],
-          "volume": 18335.515948
+          "volume": 18439.915948
         }
       ]
     },
@@ -1053,10 +1053,10 @@
             "아니오"
           ],
           "prices": [
-            0.2,
-            0.8
+            0.184,
+            0.816
           ],
-          "volume": 421709.0248909997
+          "volume": 421714.0248909997
         },
         {
           "question_en": "Will the upper bound of the target federal funds rate be 2.25% at the end of 2026?",
@@ -1107,10 +1107,10 @@
             "아니오"
           ],
           "prices": [
-            0.3285,
-            0.6715
+            0.3025,
+            0.6975
           ],
-          "volume": 523416.74697300076
+          "volume": 525073.3469730008
         },
         {
           "question_en": "Will the upper bound of the target federal funds rate be 3.0% at the end of 2026?",
@@ -1164,7 +1164,7 @@
             0.0075,
             0.9925
           ],
-          "volume": 55321.126046
+          "volume": 55354.55304599999
         },
         {
           "question_en": "Will the upper bound of the target federal funds rate be 3.5% at the end of 2026?",
@@ -1179,10 +1179,10 @@
             "아니오"
           ],
           "prices": [
-            0.079,
-            0.921
+            0.0765,
+            0.9235
           ],
-          "volume": 197808.23793100004
+          "volume": 197813.64918100004
         },
         {
           "question_en": "Will the upper bound of the target federal funds rate be 4.0% at the end of 2026?",
@@ -1197,10 +1197,10 @@
             "아니오"
           ],
           "prices": [
-            0.2535,
-            0.7465
+            0.3175,
+            0.6825
           ],
-          "volume": 1365517.479743
+          "volume": 1365607.284978
         },
         {
           "question_en": "Will the upper bound of the target federal funds rate be ≥ 4.5% at the end of 2026?",
@@ -1215,10 +1215,10 @@
             "아니오"
           ],
           "prices": [
-            0.079,
-            0.921
+            0.0835,
+            0.9165
           ],
-          "volume": 2403312.5255720024
+          "volume": 2403417.725572002
         },
         {
           "question_en": "Will the upper bound of the target federal funds rate be ≤1.0% at the end of 2026?",
@@ -1233,10 +1233,10 @@
             "아니오"
           ],
           "prices": [
-            0.0035,
-            0.9965
+            0.005,
+            0.995
           ],
-          "volume": 220445.5077009998
+          "volume": 220899.38770099977
         },
         {
           "question_en": "Will the upper bound of the target federal funds rate be 1.25% at the end of 2026?",
@@ -1254,7 +1254,7 @@
             0.0055,
             0.9945
           ],
-          "volume": 137218.78127599997
+          "volume": 137361.63841799996
         },
         {
           "question_en": "Will the upper bound of the target federal funds rate be 1.5% at the end of 2026?",
@@ -1272,7 +1272,7 @@
             0.0045,
             0.9955
           ],
-          "volume": 142135.77797100012
+          "volume": 142302.44463700012
         },
         {
           "question_en": "Will the upper bound of the target federal funds rate be 1.75% at the end of 2026?",
@@ -1287,10 +1287,10 @@
             "아니오"
           ],
           "prices": [
-            0.0035,
-            0.9965
+            0.004,
+            0.996
           ],
-          "volume": 141597.22884799994
+          "volume": 141767.51884799995
         },
         {
           "question_en": "Will the upper bound of the target federal funds rate be 2.0% at the end of 2026?",
@@ -1309,6 +1309,69 @@
             0.9965
           ],
           "volume": 254492.80088799988
+        }
+      ]
+    },
+    {
+      "slug": "israel-and-syria-normalize-relations-in-2025",
+      "title": "Israel and Syria normalize relations by...?",
+      "title_ko": "Israel and Syria normalize relations by...?",
+      "endDate": "2026-12-31T00:00:00Z",
+      "closed": false,
+      "markets": [
+        {
+          "question_en": "Israel and Syria normalize relations by December 31, 2025?",
+          "question_ko": "Israel and Syria normalize relations by December 31, 2025?",
+          "groupItemTitle_en": "December 31, 2025",
+          "outcomes_en": [
+            "Yes",
+            "No"
+          ],
+          "outcomes_ko": [
+            "예",
+            "아니오"
+          ],
+          "prices": [
+            0.0,
+            1.0
+          ],
+          "volume": 837266.369772
+        },
+        {
+          "question_en": "Israel and Syria normalize relations by June 30, 2026?",
+          "question_ko": "Israel and Syria normalize relations by June 30, 2026?",
+          "groupItemTitle_en": "June 30, 2026",
+          "outcomes_en": [
+            "Yes",
+            "No"
+          ],
+          "outcomes_ko": [
+            "예",
+            "아니오"
+          ],
+          "prices": [
+            0.008,
+            0.992
+          ],
+          "volume": 622660.7778300036
+        },
+        {
+          "question_en": "Israel and Syria normalize relations by December 31, 2026?",
+          "question_ko": "Israel and Syria normalize relations by December 31, 2026?",
+          "groupItemTitle_en": "December 31, 2026",
+          "outcomes_en": [
+            "Yes",
+            "No"
+          ],
+          "outcomes_ko": [
+            "예",
+            "아니오"
+          ],
+          "prices": [
+            0.125,
+            0.875
+          ],
+          "volume": 637813.6524669972
         }
       ]
     },
@@ -1332,10 +1395,10 @@
             "아니오"
           ],
           "prices": [
-            0.8055,
-            0.1945
+            0.8025,
+            0.1975
           ],
-          "volume": 5399238.378775989
+          "volume": 5413423.055538982
         },
         {
           "question_en": "Will 1 Fed rate cut happen in 2026?",
@@ -1350,10 +1413,10 @@
             "아니오"
           ],
           "prices": [
-            0.145,
-            0.855
+            0.135,
+            0.865
           ],
-          "volume": 1751263.1624419682
+          "volume": 1770013.386997968
         },
         {
           "question_en": "Will 2 Fed rate cuts happen in 2026?",
@@ -1368,10 +1431,10 @@
             "아니오"
           ],
           "prices": [
-            0.0225,
-            0.9775
+            0.0365,
+            0.9635
           ],
-          "volume": 1751632.944717964
+          "volume": 1774302.8987009644
         },
         {
           "question_en": "Will 3 Fed rate cuts happen in 2026?",
@@ -1389,7 +1452,7 @@
             0.0095,
             0.9905
           ],
-          "volume": 1762264.3630919736
+          "volume": 1800408.094279973
         },
         {
           "question_en": "Will 4 Fed rate cuts happen in 2026?",
@@ -1404,10 +1467,10 @@
             "아니오"
           ],
           "prices": [
-            0.0045,
-            0.9955
+            0.006,
+            0.994
           ],
-          "volume": 1592191.5349209665
+          "volume": 1621256.8027259677
         },
         {
           "question_en": "Will 5 Fed rate cuts happen in 2026?",
@@ -1425,7 +1488,7 @@
             0.0035,
             0.9965
           ],
-          "volume": 1785784.763337967
+          "volume": 1805820.6077439662
         },
         {
           "question_en": "Will 6 Fed rate cuts happen in 2026?",
@@ -1443,7 +1506,7 @@
             0.0035,
             0.9965
           ],
-          "volume": 3077592.9026889247
+          "volume": 3115937.2009979268
         },
         {
           "question_en": "Will 7 Fed rate cuts happen in 2026?",
@@ -1461,7 +1524,7 @@
             0.0025,
             0.9975
           ],
-          "volume": 2431930.194572914
+          "volume": 2453180.947905914
         },
         {
           "question_en": "Will 8 Fed rate cuts happen in 2026?",
@@ -1479,7 +1542,7 @@
             0.0025,
             0.9975
           ],
-          "volume": 2459602.9107259656
+          "volume": 2487514.1647259654
         },
         {
           "question_en": "Will 9 Fed rate cuts happen in 2026?",
@@ -1497,7 +1560,7 @@
             0.0025,
             0.9975
           ],
-          "volume": 3557209.717900921
+          "volume": 3576241.9129009186
         },
         {
           "question_en": "Will 10 Fed rate cuts happen in 2026?",
@@ -1515,7 +1578,7 @@
             0.0025,
             0.9975
           ],
-          "volume": 4235584.975683964
+          "volume": 4253068.493183965
         },
         {
           "question_en": "Will 11 Fed rate cuts happen in 2026?",
@@ -1533,7 +1596,7 @@
             0.0025,
             0.9975
           ],
-          "volume": 4318928.691406974
+          "volume": 4340312.773906975
         },
         {
           "question_en": "Will 12 or more Fed rate cuts happen in 2026?",
@@ -1551,358 +1614,7 @@
             0.0035,
             0.9965
           ],
-          "volume": 3126234.7634639293
-        }
-      ]
-    },
-    {
-      "slug": "starmer-out-in-2025",
-      "title": "Starmer out by...?",
-      "title_ko": "Starmer out by...?",
-      "endDate": "2026-12-31T12:00:00Z",
-      "closed": false,
-      "markets": [
-        {
-          "question_en": "Starmer out in 2025?",
-          "question_ko": "Starmer out in 2025?",
-          "groupItemTitle_en": "December 31, 2025",
-          "outcomes_en": [
-            "Yes",
-            "No"
-          ],
-          "outcomes_ko": [
-            "예",
-            "아니오"
-          ],
-          "prices": [
-            0.0,
-            1.0
-          ],
-          "volume": 1321879.731075
-        },
-        {
-          "question_en": "Starmer out by June 30, 2026?",
-          "question_ko": "Starmer out by June 30, 2026?",
-          "groupItemTitle_en": "June 30",
-          "outcomes_en": [
-            "Yes",
-            "No"
-          ],
-          "outcomes_ko": [
-            "예",
-            "아니오"
-          ],
-          "prices": [
-            0.905,
-            0.095
-          ],
-          "volume": 7449401.803089065
-        },
-        {
-          "question_en": "Starmer out by December 31, 2026?",
-          "question_ko": "Starmer out by December 31, 2026?",
-          "groupItemTitle_en": "December 31",
-          "outcomes_en": [
-            "Yes",
-            "No"
-          ],
-          "outcomes_ko": [
-            "예",
-            "아니오"
-          ],
-          "prices": [
-            0.9855,
-            0.0145
-          ],
-          "volume": 3438606.6072369902
-        },
-        {
-          "question_en": "Starmer out by February 28, 2026?",
-          "question_ko": "Starmer out by February 28, 2026?",
-          "groupItemTitle_en": "February 28",
-          "outcomes_en": [
-            "Yes",
-            "No"
-          ],
-          "outcomes_ko": [
-            "예",
-            "아니오"
-          ],
-          "prices": [
-            0.0,
-            1.0
-          ],
-          "volume": 5862235.976712
-        },
-        {
-          "question_en": "Starmer out by March 31, 2026?",
-          "question_ko": "Starmer out by March 31, 2026?",
-          "groupItemTitle_en": "March 31",
-          "outcomes_en": [
-            "Yes",
-            "No"
-          ],
-          "outcomes_ko": [
-            "예",
-            "아니오"
-          ],
-          "prices": [
-            0.0,
-            1.0
-          ],
-          "volume": 878483.2840860012
-        },
-        {
-          "question_en": "Starmer out by April 30, 2026?",
-          "question_ko": "Starmer out by April 30, 2026?",
-          "groupItemTitle_en": "April 30",
-          "outcomes_en": [
-            "Yes",
-            "No"
-          ],
-          "outcomes_ko": [
-            "예",
-            "아니오"
-          ],
-          "prices": [
-            0.0,
-            1.0
-          ],
-          "volume": 5036627.163993046
-        },
-        {
-          "question_en": "Starmer out by May 15, 2026?",
-          "question_ko": "Starmer out by May 15, 2026?",
-          "groupItemTitle_en": "May 15",
-          "outcomes_en": [
-            "Yes",
-            "No"
-          ],
-          "outcomes_ko": [
-            "예",
-            "아니오"
-          ],
-          "prices": [
-            0.0,
-            1.0
-          ],
-          "volume": 5725155.735899027
-        },
-        {
-          "question_en": "Starmer out by May 31, 2026?",
-          "question_ko": "Starmer out by May 31, 2026?",
-          "groupItemTitle_en": "May 31",
-          "outcomes_en": [
-            "Yes",
-            "No"
-          ],
-          "outcomes_ko": [
-            "예",
-            "아니오"
-          ],
-          "prices": [
-            0.0,
-            1.0
-          ],
-          "volume": 2106437.620742995
-        },
-        {
-          "question_en": "Starmer out by May 19, 2026?",
-          "question_ko": "Starmer out by May 19, 2026?",
-          "groupItemTitle_en": "May 19",
-          "outcomes_en": [
-            "Yes",
-            "No"
-          ],
-          "outcomes_ko": [
-            "예",
-            "아니오"
-          ],
-          "prices": [
-            0.0,
-            1.0
-          ],
-          "volume": 1409955.0757919953
-        },
-        {
-          "question_en": "Starmer out by July 31, 2026?",
-          "question_ko": "Starmer out by July 31, 2026?",
-          "groupItemTitle_en": "July 31",
-          "outcomes_en": [
-            "Yes",
-            "No"
-          ],
-          "outcomes_ko": [
-            "예",
-            "아니오"
-          ],
-          "prices": [
-            0.9585,
-            0.0415
-          ],
-          "volume": 940025.3128740006
-        },
-        {
-          "question_en": "Starmer out by June 15, 2026?",
-          "question_ko": "Starmer out by June 15, 2026?",
-          "groupItemTitle_en": "June 15",
-          "outcomes_en": [
-            "Yes",
-            "No"
-          ],
-          "outcomes_ko": [
-            "예",
-            "아니오"
-          ],
-          "prices": [
-            0.0,
-            1.0
-          ],
-          "volume": 579921.9806609999
-        },
-        {
-          "question_en": "Starmer out by August 31, 2026?",
-          "question_ko": "Starmer out by August 31, 2026?",
-          "groupItemTitle_en": "August 31",
-          "outcomes_en": [
-            "Yes",
-            "No"
-          ],
-          "outcomes_ko": [
-            "예",
-            "아니오"
-          ],
-          "prices": [
-            0.9805,
-            0.0195
-          ],
-          "volume": 160197.75555599973
-        },
-        {
-          "question_en": "Starmer out by October 31, 2026?",
-          "question_ko": "Starmer out by October 31, 2026?",
-          "groupItemTitle_en": "October 31",
-          "outcomes_en": [
-            "Yes",
-            "No"
-          ],
-          "outcomes_ko": [
-            "예",
-            "아니오"
-          ],
-          "prices": [
-            0.9805,
-            0.0195
-          ],
-          "volume": 146866.27635699994
-        },
-        {
-          "question_en": "Starmer out by June 26, 2026?",
-          "question_ko": "Starmer out by June 26, 2026?",
-          "groupItemTitle_en": "June 26",
-          "outcomes_en": [
-            "Yes",
-            "No"
-          ],
-          "outcomes_ko": [
-            "예",
-            "아니오"
-          ],
-          "prices": [
-            0.905,
-            0.095
-          ],
-          "volume": 339801.3625469999
-        },
-        {
-          "question_en": "Starmer out by June 22, 2026?",
-          "question_ko": "Starmer out by June 22, 2026?",
-          "groupItemTitle_en": "June 22",
-          "outcomes_en": [
-            "Yes",
-            "No"
-          ],
-          "outcomes_ko": [
-            "예",
-            "아니오"
-          ],
-          "prices": [
-            0.825,
-            0.175
-          ],
-          "volume": 721730.9757609966
-        },
-        {
-          "question_en": "Starmer out by June 23, 2026?",
-          "question_ko": "Starmer out by June 23, 2026?",
-          "groupItemTitle_en": "June 23",
-          "outcomes_en": [
-            "Yes",
-            "No"
-          ],
-          "outcomes_ko": [
-            "예",
-            "아니오"
-          ],
-          "prices": [
-            0.86,
-            0.14
-          ],
-          "volume": 8321.758157999999
-        },
-        {
-          "question_en": "Starmer out by June 24, 2026?",
-          "question_ko": "Starmer out by June 24, 2026?",
-          "groupItemTitle_en": "June 24",
-          "outcomes_en": [
-            "Yes",
-            "No"
-          ],
-          "outcomes_ko": [
-            "예",
-            "아니오"
-          ],
-          "prices": [
-            0.865,
-            0.135
-          ],
-          "volume": 1460.0052449999998
-        },
-        {
-          "question_en": "Starmer out by June 21, 2026?",
-          "question_ko": "Starmer out by June 21, 2026?",
-          "groupItemTitle_en": "June 21",
-          "outcomes_en": [
-            "Yes",
-            "No"
-          ],
-          "outcomes_ko": [
-            "예",
-            "아니오"
-          ],
-          "prices": [
-            0.0025,
-            0.9975
-          ],
-          "volume": 29231.931136000007
-        },
-        {
-          "question_en": "Starmer out by June 25, 2026?",
-          "question_ko": "Starmer out by June 25, 2026?",
-          "groupItemTitle_en": "June 25",
-          "outcomes_en": [
-            "Yes",
-            "No"
-          ],
-          "outcomes_ko": [
-            "예",
-            "아니오"
-          ],
-          "prices": [
-            0.87,
-            0.13
-          ],
-          "volume": 706.92626
+          "volume": 3139019.8624469284
         }
       ]
     },
@@ -1944,10 +1656,10 @@
             "아니오"
           ],
           "prices": [
-            0.0035,
-            0.9965
+            0.0025,
+            0.9975
           ],
-          "volume": 419162.65094600036
+          "volume": 419310.1709460004
         },
         {
           "question_en": "Ukraine recognizes Russian sovereignty over its territory by December 31, 2026?",
@@ -1962,10 +1674,10 @@
             "아니오"
           ],
           "prices": [
-            0.051,
-            0.949
+            0.046,
+            0.954
           ],
-          "volume": 72468.96365699997
+          "volume": 72491.07386999996
         }
       ]
     },
@@ -2007,10 +1719,10 @@
             "아니오"
           ],
           "prices": [
-            0.01,
-            0.99
+            0.011,
+            0.989
           ],
-          "volume": 291715.6316559999
+          "volume": 292229.0316559999
         },
         {
           "question_en": "Ukraine election called by March 31, 2026?",
@@ -2043,10 +1755,10 @@
             "아니오"
           ],
           "prices": [
-            0.175,
-            0.825
+            0.2,
+            0.8
           ],
-          "volume": 38271.366156000026
+          "volume": 46217.37615600002
         },
         {
           "question_en": "Ukraine election called by August 31, 2026?",
@@ -2061,10 +1773,10 @@
             "아니오"
           ],
           "prices": [
-            0.065,
-            0.935
+            0.095,
+            0.905
           ],
-          "volume": 56.25
+          "volume": 144.326922
         }
       ]
     },
@@ -2106,10 +1818,10 @@
             "아니오"
           ],
           "prices": [
-            0.003,
-            0.997
+            0.0035,
+            0.9965
           ],
-          "volume": 719509.7751440011
+          "volume": 719748.981144001
         },
         {
           "question_en": "Will any country leave NATO by December 31, 2026?",
@@ -2127,7 +1839,7 @@
             0.047,
             0.953
           ],
-          "volume": 168676.97856799987
+          "volume": 168757.81189999988
         }
       ]
     },
@@ -2187,10 +1899,10 @@
             "아니오"
           ],
           "prices": [
-            0.415,
-            0.585
+            0.385,
+            0.615
           ],
-          "volume": 34938.77370199997
+          "volume": 35058.68370199997
         }
       ]
     },
@@ -2253,7 +1965,7 @@
             0.135,
             0.865
           ],
-          "volume": 3154.3480100000015
+          "volume": 3159.9659860000015
         },
         {
           "question_en": "Mike Johnson out as Speaker by June 30?",
@@ -2271,7 +1983,7 @@
             0.0035,
             0.9965
           ],
-          "volume": 8581.922087000004
+          "volume": 8602.852087000005
         }
       ]
     },
@@ -2316,7 +2028,7 @@
             0.0035,
             0.9965
           ],
-          "volume": 167055.98367800046
+          "volume": 167129.97500500033
         },
         {
           "question_en": "US x Russia military clash by January 31, 2026?",
@@ -2349,10 +2061,10 @@
             "아니오"
           ],
           "prices": [
-            0.059,
-            0.941
+            0.057,
+            0.943
           ],
-          "volume": 933490.3736430008
+          "volume": 933772.9717260015
         }
       ]
     },
@@ -2415,7 +2127,7 @@
             0.295,
             0.705
           ],
-          "volume": 540181.3514330019
+          "volume": 540312.810747002
         },
         {
           "question_en": "Kraken IPO by June 30, 2026?",
