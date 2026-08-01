@@ -1,8 +1,8 @@
 {
   "meta": {
-    "updated_at": "2026-07-30T23:11:20.113617Z",
+    "updated_at": "2026-08-01T12:00:00Z",
     "year": 2026,
-    "version": "3.4"
+    "version": "3.5"
   },
   "fomc_calendar": [
     {
@@ -881,6 +881,105 @@
       ]
     },
     {
+      "slug": "fed-decision-in-july-181",
+      "title": "Fed Decision in July?",
+      "title_ko": "7월 FOMC 금리 결정",
+      "endDate": "2026-07-29T00:00:00Z",
+      "closed": true,
+      "markets": [
+        {
+          "question_en": "Will there be no change in Fed interest rates after the July 2026 meeting?",
+          "question_ko": "7월 FOMC 금리 결정",
+          "groupItemTitle_en": "No change",
+          "outcomes_en": [
+            "Yes",
+            "No"
+          ],
+          "outcomes_ko": [
+            "예",
+            "아니오"
+          ],
+          "prices": [
+            0.8,
+            0.2
+          ],
+          "volume": 5434251.0
+        },
+        {
+          "question_en": "Fed increases interest rates by 25 bps after July 2026 meeting?",
+          "question_ko": "7월 FOMC 금리 결정",
+          "groupItemTitle_en": "25 bps increase",
+          "outcomes_en": [
+            "Yes",
+            "No"
+          ],
+          "outcomes_ko": [
+            "예",
+            "아니오"
+          ],
+          "prices": [
+            0.189,
+            0.811
+          ],
+          "volume": 7078969.0
+        },
+        {
+          "question_en": "Fed decreases interest rates by 25 bps after July 2026 meeting?",
+          "question_ko": "7월 FOMC 금리 결정",
+          "groupItemTitle_en": "25 bps decrease",
+          "outcomes_en": [
+            "Yes",
+            "No"
+          ],
+          "outcomes_ko": [
+            "예",
+            "아니오"
+          ],
+          "prices": [
+            0.011,
+            0.989
+          ],
+          "volume": 4685645.0
+        },
+        {
+          "question_en": "Fed decreases interest rates by 50+ bps after July 2026 meeting?",
+          "question_ko": "7월 FOMC 금리 결정",
+          "groupItemTitle_en": "50+ bps decrease",
+          "outcomes_en": [
+            "Yes",
+            "No"
+          ],
+          "outcomes_ko": [
+            "예",
+            "아니오"
+          ],
+          "prices": [
+            0.006,
+            0.994
+          ],
+          "volume": 4973665.0
+        },
+        {
+          "question_en": "Fed increases interest rates by 50+ bps after July 2026 meeting?",
+          "question_ko": "7월 FOMC 금리 결정",
+          "groupItemTitle_en": "50+ bps increase",
+          "outcomes_en": [
+            "Yes",
+            "No"
+          ],
+          "outcomes_ko": [
+            "예",
+            "아니오"
+          ],
+          "prices": [
+            0.005,
+            0.995
+          ],
+          "volume": 4552702.0
+        }
+      ]
+    },
+    {
       "slug": "what-will-happen-before-gta-vi",
       "title": "What will happen before GTA VI?",
       "title_ko": "What will happen before GTA VI?",
@@ -1129,6 +1228,105 @@
             1.0
           ],
           "volume": 85707.66623799998
+        }
+      ]
+    },
+    {
+      "slug": "fed-decision-in-september-762",
+      "title": "Fed Decision in September?",
+      "title_ko": "9월 FOMC 금리 결정",
+      "endDate": "2026-09-16T00:00:00Z",
+      "closed": false,
+      "markets": [
+        {
+          "question_en": "Will there be no change in Fed interest rates after the September 2026 meeting?",
+          "question_ko": "9월 FOMC 금리 결정",
+          "groupItemTitle_en": "No change",
+          "outcomes_en": [
+            "Yes",
+            "No"
+          ],
+          "outcomes_ko": [
+            "예",
+            "아니오"
+          ],
+          "prices": [
+            0.39,
+            0.61
+          ],
+          "volume": 0
+        },
+        {
+          "question_en": "Will the Fed increase interest rates by 25 bps after the September 2026 meeting?",
+          "question_ko": "9월 FOMC 금리 결정",
+          "groupItemTitle_en": "25 bps increase",
+          "outcomes_en": [
+            "Yes",
+            "No"
+          ],
+          "outcomes_ko": [
+            "예",
+            "아니오"
+          ],
+          "prices": [
+            0.6,
+            0.4
+          ],
+          "volume": 0
+        },
+        {
+          "question_en": "Will the Fed decrease interest rates by 25 bps after the September 2026 meeting?",
+          "question_ko": "9월 FOMC 금리 결정",
+          "groupItemTitle_en": "25 bps decrease",
+          "outcomes_en": [
+            "Yes",
+            "No"
+          ],
+          "outcomes_ko": [
+            "예",
+            "아니오"
+          ],
+          "prices": [
+            0.02,
+            0.98
+          ],
+          "volume": 0
+        },
+        {
+          "question_en": "Will the Fed decrease interest rates by 50+ bps after the September 2026 meeting?",
+          "question_ko": "9월 FOMC 금리 결정",
+          "groupItemTitle_en": "50+ bps decrease",
+          "outcomes_en": [
+            "Yes",
+            "No"
+          ],
+          "outcomes_ko": [
+            "예",
+            "아니오"
+          ],
+          "prices": [
+            0.01,
+            0.99
+          ],
+          "volume": 0
+        },
+        {
+          "question_en": "Will the Fed increase interest rates by 50+ bps after the September 2026 meeting?",
+          "question_ko": "9월 FOMC 금리 결정",
+          "groupItemTitle_en": "50+ bps increase",
+          "outcomes_en": [
+            "Yes",
+            "No"
+          ],
+          "outcomes_ko": [
+            "예",
+            "아니오"
+          ],
+          "prices": [
+            0.02,
+            0.98
+          ],
+          "volume": 0
         }
       ]
     },
