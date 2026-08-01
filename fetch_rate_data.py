@@ -1,23 +1,27 @@
 #!/usr/bin/env python3
 """
-Fed Rate Dashboard v3.4
+Fed Rate Dashboard v3.5
 ========================
-핵심 개선: Polymarket 3월 이벤트 찾기
-  - slug "fed-decision-in-march" → 2025년 (종료) 반환 문제
-  - 실제 2026년 슬러그: "fed-decision-in-march-885"
+v3.5 핵심 수정:
+  - closed=false 필터만 사용하던 문제 → open+closed 모두 검색
+    (7월처럼 이미 종료된 FOMC 이벤트도 데이터 수집)
+  - 브루트포스 step 5 → coarse probe(step 10) + refine(step 1)
+    (181, 762 같은 접미사 누락 방지)
   
 전략:
-  1. /events 검색 (title + closed=false)
-  2. /markets 검색 (question 포함 "March 2026")  
-  3. /events 검색 (tag=fed-rates)
-  4. slug 직접 + 접미사 패턴
+  1. /events 검색 (title, closed=false + closed=true)
+  2. /markets 검색 (question 포함 "{Month} {YEAR}")  
+  3. /events 검색 (tag, closed=false + closed=true)
+  4. 텍스트 검색 (closed=false + closed=true)
+  5. slug 직접 조회
+  6. 접미사 스캔 (coarse probe + refine)
 """
 
 import json, requests, re, os
 from datetime import datetime
 
 TIMEOUT = 15
-HDR = {"User-Agent": "FedRateDashboard/3.4", "Accept": "application/json"}
+HDR = {"User-Agent": "FedRateDashboard/3.5", "Accept": "application/json"}
 NOW = datetime.utcnow()
 YEAR = NOW.year
 BASE = "https://gamma-api.polymarket.com"
@@ -176,11 +180,13 @@ def fetch_polymarket():
     print("  🔍 [1] 월별 타겟 검색")
     for mo_num, mo_en in FOMC_MONTHS.items():
         for q in [f"Fed decision in {mo_en}", f"fed decision {mo_en}"]:
-            d = api_get(f"{BASE}/events", {"title": q, "closed": "false", "limit": "20"})
-            if isinstance(d, list):
-                for ev in d:
-                    if get_event_year(ev) >= YEAR:
-                        add(ev, f"title:{mo_en}")
+            # closed 이벤트도 포함 (과거 FOMC 결과 반영)
+            for closed_val in ["false", "true"]:
+                d = api_get(f"{BASE}/events", {"title": q, "closed": closed_val, "limit": "20"})
+                if isinstance(d, list):
+                    for ev in d:
+                        if get_event_year(ev) >= YEAR:
+                            add(ev, f"title:{mo_en}")
 
     # ═══ 전략2: /markets 엔드포인트로 개별 마켓 → 이벤트 역추적 ═══
     # (events 검색에서 못 찾은 달만)
@@ -214,29 +220,35 @@ def fetch_polymarket():
     # ═══ 전략3: 태그 검색 ═══
     print("  🔍 [3] 태그 검색")
     for tag in ["fed-rates", "federal-reserve", "fed", "fomc"]:
-        d = api_get(f"{BASE}/events", {"tag": tag, "closed": "false", "active": "true", "limit": "100"})
-        if isinstance(d, list):
-            for ev in d:
-                t = ev.get("title","").lower()
-                if "fed" in t and ("decision" in t or "rate" in t or "cut" in t):
-                    add(ev, f"tag:{tag}")
+        for closed_val in ["false", "true"]:
+            params = {"tag": tag, "closed": closed_val, "limit": "100"}
+            if closed_val == "false":
+                params["active"] = "true"
+            d = api_get(f"{BASE}/events", params)
+            if isinstance(d, list):
+                for ev in d:
+                    t = ev.get("title","").lower()
+                    if "fed" in t and ("decision" in t or "rate" in t or "cut" in t):
+                        add(ev, f"tag:{tag}")
 
     # ═══ 전략4: 일반 텍스트 검색 (다양한 쿼리) ═══
     print("  🔍 [4] 텍스트 검색")
     for q in ["how many fed rate cuts", "fed funds rate end", "Fed Decision"]:
-        d = api_get(f"{BASE}/events", {"title": q, "closed": "false", "limit": "20"})
-        if isinstance(d, list):
-            for ev in d:
-                add(ev, f"search:{q}")
+        for closed_val in ["false", "true"]:
+            d = api_get(f"{BASE}/events", {"title": q, "closed": closed_val, "limit": "20"})
+            if isinstance(d, list):
+                for ev in d:
+                    add(ev, f"search:{q}")
     
     # offset 기반 페이징도 시도
-    for offset in [0, 20, 40]:
-        d = api_get(f"{BASE}/events", {"title": "Fed", "closed": "false", "limit": "20", "offset": str(offset)})
-        if isinstance(d, list):
-            for ev in d:
-                t = ev.get("title","").lower()
-                if "fed" in t and "decision" in t:
-                    add(ev, f"page:{offset}")
+    for closed_val in ["false", "true"]:
+        for offset in [0, 20, 40]:
+            d = api_get(f"{BASE}/events", {"title": "Fed", "closed": closed_val, "limit": "20", "offset": str(offset)})
+            if isinstance(d, list):
+                for ev in d:
+                    t = ev.get("title","").lower()
+                    if "fed" in t and "decision" in t:
+                        add(ev, f"page:{offset}")
 
     # ═══ 전략5: slug 직접 조회 ═══
     print("  🔍 [5] 슬러그 직접")
@@ -250,7 +262,7 @@ def fetch_polymarket():
             ev = d if isinstance(d, dict) and d.get("slug") else (d[0] if isinstance(d, list) and d else None)
             add(ev, "slug")
 
-    # ═══ 전략6: 아직 누락된 달 → 슬러그 접미사 브루트포스 ═══
+    # ═══ 전략6: 아직 누락된 달 → 슬러그 접미사 스캔 (coarse+refine) ═══
     found_months2 = set()
     for r in results:
         tl = r["title"].lower()
@@ -260,21 +272,59 @@ def fetch_polymarket():
     still_missing = set(FOMC_MONTHS.keys()) - found_months2
     
     if still_missing:
-        print(f"  🔍 [6] 접미사 브루트포스: {[MO_NUM_KO[m] for m in still_missing]}")
+        print(f"  🔍 [6] 접미사 스캔: {[MO_NUM_KO[m] for m in still_missing]}")
         for mo in still_missing:
             mo_en = FOMC_MONTHS[mo]
             base = f"fed-decision-in-{mo_en}"
             found = False
-            # 넓은 범위, 작은 스텝
-            for suffix in list(range(1, 20)) + list(range(100, 1100, 5)):
+            
+            # 1차: step 1로 1~30
+            for suffix in range(1, 31):
                 slug = f"{base}-{suffix}"
                 d = api_get(f"{BASE}/events/slug/{slug}")
                 if d:
                     ev = d if isinstance(d, dict) and d.get("slug") else (d[0] if isinstance(d, list) and d else None)
                     if ev and get_event_year(ev) >= YEAR:
-                        add(ev, f"bruteforce:{suffix}")
+                        add(ev, f"scan:{suffix}")
                         found = True
                         break
+            if found: continue
+            
+            # 2차: step 10으로 30~2000 — 아무 연도 hit이든 근처에 올해 것 있음
+            # Polymarket 슬러그는 순차적이므로 같은 달 이벤트는 근접함
+            hits = []  # (suffix, year) — 연도 무관 hit 지점 기록
+            for probe in range(30, 2001, 10):
+                slug = f"{base}-{probe}"
+                d = api_get(f"{BASE}/events/slug/{slug}")
+                if d:
+                    ev = d if isinstance(d, dict) and d.get("slug") else (d[0] if isinstance(d, list) and d else None)
+                    if ev:
+                        eyr = get_event_year(ev)
+                        if eyr >= YEAR:
+                            add(ev, f"probe:{probe}")
+                            found = True
+                            break
+                        hits.append(probe)
+            
+            if found: continue
+            
+            # 3차: hit 지점 주변 ±12 step 1 정밀 탐색
+            # 최신 hit부터 역순 (올해에 가장 가까울 가능성)
+            tried = set()
+            for h in reversed(hits):
+                for suffix in range(max(1, h - 12), h + 13):
+                    if suffix in tried: continue
+                    tried.add(suffix)
+                    slug = f"{base}-{suffix}"
+                    d = api_get(f"{BASE}/events/slug/{slug}")
+                    if d:
+                        ev = d if isinstance(d, dict) and d.get("slug") else (d[0] if isinstance(d, list) and d else None)
+                        if ev and get_event_year(ev) >= YEAR:
+                            add(ev, f"refine:{suffix}")
+                            found = True
+                            break
+                if found: break
+            
             if not found:
                 print(f"    ❌ {mo_en}: 접미사 못 찾음")
 
@@ -303,11 +353,11 @@ def fetch_polymarket():
 # ═══════════════ Main ═══════════════
 def main():
     print("="*55)
-    print(f"🏦 Fed Rate Dashboard v3.4 | {NOW.strftime('%Y-%m-%d %H:%M UTC')}")
+    print(f"🏦 Fed Rate Dashboard v3.5 | {NOW.strftime('%Y-%m-%d %H:%M UTC')}")
     print("="*55)
 
     output = {
-        "meta": {"updated_at": NOW.isoformat()+"Z", "year": YEAR, "version": "3.4"},
+        "meta": {"updated_at": NOW.isoformat()+"Z", "year": YEAR, "version": "3.5"},
         "fomc_calendar": build_fomc_calendar(),
         "sofr": fetch_sofr(),
         "fed_funds_target": fetch_fred_target_rate(),
