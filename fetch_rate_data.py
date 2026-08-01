@@ -71,6 +71,22 @@ FOMC_DATES = {
     2027: [(1,26,27),(3,16,17),(4,27,28),(6,15,16),(7,27,28),(9,21,22),(10,26,27),(12,14,15)],
 }
 
+# 확인된 이벤트 슬러그 (접미사가 불규칙해 검색이 놓칠 수 있는 것들)
+# 새 달의 슬러그를 알게 되면 여기에 추가하면 즉시 1회 호출로 수집됨
+KNOWN_SLUGS = {
+    2026: [
+        "fed-decision-in-january",
+        "fed-decision-in-march-885",
+        "fed-decision-in-april",
+        "fed-decision-in-june-825",
+        "fed-decision-in-july-181",
+        "fed-decision-in-september-762",
+        "fed-decision-in-october",
+        "how-many-fed-rate-cuts-in-2026",
+        "what-will-the-fed-rate-be-at-the-end-of-2026",
+    ],
+}
+
 def build_fomc_calendar():
     print("[0] FOMC 캘린더 ...")
     cal, today = [], NOW.strftime("%Y-%m-%d")
@@ -188,34 +204,23 @@ def fetch_polymarket():
                         if get_event_year(ev) >= YEAR:
                             add(ev, f"title:{mo_en}")
 
-    # ═══ 전략2: /markets 엔드포인트로 개별 마켓 → 이벤트 역추적 ═══
-    # (events 검색에서 못 찾은 달만)
-    found_months = set()
-    for r in results:
-        tl = r["title"].lower()
-        for en in MONTHS_EN:
-            if en in tl and "decision" in tl:
-                found_months.add(MONTHS_EN.index(en)+1)
-    missing = set(FOMC_MONTHS.keys()) - found_months
-    
-    if missing:
-        print(f"  🔍 [2] 누락 달 → markets 검색: {[MO_NUM_KO[m] for m in missing]}")
-        for mo in missing:
-            mo_en = FOMC_MONTHS[mo]
-            # /markets?closed=false 에서 question에 월+2026 포함 검색
-            for q in [f"Fed decision in {mo_en.capitalize()}", f"rate {mo_en} {YEAR}"]:
-                d = api_get(f"{BASE}/markets", {"closed": "false", "limit": "50"})
-                if isinstance(d, list):
-                    for mkt in d:
-                        question = mkt.get("question","").lower()
-                        if mo_en in question and ("fed" in question or "rate" in question):
-                            # 이벤트 슬러그 추출
-                            event_slug = mkt.get("eventSlug","")
-                            if event_slug and event_slug not in seen:
-                                ev_data = api_get(f"{BASE}/events/slug/{event_slug}")
-                                if ev_data:
-                                    ev = ev_data if isinstance(ev_data, dict) else (ev_data[0] if isinstance(ev_data, list) else None)
-                                    add(ev, f"market→event:{event_slug}")
+    # ═══ 전략2: FOMC 태그 슬러그로 전체 이벤트 페이징 ═══
+    # /events?tag_slug=fomc 로 모든 Fed decision 이벤트를 한 번에 수집
+    # (제목 검색이 놓친 달을 태그 카탈로그가 채워줌 — closed 무관)
+    print("  🔍 [2] FOMC 태그 카탈로그")
+    for tag_slug in ["fomc", "fed-rates"]:
+        for closed_val in ["false", "true"]:
+            for offset in range(0, 200, 50):
+                d = api_get(f"{BASE}/events", {
+                    "tag_slug": tag_slug, "closed": closed_val,
+                    "limit": "50", "offset": str(offset)})
+                if isinstance(d, list) and d:
+                    for ev in d:
+                        t = ev.get("title","").lower()
+                        if "fed" in t and ("decision" in t or "rate" in t or "cut" in t):
+                            add(ev, f"tag_slug:{tag_slug}")
+                else:
+                    break  # 빈 페이지면 다음 offset 불필요
 
     # ═══ 전략3: 태그 검색 ═══
     print("  🔍 [3] 태그 검색")
@@ -255,6 +260,9 @@ def fetch_polymarket():
     slug_bases = [f"fed-decision-in-{mo}" for mo in MONTHS_EN]
     slug_bases += [f"how-many-fed-rate-cuts-in-{YEAR}",
                    f"what-will-the-fed-rate-be-at-the-end-of-{YEAR}"]
+    # 알려진 접미사 슬러그 힌트 (앞 전략이 다 실패해도 여기서 잡힘)
+    # 새 이벤트 발견 시 이 목록에 추가해두면 항상 1회 호출로 즉시 수집됨
+    slug_bases += list(KNOWN_SLUGS.get(YEAR, []))
     for s in slug_bases:
         if s in seen: continue
         d = api_get(f"{BASE}/events/slug/{s}")
@@ -262,7 +270,9 @@ def fetch_polymarket():
             ev = d if isinstance(d, dict) and d.get("slug") else (d[0] if isinstance(d, list) and d else None)
             add(ev, "slug")
 
-    # ═══ 전략6: 아직 누락된 달 → 슬러그 접미사 스캔 (coarse+refine) ═══
+    # ═══ 전략6: 누락된 달 → /markets 검색 후 eventSlug 역추적 ═══
+    # 슬러그 접미사(181, 762 등)를 추측하지 않고, 마켓 question으로 찾아
+    # 그 마켓이 속한 이벤트를 slug로 정확히 조회. 접미사에 무관하게 동작.
     found_months2 = set()
     for r in results:
         tl = r["title"].lower()
@@ -272,61 +282,34 @@ def fetch_polymarket():
     still_missing = set(FOMC_MONTHS.keys()) - found_months2
     
     if still_missing:
-        print(f"  🔍 [6] 접미사 스캔: {[MO_NUM_KO[m] for m in still_missing]}")
+        print(f"  🔍 [6] markets 역추적: {[MO_NUM_KO[m] for m in still_missing]}")
         for mo in still_missing:
             mo_en = FOMC_MONTHS[mo]
-            base = f"fed-decision-in-{mo_en}"
+            mo_cap = mo_en.capitalize()
             found = False
-            
-            # 1차: step 1로 1~30
-            for suffix in range(1, 31):
-                slug = f"{base}-{suffix}"
-                d = api_get(f"{BASE}/events/slug/{slug}")
-                if d:
-                    ev = d if isinstance(d, dict) and d.get("slug") else (d[0] if isinstance(d, list) and d else None)
-                    if ev and get_event_year(ev) >= YEAR:
-                        add(ev, f"scan:{suffix}")
-                        found = True
+            # question에 "{Month} {YEAR}" 가 포함된 마켓 검색 (open+closed)
+            for closed_val in ["false", "true"]:
+                for offset in range(0, 500, 100):
+                    d = api_get(f"{BASE}/markets", {
+                        "closed": closed_val, "limit": "100", "offset": str(offset)})
+                    if not (isinstance(d, list) and d):
                         break
-            if found: continue
-            
-            # 2차: step 10으로 30~2000 — 아무 연도 hit이든 근처에 올해 것 있음
-            # Polymarket 슬러그는 순차적이므로 같은 달 이벤트는 근접함
-            hits = []  # (suffix, year) — 연도 무관 hit 지점 기록
-            for probe in range(30, 2001, 10):
-                slug = f"{base}-{probe}"
-                d = api_get(f"{BASE}/events/slug/{slug}")
-                if d:
-                    ev = d if isinstance(d, dict) and d.get("slug") else (d[0] if isinstance(d, list) and d else None)
-                    if ev:
-                        eyr = get_event_year(ev)
-                        if eyr >= YEAR:
-                            add(ev, f"probe:{probe}")
-                            found = True
-                            break
-                        hits.append(probe)
-            
-            if found: continue
-            
-            # 3차: hit 지점 주변 ±12 step 1 정밀 탐색
-            # 최신 hit부터 역순 (올해에 가장 가까울 가능성)
-            tried = set()
-            for h in reversed(hits):
-                for suffix in range(max(1, h - 12), h + 13):
-                    if suffix in tried: continue
-                    tried.add(suffix)
-                    slug = f"{base}-{suffix}"
-                    d = api_get(f"{BASE}/events/slug/{slug}")
-                    if d:
-                        ev = d if isinstance(d, dict) and d.get("slug") else (d[0] if isinstance(d, list) and d else None)
-                        if ev and get_event_year(ev) >= YEAR:
-                            add(ev, f"refine:{suffix}")
-                            found = True
-                            break
+                    for mkt in d:
+                        q = mkt.get("question","").lower()
+                        # "july 2026" 또는 "in july" + fed/rate 조합
+                        if mo_en in q and str(YEAR) in q and ("fed" in q or "rate" in q):
+                            eslug = mkt.get("eventSlug","") or mkt.get("slug","")
+                            if eslug and eslug not in seen:
+                                ev_data = api_get(f"{BASE}/events/slug/{eslug}")
+                                if ev_data:
+                                    ev = ev_data if isinstance(ev_data, dict) and ev_data.get("slug") else (ev_data[0] if isinstance(ev_data, list) and ev_data else None)
+                                    if ev and get_event_year(ev) >= YEAR:
+                                        add(ev, f"market→event:{eslug}")
+                                        found = True
+                    if found: break
                 if found: break
-            
             if not found:
-                print(f"    ❌ {mo_en}: 접미사 못 찾음")
+                print(f"    ⚠️ {mo_en}: 자동 탐색 실패 (수동 슬러그 필요할 수 있음)")
 
     results.sort(key=lambda x: x.get("endDate",""))
     
@@ -350,19 +333,69 @@ def fetch_polymarket():
     
     return results
 
+# ═══════════════ 데이터 보존 병합 ═══════════════
+def load_previous():
+    """이전 JSON 로드 (API 실패 시 폴백용)"""
+    try:
+        with open("data/rate_data.json", "r", encoding="utf-8") as f:
+            return json.load(f)
+    except Exception:
+        return None
+
+def merge_preserve(new_pm, old_data):
+    """
+    새로 수집한 polymarket과 이전 데이터를 병합.
+    - 새로 잡힌 이벤트는 최신값 사용
+    - 이번에 못 잡은 과거 이벤트(FOMC 결정)는 이전 값 유지
+    → 일시적 API 실패가 대시보드를 비우지 않도록 방어
+    """
+    if not old_data:
+        return new_pm
+    old_pm = old_data.get("polymarket", [])
+    new_by_slug = {e["slug"]: e for e in new_pm}
+    merged = list(new_pm)
+    for old_e in old_pm:
+        slug = old_e.get("slug","")
+        if slug in new_by_slug:
+            continue  # 새 값이 우선
+        # 못 잡은 이벤트 중 실제 가격 데이터가 있던 것만 보존
+        has_prices = any(m.get("prices") for m in old_e.get("markets", []))
+        # 지난 연도 이벤트는 버림
+        try:
+            eyr = datetime.fromisoformat(old_e.get("endDate","").replace("Z","")).year
+        except Exception:
+            eyr = YEAR
+        if has_prices and eyr >= YEAR:
+            merged.append(old_e)
+            print(f"    🔒 이전 데이터 보존: {slug}")
+    merged.sort(key=lambda x: x.get("endDate",""))
+    return merged
+
 # ═══════════════ Main ═══════════════
 def main():
     print("="*55)
     print(f"🏦 Fed Rate Dashboard v3.5 | {NOW.strftime('%Y-%m-%d %H:%M UTC')}")
     print("="*55)
 
+    old_data = load_previous()
+    new_pm = fetch_polymarket()
+    merged_pm = merge_preserve(new_pm, old_data)
+
     output = {
         "meta": {"updated_at": NOW.isoformat()+"Z", "year": YEAR, "version": "3.5"},
         "fomc_calendar": build_fomc_calendar(),
         "sofr": fetch_sofr(),
         "fed_funds_target": fetch_fred_target_rate(),
-        "polymarket": fetch_polymarket(),
+        "polymarket": merged_pm,
     }
+
+    # SOFR/목표금리도 이번에 비었으면 이전 값 유지
+    if not output["sofr"] and old_data and old_data.get("sofr"):
+        output["sofr"] = old_data["sofr"]
+        print("    🔒 SOFR 이전 데이터 보존")
+    if not output["fed_funds_target"] and old_data and old_data.get("fed_funds_target"):
+        output["fed_funds_target"] = old_data["fed_funds_target"]
+        print("    🔒 목표금리 이전 데이터 보존")
 
     os.makedirs("data", exist_ok=True)
     with open("data/rate_data.json", "w", encoding="utf-8") as f:
