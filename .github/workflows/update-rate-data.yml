@@ -2,8 +2,10 @@ name: Update Fed Rate Data
 
 on:
   schedule:
-    # 평일만 KST 07:00 (Sun-Thu UTC 22:00 = Mon-Fri KST)
+    # 평일 KST 07:00 (Sun-Thu UTC 22:00 = Mon-Fri KST 아침)
     - cron: '0 22 * * 0-4'
+    # 평일 KST 08:00 미 장마감 후 반영 (Mon-Fri UTC 21:00 = Tue-Sat KST 06:00)
+    - cron: '0 21 * * 1-5'
   workflow_dispatch:
 
 permissions:
@@ -24,5 +26,14 @@ jobs:
           git config user.email "action@github.com"
           git config user.name "GitHub Action"
           git add data/
-          git diff --staged --quiet || git commit -m "📊 $(date +'%Y-%m-%d %H:%M') data update"
-          git push
+          if git diff --staged --quiet; then
+            echo "변경 없음 — 커밋 스킵"
+          else
+            git commit -m "📊 $(date +'%Y-%m-%d %H:%M') data update"
+            # 충돌 대비 rebase 후 push 재시도
+            for i in 1 2 3; do
+              git pull --rebase origin main && git push && break
+              echo "push 재시도 $i..."
+              sleep 5
+            done
+          fi
