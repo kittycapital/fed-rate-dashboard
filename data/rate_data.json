@@ -1,6 +1,6 @@
 {
   "meta": {
-    "updated_at": "2026-11-11T01:45:31.825025Z",
+    "updated_at": "2026-11-12T02:02:10.055755Z",
     "year": 2026,
     "version": "3.5"
   },
@@ -434,9 +434,9 @@
   ],
   "fed_funds_target": {
     "upper": 4.0,
-    "upper_date": "2026-11-10",
+    "upper_date": "2026-11-11",
     "lower": 3.75,
-    "lower_date": "2026-11-10"
+    "lower_date": "2026-11-11"
   },
   "polymarket": [
     {
@@ -2961,10 +2961,10 @@
             "아니오"
           ],
           "prices": [
-            0.9555,
-            0.0445
+            0.9595,
+            0.0405
           ],
-          "volume": 230974.20357499996
+          "volume": 232149.207117
         },
         {
           "question_en": "Will the Fed Hike–Pause–Pause in the next three decisions (Sep–Oct–Dec)?",
@@ -2979,10 +2979,10 @@
             "아니오"
           ],
           "prices": [
-            0.0355,
-            0.9645
+            0.0265,
+            0.9735
           ],
-          "volume": 223086.361297
+          "volume": 223399.11774900003
         },
         {
           "question_en": "Will the Fed Hike–Hike–Hike in the next three decisions (Sep–Oct–Dec)?",
@@ -3105,10 +3105,10 @@
             "아니오"
           ],
           "prices": [
-            0.0085,
-            0.9915
+            0.0125,
+            0.9875
           ],
-          "volume": 42828.07499799999
+          "volume": 43415.175851
         }
       ]
     },
@@ -3135,7 +3135,7 @@
             0.0025,
             0.9975
           ],
-          "volume": 3668957.723928
+          "volume": 3766071.9047679994
         },
         {
           "question_en": "Will the Fed decrease interest rates by 25 bps after the December 2026 meeting?",
@@ -3153,7 +3153,7 @@
             0.0035,
             0.9965
           ],
-          "volume": 3878867.1151370006
+          "volume": 3997110.577802999
         },
         {
           "question_en": "Will there be no change in Fed interest rates after the December 2026 meeting?",
@@ -3168,10 +3168,10 @@
             "아니오"
           ],
           "prices": [
-            0.0365,
-            0.9635
+            0.03,
+            0.97
           ],
-          "volume": 6471127.785932001
+          "volume": 6784930.849595
         },
         {
           "question_en": "Will the Fed increase interest rates by 25 bps after the December 2026 meeting?",
@@ -3189,7 +3189,7 @@
             0.855,
             0.145
           ],
-          "volume": 6784423.221498999
+          "volume": 6957957.284561999
         },
         {
           "question_en": "Will the Fed increase interest rates by 50+ bps after the December 2026 meeting?",
@@ -3204,10 +3204,10 @@
             "아니오"
           ],
           "prices": [
-            0.11,
-            0.89
+            0.0995,
+            0.9005
           ],
-          "volume": 4078235.86228
+          "volume": 4708854.785084001
         }
       ]
     },
@@ -3231,10 +3231,10 @@
             "아니오"
           ],
           "prices": [
-            0.9545,
-            0.0455
+            0.9635,
+            0.0365
           ],
-          "volume": 1935095.794784
+          "volume": 1961030.861106
         }
       ]
     },
@@ -3276,8 +3276,8 @@
             "아니오"
           ],
           "prices": [
-            0.0205,
-            0.9795
+            0.021,
+            0.979
           ],
           "volume": 58832.458495
         },
@@ -3294,10 +3294,10 @@
             "아니오"
           ],
           "prices": [
-            0.021,
-            0.979
+            0.019,
+            0.981
           ],
-          "volume": 142685.30258000002
+          "volume": 142813.48257999998
         },
         {
           "question_en": "Will the Fed’s upper bound reach 4.5% or higher before 2027?",
@@ -3312,10 +3312,10 @@
             "아니오"
           ],
           "prices": [
-            0.117,
-            0.883
+            0.111,
+            0.889
           ],
-          "volume": 55396.173728999995
+          "volume": 55396.173729
         },
         {
           "question_en": "Will the Fed’s upper bound reach 4.75% or higher before 2027?",
@@ -3348,10 +3348,10 @@
             "아니오"
           ],
           "prices": [
-            0.948,
-            0.052
+            0.9495,
+            0.0505
           ],
-          "volume": 158529.09114500004
+          "volume": 158599.09114500004
         },
         {
           "question_en": "Will the Fed’s lower bound reach 2.0% or lower before 2027?",
@@ -3384,8 +3384,8 @@
             "아니오"
           ],
           "prices": [
-            0.0145,
-            0.9855
+            0.0175,
+            0.9825
           ],
           "volume": 2459.1188609999995
         },
@@ -3474,8 +3474,8 @@
             "아니오"
           ],
           "prices": [
-            0.02,
-            0.98
+            0.0185,
+            0.9815
           ],
           "volume": 110542.955905
         },
@@ -3510,10 +3510,10 @@
             "아니오"
           ],
           "prices": [
-            0.019,
-            0.981
+            0.0185,
+            0.9815
           ],
-          "volume": 21436.277445000003
+          "volume": 21436.277445
         },
         {
           "question_en": "Will the Fed’s lower bound reach 2.25% or lower before 2027?",
@@ -3564,10 +3564,10 @@
             "아니오"
           ],
           "prices": [
-            0.0165,
-            0.9835
+            0.016,
+            0.984
           ],
-          "volume": 379844.314794
+          "volume": 380120.86479400005
         },
         {
           "question_en": "Will the Fed’s lower bound reach 3.0% or lower before 2027?",
@@ -3600,10 +3600,10 @@
             "아니오"
           ],
           "prices": [
-            0.0135,
-            0.9865
+            0.0145,
+            0.9855
           ],
-          "volume": 83539.724146
+          "volume": 83539.72414600001
         },
         {
           "question_en": "Will the Fed’s lower bound reach 3.5% or lower before 2027?",
@@ -3780,10 +3780,10 @@
             "아니오"
           ],
           "prices": [
-            0.055,
-            0.945
+            0.045,
+            0.955
           ],
-          "volume": 232930.99272000004
+          "volume": 233256.43271999998
         }
       ]
     },
@@ -3906,8 +3906,8 @@
             "아니오"
           ],
           "prices": [
-            0.14,
-            0.86
+            0.135,
+            0.865
           ],
           "volume": 993.106866
         },
@@ -3942,10 +3942,10 @@
             "아니오"
           ],
           "prices": [
-            0.052,
-            0.948
+            0.0485,
+            0.9515
           ],
-          "volume": 108649.48727000001
+          "volume": 108660.35727000002
         }
       ]
     },
@@ -4140,10 +4140,10 @@
             "아니오"
           ],
           "prices": [
-            0.14,
-            0.86
+            0.155,
+            0.845
           ],
-          "volume": 6215.595904
+          "volume": 6284.164
         },
         {
           "question_en": "Mike Johnson out as Speaker by October 31?",
@@ -4242,7 +4242,7 @@
             0.15,
             0.85
           ],
-          "volume": 110233.892774
+          "volume": 110236.59277400002
         }
       ]
     },
@@ -4305,7 +4305,7 @@
             0.0335,
             0.9665
           ],
-          "volume": 1088521.9348160003
+          "volume": 1088614.354816
         },
         {
           "question_en": "US x Russia military clash by January 31, 2026?",
@@ -4365,10 +4365,10 @@
             "아니오"
           ],
           "prices": [
-            0.0205,
-            0.9795
+            0.017,
+            0.983
           ],
-          "volume": 513269.6567509999
+          "volume": 515730.402097
         },
         {
           "question_en": "Will Russia invade a NATO country by June 30, 2026?",
@@ -4509,10 +4509,10 @@
             "아니오"
           ],
           "prices": [
-            0.046,
-            0.954
+            0.0315,
+            0.9685
           ],
-          "volume": 793140.7424559997
+          "volume": 806428.725598
         },
         {
           "question_en": "Will 2 Fed rate hikes happen in 2026?",
@@ -4527,10 +4527,10 @@
             "아니오"
           ],
           "prices": [
-            0.855,
-            0.145
+            0.85,
+            0.15
           ],
-          "volume": 268334.23842999997
+          "volume": 268448.75843
         },
         {
           "question_en": "Will 3 Fed rate hikes happen in 2026?",
@@ -4545,10 +4545,10 @@
             "아니오"
           ],
           "prices": [
-            0.0985,
-            0.9015
+            0.102,
+            0.898
           ],
-          "volume": 231406.130099
+          "volume": 231441.96009899996
         },
         {
           "question_en": "Will 4 Fed rate hikes happen in 2026?",
@@ -4566,7 +4566,7 @@
             0.0005,
             0.9995
           ],
-          "volume": 96272.31014399999
+          "volume": 96272.310144
         },
         {
           "question_en": "Will 5 or more Fed rate hikes happen in 2026?",
@@ -4608,10 +4608,10 @@
             "아니오"
           ],
           "prices": [
-            0.9815,
-            0.0185
+            0.9835,
+            0.0165
           ],
-          "volume": 9556991.553148998
+          "volume": 9564808.269973
         },
         {
           "question_en": "Will 1 Fed rate cut happen in 2026?",
@@ -4626,10 +4626,10 @@
             "아니오"
           ],
           "prices": [
-            0.0075,
-            0.9925
+            0.0065,
+            0.9935
           ],
-          "volume": 3742522.940364
+          "volume": 3756330.543698
         },
         {
           "question_en": "Will 2 Fed rate cuts happen in 2026?",
@@ -4644,10 +4644,10 @@
             "아니오"
           ],
           "prices": [
-            0.0045,
-            0.9955
+            0.0015,
+            0.9985
           ],
-          "volume": 3563246.359773
+          "volume": 3572164.965168
         },
         {
           "question_en": "Will 3 Fed rate cuts happen in 2026?",
@@ -4665,7 +4665,7 @@
             0.0015,
             0.9985
           ],
-          "volume": 3030349.174095001
+          "volume": 3030420.8300949996
         },
         {
           "question_en": "Will 4 Fed rate cuts happen in 2026?",
@@ -4683,7 +4683,7 @@
             0.0015,
             0.9985
           ],
-          "volume": 2832363.109825
+          "volume": 2832449.476825
         },
         {
           "question_en": "Will 5 Fed rate cuts happen in 2026?",
@@ -4701,7 +4701,7 @@
             0.0005,
             0.9995
           ],
-          "volume": 3076416.210133999
+          "volume": 3076421.910133999
         },
         {
           "question_en": "Will 6 Fed rate cuts happen in 2026?",
@@ -4737,7 +4737,7 @@
             0.0005,
             0.9995
           ],
-          "volume": 3540599.8851670003
+          "volume": 3540599.885167
         },
         {
           "question_en": "Will 8 Fed rate cuts happen in 2026?",
@@ -4755,7 +4755,7 @@
             0.0005,
             0.9995
           ],
-          "volume": 3323596.1228899993
+          "volume": 3323596.1228899998
         },
         {
           "question_en": "Will 9 Fed rate cuts happen in 2026?",
@@ -4773,7 +4773,7 @@
             0.0005,
             0.9995
           ],
-          "volume": 4325517.017518001
+          "volume": 4325519.217518001
         },
         {
           "question_en": "Will 10 Fed rate cuts happen in 2026?",
@@ -4791,7 +4791,7 @@
             0.0005,
             0.9995
           ],
-          "volume": 4991769.319515999
+          "volume": 4991769.319516
         },
         {
           "question_en": "Will 11 Fed rate cuts happen in 2026?",
@@ -4809,7 +4809,7 @@
             0.0005,
             0.9995
           ],
-          "volume": 5331594.088101001
+          "volume": 5331594.0881010005
         },
         {
           "question_en": "Will 12 or more Fed rate cuts happen in 2026?",
@@ -4827,7 +4827,7 @@
             0.0015,
             0.9985
           ],
-          "volume": 4183441.472586001
+          "volume": 4183520.2955860007
         }
       ]
     },
@@ -4851,8 +4851,8 @@
             "아니오"
           ],
           "prices": [
-            0.018,
-            0.982
+            0.0175,
+            0.9825
           ],
           "volume": 262488.4252600001
         }
@@ -4881,7 +4881,7 @@
             0.0025,
             0.9975
           ],
-          "volume": 102653.19802599998
+          "volume": 102926.87252599998
         },
         {
           "question_en": "Will the upper bound of the target federal funds rate be 2.5% at the end of 2026?",
@@ -4899,7 +4899,7 @@
             0.0015,
             0.9985
           ],
-          "volume": 190434.23201499996
+          "volume": 190586.87801499997
         },
         {
           "question_en": "Will the upper bound of the target federal funds rate be 2.75% at the end of 2026?",
@@ -4935,7 +4935,7 @@
             0.0015,
             0.9985
           ],
-          "volume": 506536.074233
+          "volume": 506706.92823300004
         },
         {
           "question_en": "Will the upper bound of the target federal funds rate be 3.25% at the end of 2026?",
@@ -4950,10 +4950,10 @@
             "아니오"
           ],
           "prices": [
-            0.002,
-            0.998
+            0.0025,
+            0.9975
           ],
-          "volume": 91322.69901399998
+          "volume": 91493.079014
         },
         {
           "question_en": "Will the upper bound of the target federal funds rate be 3.5% at the end of 2026?",
@@ -4968,10 +4968,10 @@
             "아니오"
           ],
           "prices": [
-            0.0065,
-            0.9935
+            0.0055,
+            0.9945
           ],
-          "volume": 210929.76186399997
+          "volume": 211094.98186400003
         },
         {
           "question_en": "Will the upper bound of the target federal funds rate be 3.75% at the end of 2026?",
@@ -4986,10 +4986,10 @@
             "아니오"
           ],
           "prices": [
-            0.012,
-            0.988
+            0.013,
+            0.987
           ],
-          "volume": 544338.3334410001
+          "volume": 546181.2280410003
         },
         {
           "question_en": "Will the upper bound of the target federal funds rate be 4.0% at the end of 2026?",
@@ -5004,10 +5004,10 @@
             "아니오"
           ],
           "prices": [
-            0.0425,
-            0.9575
+            0.0375,
+            0.9625
           ],
-          "volume": 1387045.5328610002
+          "volume": 1387237.543514
         },
         {
           "question_en": "Will the upper bound of the target federal funds rate be 4.25% at the end of 2026?",
@@ -5022,10 +5022,10 @@
             "아니오"
           ],
           "prices": [
-            0.8505,
-            0.1495
+            0.861,
+            0.139
           ],
-          "volume": 587627.5779820001
+          "volume": 587777.1479819999
         },
         {
           "question_en": "Will the upper bound of the target federal funds rate be ≥ 4.5% at the end of 2026?",
@@ -5040,10 +5040,10 @@
             "아니오"
           ],
           "prices": [
-            0.109,
-            0.891
+            0.0855,
+            0.9145
           ],
-          "volume": 2440418.877631
+          "volume": 2440583.736397
         },
         {
           "question_en": "Will the upper bound of the target federal funds rate be ≤1.0% at the end of 2026?",
@@ -5058,10 +5058,10 @@
             "아니오"
           ],
           "prices": [
-            0.0045,
-            0.9955
+            0.0155,
+            0.9845
           ],
-          "volume": 281502.851299
+          "volume": 307216.7263139999
         },
         {
           "question_en": "Will the upper bound of the target federal funds rate be 1.25% at the end of 2026?",
@@ -5076,10 +5076,10 @@
             "아니오"
           ],
           "prices": [
-            0.004,
-            0.996
+            0.003,
+            0.997
           ],
-          "volume": 157323.52762
+          "volume": 157469.29661999998
         },
         {
           "question_en": "Will the upper bound of the target federal funds rate be 1.5% at the end of 2026?",
@@ -5115,7 +5115,7 @@
             0.0025,
             0.9975
           ],
-          "volume": 158652.495496
+          "volume": 158868.00349600005
         },
         {
           "question_en": "Will the upper bound of the target federal funds rate be 2.0% at the end of 2026?",
@@ -5133,7 +5133,7 @@
             0.0025,
             0.9975
           ],
-          "volume": 275363.824595
+          "volume": 275614.40359500004
         }
       ]
     },
@@ -5328,8 +5328,8 @@
             "아니오"
           ],
           "prices": [
-            0.0465,
-            0.9535
+            0.046,
+            0.954
           ],
           "volume": 200862.59923400002
         }
@@ -5355,10 +5355,10 @@
             "아니오"
           ],
           "prices": [
-            0.07,
-            0.93
+            0.045,
+            0.955
           ],
-          "volume": 13207.516423000001
+          "volume": 13728.048073000002
         },
         {
           "question_en": "Will MegaETH perform an airdrop by September 30? ",
@@ -5580,10 +5580,10 @@
             "아니오"
           ],
           "prices": [
-            0.009,
-            0.991
+            0.033,
+            0.967
           ],
-          "volume": 19301.076578
+          "volume": 19384.366578
         },
         {
           "question_en": "Will the Fed Pause-Pause-Pause in the next three decisions (Oct-Dec-Jan)?",
@@ -5598,10 +5598,10 @@
             "아니오"
           ],
           "prices": [
-            0.004,
-            0.996
+            0.0045,
+            0.9955
           ],
-          "volume": 30142.641115
+          "volume": 30245.581115
         },
         {
           "question_en": "Will the Fed Pause-Hike-Hike in the next three decisions (Oct-Dec-Jan)?",
@@ -5616,10 +5616,10 @@
             "아니오"
           ],
           "prices": [
-            0.4425,
-            0.5575
+            0.481,
+            0.519
           ],
-          "volume": 39611.66779099999
+          "volume": 41200.933692000006
         },
         {
           "question_en": "Will the Fed Pause-Hike-Pause in the next three decisions (Oct-Dec-Jan)?",
@@ -5634,10 +5634,10 @@
             "아니오"
           ],
           "prices": [
-            0.54,
-            0.46
+            0.48,
+            0.52
           ],
-          "volume": 110799.35312100001
+          "volume": 111635.87312099998
         },
         {
           "question_en": "Will the Fed decide differently in the next three decisions (Oct-Dec-Jan)?",
@@ -5652,10 +5652,10 @@
             "아니오"
           ],
           "prices": [
-            0.005,
-            0.995
+            0.007,
+            0.993
           ],
-          "volume": 7959.066079
+          "volume": 8417.186079
         }
       ]
     },
@@ -5682,7 +5682,7 @@
             0.0045,
             0.9955
           ],
-          "volume": 340910.788615
+          "volume": 480864.80053199996
         },
         {
           "question_en": "Will the Fed decrease interest rates by 25 bps after the January 2027 meeting?",
@@ -5697,10 +5697,10 @@
             "아니오"
           ],
           "prices": [
-            0.0055,
-            0.9945
+            0.0045,
+            0.9955
           ],
-          "volume": 298102.925165
+          "volume": 485441.224888
         },
         {
           "question_en": "Will there be no change in Fed interest rates after the January 2027 meeting?",
@@ -5715,10 +5715,10 @@
             "아니오"
           ],
           "prices": [
-            0.515,
-            0.485
+            0.455,
+            0.545
           ],
-          "volume": 534270.982129
+          "volume": 655993.6592400001
         },
         {
           "question_en": "Will the Fed increase interest rates by 25 bps after the January 2027 meeting?",
@@ -5733,10 +5733,10 @@
             "아니오"
           ],
           "prices": [
-            0.495,
-            0.505
+            0.535,
+            0.465
           ],
-          "volume": 611716.729968
+          "volume": 757073.693025
         },
         {
           "question_en": "Will the Fed increase interest rates by 50+ bps after the January 2027 meeting?",
@@ -5751,10 +5751,10 @@
             "아니오"
           ],
           "prices": [
-            0.012,
-            0.988
+            0.0065,
+            0.9935
           ],
-          "volume": 245171.58171
+          "volume": 373953.920041
         }
       ]
     },
@@ -5841,10 +5841,10 @@
             "아니오"
           ],
           "prices": [
-            0.0155,
-            0.9845
+            0.008,
+            0.992
           ],
-          "volume": 13195.009235000001
+          "volume": 20566.610835
         },
         {
           "question_en": "Will the Fed decrease interest rates by 25 bps after the March 2027 meeting?",
@@ -5859,10 +5859,10 @@
             "아니오"
           ],
           "prices": [
-            0.0405,
-            0.9595
+            0.023,
+            0.977
           ],
-          "volume": 12565.404645999999
+          "volume": 20280.19625
         },
         {
           "question_en": "Will there be no change in Fed interest rates after the March 2027 meeting?",
@@ -5877,10 +5877,10 @@
             "아니오"
           ],
           "prices": [
-            0.405,
-            0.595
+            0.37,
+            0.63
           ],
-          "volume": 37321.64382
+          "volume": 44580.908912
         },
         {
           "question_en": "Will the Fed increase interest rates by 25 bps after the March 2027 meeting?",
@@ -5895,10 +5895,10 @@
             "아니오"
           ],
           "prices": [
-            0.54,
-            0.46
+            0.585,
+            0.415
           ],
-          "volume": 89389.406245
+          "volume": 100103.94880400001
         },
         {
           "question_en": "Will the Fed increase interest rates by 50+ bps after the March 2027 meeting?",
@@ -5913,10 +5913,10 @@
             "아니오"
           ],
           "prices": [
-            0.025,
-            0.975
+            0.0115,
+            0.9885
           ],
-          "volume": 12375.409443999999
+          "volume": 20327.961606
         }
       ]
     },
@@ -5979,7 +5979,7 @@
             0.028,
             0.972
           ],
-          "volume": 449983.930574
+          "volume": 449983.93057400006
         }
       ]
     },
@@ -6003,8 +6003,8 @@
             "아니오"
           ],
           "prices": [
-            0.048,
-            0.952
+            0.049,
+            0.951
           ],
           "volume": 4483.243114
         },
@@ -6021,10 +6021,10 @@
             "아니오"
           ],
           "prices": [
-            0.09,
-            0.91
+            0.095,
+            0.905
           ],
-          "volume": 6152.621322999999
+          "volume": 6801.201322999999
         },
         {
           "question_en": "Will there be no change in Fed interest rates after the April 2027 meeting?",
@@ -6042,7 +6042,7 @@
             0.655,
             0.345
           ],
-          "volume": 13379.165109
+          "volume": 14409.468139999999
         },
         {
           "question_en": "Will the Fed increase interest rates by 25 bps after the April 2027 meeting?",
@@ -6057,10 +6057,10 @@
             "아니오"
           ],
           "prices": [
-            0.155,
-            0.845
+            0.185,
+            0.815
           ],
-          "volume": 34610.474875
+          "volume": 35195.382523
         },
         {
           "question_en": "Will the Fed increase interest rates by 50+ bps after the April 2027 meeting?",
@@ -6156,8 +6156,8 @@
             "아니오"
           ],
           "prices": [
-            0.045,
-            0.955
+            0.0265,
+            0.9735
           ],
           "volume": 49761.561695000004
         },
@@ -6174,10 +6174,10 @@
             "아니오"
           ],
           "prices": [
-            0.325,
-            0.675
+            0.265,
+            0.735
           ],
-          "volume": 11074.973520000001
+          "volume": 11094.973520000001
         },
         {
           "question_en": "Will the next UK election be called by June 30, 2026?",
@@ -6273,10 +6273,10 @@
             "아니오"
           ],
           "prices": [
-            0.57,
-            0.43
+            0.415,
+            0.585
           ],
-          "volume": 3869.4499780000006
+          "volume": 4429.369978
         },
         {
           "question_en": "Kraken IPO by March 31, 2027?",
@@ -6291,10 +6291,10 @@
             "아니오"
           ],
           "prices": [
-            0.14,
-            0.86
+            0.07,
+            0.93
           ],
-          "volume": 4016.675082
+          "volume": 5372.975082
         },
         {
           "question_en": "Kraken IPO by December 31, 2026?",
@@ -6309,10 +6309,10 @@
             "아니오"
           ],
           "prices": [
-            0.037,
-            0.963
+            0.0365,
+            0.9635
           ],
-          "volume": 577654.652616
+          "volume": 577750.8726160001
         },
         {
           "question_en": "Kraken IPO by June 30, 2026?",
@@ -6369,10 +6369,10 @@
             "아니오"
           ],
           "prices": [
-            0.041,
-            0.959
+            0.035,
+            0.965
           ],
-          "volume": 114651.34233500002
+          "volume": 114651.342335
         },
         {
           "question_en": "Ukraine election called by August 31, 2026?",
@@ -6459,8 +6459,8 @@
             "아니오"
           ],
           "prices": [
-            0.595,
-            0.405
+            0.62,
+            0.38
           ],
           "volume": 28.67347
         }
@@ -6540,10 +6540,10 @@
             "아니오"
           ],
           "prices": [
-            0.0655,
-            0.9345
+            0.0695,
+            0.9305
           ],
-          "volume": 4483.985692
+          "volume": 4756.620963
         },
         {
           "question_en": "Will any country leave NATO by December 31, 2026?",
@@ -6603,8 +6603,8 @@
             "아니오"
           ],
           "prices": [
-            0.255,
-            0.745
+            0.245,
+            0.755
           ],
           "volume": 3037.222997
         },
@@ -6702,10 +6702,10 @@
             "아니오"
           ],
           "prices": [
-            0.078,
-            0.922
+            0.084,
+            0.916
           ],
-          "volume": 1086.60861
+          "volume": 1116.9686100000001
         },
         {
           "question_en": "Will the upper bound of the target federal funds rate be 2.75% at the end of 2027?",
@@ -6756,8 +6756,8 @@
             "아니오"
           ],
           "prices": [
-            0.047,
-            0.953
+            0.02,
+            0.98
           ],
           "volume": 955.287473
         },
@@ -6774,8 +6774,8 @@
             "아니오"
           ],
           "prices": [
-            0.1015,
-            0.8985
+            0.102,
+            0.898
           ],
           "volume": 1233.5685130000002
         },
@@ -6792,10 +6792,10 @@
             "아니오"
           ],
           "prices": [
-            0.1395,
-            0.8605
+            0.11,
+            0.89
           ],
-          "volume": 867.510032
+          "volume": 872.510032
         },
         {
           "question_en": "Will the upper bound of the target federal funds rate be 4.0% at the end of 2027?",
@@ -6810,8 +6810,8 @@
             "아니오"
           ],
           "prices": [
-            0.095,
-            0.905
+            0.1,
+            0.9
           ],
           "volume": 2392.438832
         },
@@ -6828,8 +6828,8 @@
             "아니오"
           ],
           "prices": [
-            0.31,
-            0.69
+            0.28,
+            0.72
           ],
           "volume": 6832.530147
         },
@@ -6846,8 +6846,8 @@
             "아니오"
           ],
           "prices": [
-            0.285,
-            0.715
+            0.25,
+            0.75
           ],
           "volume": 4070.8882510000003
         },
@@ -6864,8 +6864,8 @@
             "아니오"
           ],
           "prices": [
-            0.2,
-            0.8
+            0.205,
+            0.795
           ],
           "volume": 2099.038508
         },
@@ -6882,8 +6882,8 @@
             "아니오"
           ],
           "prices": [
-            0.1,
-            0.9
+            0.105,
+            0.895
           ],
           "volume": 1894.3672560000002
         },
@@ -6900,8 +6900,8 @@
             "아니오"
           ],
           "prices": [
-            0.0375,
-            0.9625
+            0.0395,
+            0.9605
           ],
           "volume": 1662.07174
         },
@@ -6918,10 +6918,10 @@
             "아니오"
           ],
           "prices": [
-            0.0135,
-            0.9865
+            0.015,
+            0.985
           ],
-          "volume": 575.4013600000001
+          "volume": 585.40136
         },
         {
           "question_en": "Will the upper bound of the target federal funds rate be 5.75% at the end of 2027?",
@@ -6936,8 +6936,8 @@
             "아니오"
           ],
           "prices": [
-            0.0765,
-            0.9235
+            0.079,
+            0.921
           ],
           "volume": 1344.986111
         },
@@ -6954,10 +6954,10 @@
             "아니오"
           ],
           "prices": [
-            0.015,
-            0.985
+            0.021,
+            0.979
           ],
-          "volume": 734.1037269999999
+          "volume": 744.1037270000002
         }
       ]
     },
@@ -7053,10 +7053,10 @@
             "아니오"
           ],
           "prices": [
-            0.067,
-            0.933
+            0.0425,
+            0.9575
           ],
-          "volume": 9429.904923
+          "volume": 10025.214923
         },
         {
           "question_en": "Fed rate cut by March 2027 meeting?",
@@ -7074,7 +7074,7 @@
             0.085,
             0.915
           ],
-          "volume": 6899.806649
+          "volume": 6909.806649
         },
         {
           "question_en": "Fed rate cut by July 2027 meeting?",
@@ -7089,8 +7089,8 @@
             "아니오"
           ],
           "prices": [
-            0.47,
-            0.53
+            0.465,
+            0.535
           ],
           "volume": 161.763798
         },
@@ -7107,10 +7107,10 @@
             "아니오"
           ],
           "prices": [
-            0.465,
-            0.535
+            0.35,
+            0.65
           ],
-          "volume": 155.649911
+          "volume": 159.44737700000002
         },
         {
           "question_en": "Fed rate cut by June 2027 meeting?",
@@ -7125,8 +7125,8 @@
             "아니오"
           ],
           "prices": [
-            0.315,
-            0.685
+            0.31,
+            0.69
           ],
           "volume": 27.337838
         },
